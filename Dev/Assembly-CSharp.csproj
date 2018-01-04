@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\behaviour.cs" />
      <Compile Include="Assets\buttonscenetest.cs" />
+     <Compile Include="Assets\CameraPan.cs" />
      <Compile Include="Assets\controller.cs" />
      <Compile Include="Assets\fade.cs" />
      <Compile Include="Assets\GameControl.cs" />
@@ -60,6 +61,14 @@
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\TextureController.cs" />
+     <Compile Include="Assets\Tiling.cs" />
+     <Compile Include="Assets\Word.cs" />
+     <Compile Include="Assets\WordDisplay.cs" />
+     <Compile Include="Assets\WordGenerator.cs" />
+     <Compile Include="Assets\WordInput.cs" />
+     <Compile Include="Assets\WordManager.cs" />
+     <Compile Include="Assets\WordSpawner.cs" />
+     <Compile Include="Assets\WordTimer.cs" />
      <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Pro Only)\Shaders\FXWaterV4Simple.shader" />

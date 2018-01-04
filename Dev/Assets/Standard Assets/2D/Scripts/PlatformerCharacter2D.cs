@@ -68,7 +68,6 @@ namespace UnitySampleAssets._2D
 
                 // The Speed animator parameter is set to the absolute value of the horizontal input.
                 anim.SetFloat("Speed", Mathf.Abs(move));
-				Debug.Log (anim.speed);
                 // Move the character
                 GetComponent<Rigidbody2D>().velocity = new Vector2(move*maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
