@@ -7,10 +7,10 @@ public class Word {
 
 	public string word;
 	private int typeIndex;
-
+	private WordManager wordManager;
 	WordDisplay display;
 
-	public Word (string _word, WordDisplay _display)
+	public Word (string _word, WordDisplay _display, WordManager _manager)
 	{
 		word = _word;
 		typeIndex = 0;
@@ -21,9 +21,19 @@ public class Word {
 
 	public char GetNextLetter ()
 	{
-		return word[typeIndex];
-	}
+			return word [typeIndex];
 
+
+
+	}
+	public bool DoesWordExist(){
+		if (display.wordDestroyed) {
+			return false;
+		} else {
+			return true;
+		}
+
+	}
 	public void TypeLetter ()
 	{
 		typeIndex++;
@@ -36,6 +46,7 @@ public class Word {
 		if (wordTyped)
 		{
 			display.RemoveWord();
+			display.CreateObject ();
 		}
 		return wordTyped;
 	}

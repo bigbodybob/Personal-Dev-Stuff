@@ -6,16 +6,13 @@ public class WordTimer : MonoBehaviour {
 
 	public WordManager wordManager;
 
-	public float wordDelay = 1.5f;
-	private float nextWordTime = 0f;
 
-	private void Update()
+	public int wordNum;
+	private void Start()
 	{
-		if (Time.time >= nextWordTime)
-		{
+		for(int i=0; i<wordNum;i++){
 			wordManager.AddWord();
-			nextWordTime = Time.time + wordDelay;
-			wordDelay *= .99f;
+
 		}
 	}
 
