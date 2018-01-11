@@ -9,7 +9,6 @@ public class WordDisplay : MonoBehaviour {
 	public float fallSpeed = 1f;
 	public GameObject spawnFX;
 	public bool wordDestroyed;
-
 	// has word entered screen?
 	private bool wordInView;
 	private string itemType;
@@ -55,6 +54,7 @@ public class WordDisplay : MonoBehaviour {
 		if (wordInView && !(Camera.main.WorldToViewportPoint (transform.position).x > -.05 && Camera.main.WorldToViewportPoint (transform.position).x < 1)) {
 			RemoveWord();
 			wordDestroyed = true;
+			GameObject.Find ("LifeManager").GetComponent<lifeManager>().removeLife();
 		}
 	}
 
