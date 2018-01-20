@@ -55,8 +55,10 @@
      <Compile Include="Assets\buttonscenetest.cs" />
      <Compile Include="Assets\CameraPan.cs" />
      <Compile Include="Assets\controller.cs" />
+     <Compile Include="Assets\CreatedGame.cs" />
      <Compile Include="Assets\fade.cs" />
      <Compile Include="Assets\GameControl.cs" />
+     <Compile Include="Assets\gameStats.cs" />
      <Compile Include="Assets\heart.cs" />
      <Compile Include="Assets\lifeManager.cs" />
      <Compile Include="Assets\Parallaxing.cs" />
@@ -97,6 +99,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\Tiling.cs" />
      <Compile Include="Assets\Word.cs" />
+     <Compile Include="Assets\wordCount.cs" />
      <Compile Include="Assets\WordDisplay.cs" />
      <Compile Include="Assets\WordGenerator.cs" />
      <Compile Include="Assets\WordInput.cs" />

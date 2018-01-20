@@ -8,9 +8,16 @@ using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour {
 	public Sprite[] upperarmlist;
 	public Sprite[] hairlist;
-
+	public static string[] unlockedWordList = {   "castle" ,"minion"};
+	public static List<gameStats> allGames;
 	public static  GameControl control;
 	public int upperarm=0;
+	public GameObject lowerarmS=null;
+	public GameObject lowerarmleftS = null;
+	public GameObject headS = null;
+	public GameObject handS=null;
+	public GameObject handleftS=null;
+	public GameObject neckS=null;
 	public int lowerarm= 0;
 	public int lowerleg= 0;
 	public int upperleg= 0;
@@ -18,13 +25,26 @@ public class GameControl : MonoBehaviour {
 	public Color skintone;
 	public int shoes= 0;
 	public int hair= 0;
-	private GameObject Foot;
-	private GameObject Head;
+
 	// Use this for initialization
 	void Awake () {
-		if (GameObject.Find ("upper_000")!=null) {
-			Foot = GameObject.Find ("upper_000");
-			Foot.GetComponent<SpriteRenderer> ().sprite = upperarmlist [1];
+		
+		if(GameObject.Find ("lower_002")!=null){
+			lowerarmS = GameObject.Find ("lower_002");
+		}
+		if(GameObject.Find ("lower_001")!=null){
+			lowerarmleftS = GameObject.Find ("lower_001");
+		}
+		if(GameObject.Find ("neck")!=null){
+			neckS = GameObject.Find ("neck");
+		}	if(GameObject.Find ("head")!=null){
+			headS = GameObject.Find ("head");
+		}
+		if(GameObject.Find ("hand")!=null){
+			handS = GameObject.Find ("hand");
+		}
+		if(GameObject.Find ("hand_000")!=null){
+			handleftS = GameObject.Find ("hand_000");
 		}
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
@@ -37,22 +57,19 @@ public class GameControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameObject.Find ("upper_000")!=null) {
-			Foot = GameObject.Find ("upper_000");
-			Foot.GetComponent<SpriteRenderer> ().sprite = upperarmlist [1];
-		}
+		
 	}
 	public void changeSkinTone(float newskintone)
 	{
 		skintone= new Color (0.5F*newskintone,0.3F*newskintone,0.2F*newskintone,1.0F);
-		Head = GameObject.Find ("head");
+		headS = GameObject.Find ("head");
 
-		Head.GetComponent<SpriteRenderer> ().color = skintone;
-		GameObject.Find ("lower_002").GetComponent<SpriteRenderer> ().color = skintone;
-		GameObject.Find ("lower_001").GetComponent<SpriteRenderer> ().color = skintone;
-		GameObject.Find ("neck").GetComponent<SpriteRenderer> ().color = skintone;
-		GameObject.Find ("hand").GetComponent<SpriteRenderer> ().color = skintone;
-		GameObject.Find ("hand_000").GetComponent<SpriteRenderer> ().color = skintone;
+		headS.GetComponent<SpriteRenderer> ().color = skintone;
+		lowerarmS.GetComponent<SpriteRenderer> ().color = skintone;
+		lowerarmleftS.GetComponent<SpriteRenderer> ().color = skintone;
+		neckS.GetComponent<SpriteRenderer> ().color = skintone;
+		handS.GetComponent<SpriteRenderer> ().color = skintone;
+		handleftS.GetComponent<SpriteRenderer> ().color = skintone;
 
 	}
 	public void changeHairColor(float haircolorvalue)

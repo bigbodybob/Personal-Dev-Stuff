@@ -195,6 +195,12 @@ MonoBehaviour:
   upperarmlist: []
   hairlist: []
   upperarm: 0
+  lowerarmS: {fileID: 0}
+  lowerarmleftS: {fileID: 0}
+  headS: {fileID: 0}
+  handS: {fileID: 0}
+  handleftS: {fileID: 0}
+  neckS: {fileID: 0}
   lowerarm: 0
   lowerleg: 0
   upperleg: 0
@@ -1023,7 +1029,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1438681274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 398.5, y: 148.5, z: 0}
+  m_LocalPosition: {x: 390.5, y: 131, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1046,6 +1052,7 @@ GameObject:
   - component: {fileID: 1448547779}
   - component: {fileID: 1448547778}
   - component: {fileID: 1448547781}
+  - component: {fileID: 1448547782}
   m_Layer: 0
   m_Name: WordManager
   m_TagString: Untagged
@@ -1104,6 +1111,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   words: []
   wordSpawner: {fileID: 1448547779}
+  wordGenerator: {fileID: 1448547782}
+  wordCounters:
+  - count: 0
+    name: castle
+  - count: 0
+    name: minion
 --- !u!114 &1448547781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,3 +1130,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordManager: {fileID: 1448547780}
   wordNum: 5
+--- !u!114 &1448547782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448547776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05366c5ff9f2d3f4d926640499a856e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordC: []
+--- !u!1 &1457553407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1457553409}
+  - component: {fileID: 1457553408}
+  m_Layer: 0
+  m_Name: GameStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1457553408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1457553407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a52fbc9fe1deea04cb8b84e5b0d1cf1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bugs: 0
+  wordTier1Count: 0
+  wordTier2Count: 0
+  wordTier3Count: 0
+  gameScore: 0
+--- !u!4 &1457553409
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1457553407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.431852, y: -4.193615, z: -3.381803}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
