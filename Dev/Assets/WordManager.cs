@@ -8,7 +8,6 @@ public class WordManager : MonoBehaviour {
 	public WordSpawner wordSpawner;
 	public WordGenerator wordGenerator;
 	public List<wordCount> wordCounters;
-
 	private bool hasActiveWord;
 	private Word activeWord;
 	private int space = 0;
@@ -21,7 +20,6 @@ public class WordManager : MonoBehaviour {
 	{
 		Word word = new Word(wordGenerator.GetRandomWord(), wordSpawner.SpawnWord(space), this);
 		space += Screen.width / 2;
-		Debug.Log(word.word);
 
 		words.Add(word);
 	}
@@ -36,9 +34,12 @@ public class WordManager : MonoBehaviour {
 		if (hasActiveWord)
 		{
 			
-			if (activeWord.GetNextLetter() == letter)
-			{
-				activeWord.TypeLetter();
+			if (activeWord.GetNextLetter () == letter) {
+				activeWord.TypeLetter ();
+			} else if (activeWord.GetNextLetter () != letter) {
+				hasActiveWord = false;
+				activeWord.display.fade();
+				words.Remove (activeWord);
 			}
 		} else
 		{
@@ -61,9 +62,10 @@ public class WordManager : MonoBehaviour {
 			foreach (wordCount count in wordCounters) {
 				if (count.name.Equals(activeWord.word)) {
 					count.addCount();
-					Debug.Log (count.count);
 				}
 			}
+			gameStats.gameScore+=(10*activeWord.word.Length);
+
 			words.Remove(activeWord);
 		}
 	}

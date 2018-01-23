@@ -8,6 +8,8 @@ public class WordDisplay : MonoBehaviour {
 	public TextMeshProUGUI text;
 	public float fallSpeed = 1f;
 	public GameObject spawnFX;
+	public GameObject deadword;
+	public Animator animator;
 	public bool wordDestroyed;
 	// has word entered screen?
 	private bool wordInView;
@@ -24,6 +26,12 @@ public class WordDisplay : MonoBehaviour {
 			text.text = text.text.Remove (0, 1);
 			text.color = Color.red;
 
+	}
+	public void fade()
+	{
+		animator.SetBool ("isFaded", true);
+		GameObject deadwordanim= Instantiate(deadword,new Vector3 (transform.position.x,transform.position.y,1),Quaternion.identity);
+		Destroy (deadwordanim, 6f);
 	}
 
 	public void RemoveWord ()

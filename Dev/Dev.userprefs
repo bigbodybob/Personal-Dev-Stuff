@@ -1,13 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\gameStats.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WordDisplay.cs">
     <Files>
-      <File FileName="Assets\GameControl.cs" Line="12" Column="16" />
-      <File FileName="Assets\lifeManager.cs" Line="8" Column="21" />
-      <File FileName="Assets\gameStats.cs" Line="16" Column="13" />
-      <File FileName="Assets\WordManager.cs" Line="9" Column="37" />
-      <File FileName="Assets\WordGenerator.cs" Line="14" Column="27" />
-      <File FileName="Assets\wordCount.cs" Line="9" Column="21" />
+      <File FileName="Assets\GameControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\lifeManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\gameStats.cs" Line="1" Column="1" />
+      <File FileName="Assets\WordManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\WordGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets\wordCount.cs" Line="1" Column="1" />
+      <File FileName="Assets\score.cs" Line="1" Column="1" />
+      <File FileName="Assets\heart.cs" Line="1" Column="1" />
+      <File FileName="Assets\Word.cs" Line="1" Column="1" />
+      <File FileName="Assets\WordDisplay.cs" Line="34" Column="30" />
+      <File FileName="Assets\WordSpawner.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

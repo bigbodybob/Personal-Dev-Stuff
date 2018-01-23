@@ -11,7 +11,6 @@ public class WordGenerator:MonoBehaviour  {
 		foreach (string word in wordList) {
 			wordCount tempWord = new wordCount (0,word);
 			wordC.Add (tempWord);
-			Debug.Log (tempWord.count);
 		}
 		return wordC;
 	}

@@ -7,8 +7,9 @@ public class Word {
 
 	public string word;
 	private int typeIndex;
+	public bool isFaded;
 	private WordManager wordManager;
-	WordDisplay display;
+	public WordDisplay display;
 
 	public Word (string _word, WordDisplay _display, WordManager _manager)
 	{

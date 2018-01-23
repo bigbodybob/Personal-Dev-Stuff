@@ -12,7 +12,6 @@ public class heart : MonoBehaviour {
 	void Update () {
 		if (dead) {
 			animator.SetBool ("isDead", true);
-			Destroy (gameObject,2f);
 
 		}
 	}

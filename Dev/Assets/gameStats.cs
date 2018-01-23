@@ -5,7 +5,7 @@ using UnityEngine;
 public class gameStats : MonoBehaviour {
 	public int bugs;
 	public List<wordCount> finalWC;
-	public int gameScore;
+	public static int gameScore=0;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,7 +13,6 @@ public class gameStats : MonoBehaviour {
 	//when someone types a word
 	public void gameComplete()
 	{
-		gameScore;
 		GameControl.allGames.Add (this);
 	}
 	// Update is called once per frame
