@@ -17,6 +17,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/customize.unity
     guid: 4e7dac155740e214791091189ebdf846
-  - enabled: 1
-    path: Assets/playerhome.unity
-    guid: f5bd603e4f048694d8d11b17b4884f4b
