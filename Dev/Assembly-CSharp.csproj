@@ -54,12 +54,16 @@
      <Compile Include="Assets\behaviour.cs" />
      <Compile Include="Assets\buttonscenetest.cs" />
      <Compile Include="Assets\CameraPan.cs" />
+     <Compile Include="Assets\changeScene.cs" />
+     <Compile Include="Assets\characterBodyControl.cs" />
      <Compile Include="Assets\controller.cs" />
      <Compile Include="Assets\CreatedGame.cs" />
      <Compile Include="Assets\fade.cs" />
+     <Compile Include="Assets\FadeControl.cs" />
      <Compile Include="Assets\GameControl.cs" />
      <Compile Include="Assets\gameStats.cs" />
      <Compile Include="Assets\heart.cs" />
+     <Compile Include="Assets\housedoor.cs" />
      <Compile Include="Assets\lifeManager.cs" />
      <Compile Include="Assets\Parallaxing.cs" />
      <Compile Include="Assets\score.cs" />

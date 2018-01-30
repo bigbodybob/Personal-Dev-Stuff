@@ -12,12 +12,7 @@ public class GameControl : MonoBehaviour {
 	public static List<gameStats> allGames;
 	public static  GameControl control;
 	public int upperarm=0;
-	public GameObject lowerarmS=null;
-	public GameObject lowerarmleftS = null;
-	public GameObject headS = null;
-	public GameObject handS=null;
-	public GameObject handleftS=null;
-	public GameObject neckS=null;
+
 	public int lowerarm= 0;
 	public int lowerleg= 0;
 	public int upperleg= 0;
@@ -29,23 +24,7 @@ public class GameControl : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		
-		if(GameObject.Find ("lower_002")!=null){
-			lowerarmS = GameObject.Find ("lower_002");
-		}
-		if(GameObject.Find ("lower_001")!=null){
-			lowerarmleftS = GameObject.Find ("lower_001");
-		}
-		if(GameObject.Find ("neck")!=null){
-			neckS = GameObject.Find ("neck");
-		}	if(GameObject.Find ("head")!=null){
-			headS = GameObject.Find ("head");
-		}
-		if(GameObject.Find ("hand")!=null){
-			handS = GameObject.Find ("hand");
-		}
-		if(GameObject.Find ("hand_000")!=null){
-			handleftS = GameObject.Find ("hand_000");
-		}
+
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
 			control = this;
@@ -59,10 +38,9 @@ public class GameControl : MonoBehaviour {
 	void Update () {
 		
 	}
-	public void changeSkinTone(float newskintone)
+	public  void changeSkinTone(float newskintone, GameObject headS, GameObject lowerarmS, GameObject lowerarmleftS, GameObject neckS, GameObject handS, GameObject handleftS)
 	{
-		skintone= new Color (0.5F*newskintone,0.3F*newskintone,0.2F*newskintone,1.0F);
-		headS = GameObject.Find ("head");
+		GameControl.control.skintone= new Color (0.5F*newskintone,0.3F*newskintone,0.2F*newskintone,1.0F);
 
 		headS.GetComponent<SpriteRenderer> ().color = skintone;
 		lowerarmS.GetComponent<SpriteRenderer> ().color = skintone;
@@ -72,6 +50,7 @@ public class GameControl : MonoBehaviour {
 		handleftS.GetComponent<SpriteRenderer> ().color = skintone;
 
 	}
+
 	public void changeHairColor(float haircolorvalue)
 	{
 		Color hairc;
