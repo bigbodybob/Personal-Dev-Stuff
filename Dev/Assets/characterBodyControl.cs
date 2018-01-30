@@ -9,8 +9,10 @@ public class characterBodyControl : MonoBehaviour {
 	public GameObject handS=null;
 	public GameObject handleftS=null;
 	public GameObject neckS=null;
+	public GameObject hair=null;
 	void Awake()
 	{
+		transform.parent.position = GameControl.control.currentCharPosition;
 		if(GameObject.Find ("lower_002")!=null){
 			lowerarmS = GameObject.Find ("lower_002");
 		}
@@ -28,11 +30,12 @@ public class characterBodyControl : MonoBehaviour {
 		if(GameObject.Find ("hand_000")!=null){
 			handleftS = GameObject.Find ("hand_000");
 		}
+		hair = GameObject.Find ("hair");
 	}
-	public  void changeSkinToneChar()
+	public  void changeColorVals()
 	{
 
-
+		hair.GetComponent<SpriteRenderer> ().color = GameControl.control.hairColor;
 		headS.GetComponent<SpriteRenderer> ().color = GameControl.control.skintone;
 		lowerarmS.GetComponent<SpriteRenderer> ().color = GameControl.control.skintone;
 		lowerarmleftS.GetComponent<SpriteRenderer> ().color = GameControl.control.skintone;
@@ -43,7 +46,7 @@ public class characterBodyControl : MonoBehaviour {
 	}
 	void Start () {
 		
-		changeSkinToneChar ();
+		changeColorVals ();
 	}
 
 	// Update is called once per frame

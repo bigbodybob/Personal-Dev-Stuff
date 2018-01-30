@@ -28,7 +28,9 @@ public class housedoor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.E) && animator.GetBool("isOpen")) {
-			panel.GetComponent<FadeControl>().levelChange("home",panel);
+			panel.GetComponent<FadeControl>().levelChange("playerhome",panel);
+			GameControl.control.currentCharPosition = GameControl.control.charPositions [1];
+
 		}
 	}
 }

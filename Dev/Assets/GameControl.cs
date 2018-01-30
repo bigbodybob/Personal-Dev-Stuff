@@ -12,12 +12,14 @@ public class GameControl : MonoBehaviour {
 	public static List<gameStats> allGames;
 	public static  GameControl control;
 	public int upperarm=0;
-
+	public Vector3[] charPositions;
+	public Vector3 currentCharPosition;
 	public int lowerarm= 0;
 	public int lowerleg= 0;
 	public int upperleg= 0;
 	public int body= 0;
 	public Color skintone;
+	public Color hairColor;
 	public int shoes= 0;
 	public int hair= 0;
 
@@ -83,7 +85,7 @@ public class GameControl : MonoBehaviour {
 		}
 			
 		GameObject.Find ("hair").GetComponent<SpriteRenderer> ().color = hairc;
-
+		hairColor = hairc;
 	}
 	public void changeHair(float hairS)
 	{
