@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spriter2UnityDX;
 
 public class characterBodyControl : MonoBehaviour {
 	public GameObject lowerarmS=null;
@@ -10,9 +11,9 @@ public class characterBodyControl : MonoBehaviour {
 	public GameObject handleftS=null;
 	public GameObject neckS=null;
 	public GameObject hair=null;
+	public EntityRenderer spriteRenderer;
 	void Awake()
 	{
-		transform.parent.position = GameControl.control.currentCharPosition;
 		if(GameObject.Find ("lower_002")!=null){
 			lowerarmS = GameObject.Find ("lower_002");
 		}
@@ -45,7 +46,10 @@ public class characterBodyControl : MonoBehaviour {
 
 	}
 	void Start () {
-		
+		transform.parent.position = GameControl.control.currentCharPosition;
+		Color tmp= spriteRenderer.Color;
+		tmp.a = 1f;
+		spriteRenderer.Color = tmp;
 		changeColorVals ();
 	}
 

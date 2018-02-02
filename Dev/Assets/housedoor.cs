@@ -29,7 +29,7 @@ public class housedoor : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.E) && animator.GetBool("isOpen")) {
 			panel.GetComponent<FadeControl>().levelChange("playerhome",panel);
-			GameControl.control.currentCharPosition = GameControl.control.charPositions [1];
+			GameControl.control.currentCharPosition = GameControl.control.charPositions [0];
 
 		}
 	}

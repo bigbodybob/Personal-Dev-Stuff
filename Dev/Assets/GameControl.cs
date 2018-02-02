@@ -12,6 +12,7 @@ public class GameControl : MonoBehaviour {
 	public static List<gameStats> allGames;
 	public static  GameControl control;
 	public int upperarm=0;
+	public bool isCharFlipCorrect=true;
 	public Vector3[] charPositions;
 	public Vector3 currentCharPosition;
 	public int lowerarm= 0;

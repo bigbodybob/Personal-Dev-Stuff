@@ -53,7 +53,9 @@
   <ItemGroup>
      <Compile Include="Assets\behaviour.cs" />
      <Compile Include="Assets\buttonscenetest.cs" />
+     <Compile Include="Assets\Camera2DFollow.cs" />
      <Compile Include="Assets\CameraPan.cs" />
+     <Compile Include="Assets\changeFloor.cs" />
      <Compile Include="Assets\changeScene.cs" />
      <Compile Include="Assets\characterBodyControl.cs" />
      <Compile Include="Assets\controller.cs" />
@@ -66,6 +68,8 @@
      <Compile Include="Assets\housedoor.cs" />
      <Compile Include="Assets\lifeManager.cs" />
      <Compile Include="Assets\Parallaxing.cs" />
+     <Compile Include="Assets\Platformer2DUserControl.cs" />
+     <Compile Include="Assets\PlatformerCharacter2D.cs" />
      <Compile Include="Assets\score.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
