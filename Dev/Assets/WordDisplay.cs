@@ -64,6 +64,10 @@ public class WordDisplay : MonoBehaviour {
 			wordDestroyed = true;
 			GameObject.Find ("LifeManager").GetComponent<lifeManager>().removeLife();
 		}
+		if (GameControl.control.isGameOver) {
+		
+			RemoveWord ();
+		}
 	}
 
 

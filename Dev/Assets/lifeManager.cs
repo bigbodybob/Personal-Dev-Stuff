@@ -8,6 +8,7 @@ public class lifeManager : MonoBehaviour {
 	public GameObject canvas;
 	public GameObject lifeBar;
 	public GameObject heartPrefab;
+	public GameObject gameStats;
 	public GameObject[] hearts;
 	private float spacing=0;
 	void Start() {
@@ -22,6 +23,11 @@ public class lifeManager : MonoBehaviour {
 	public void removeLife(){
 		hearts[numLives-1].GetComponent<heart>().dead=true;
 		numLives--;
+		if (numLives == 0) {
+			gameStats currentStats=gameStats.GetComponent<gameStats> ();
+			currentStats.gameComplete ();
+
+		}
 	}
 	
 	// Update is called once per frame

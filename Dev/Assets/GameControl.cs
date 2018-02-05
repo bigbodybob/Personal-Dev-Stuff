@@ -6,10 +6,17 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour {
+	//Scene Management
+	public string currentScene;
+	public string latestScene;
+	public Vector3 latestCharPositionInScene;
+	//vars specific to TYPING GAME
+	public bool isGameOver=false;
+	//vars shared across game scenes
 	public Sprite[] upperarmlist;
 	public Sprite[] hairlist;
-	public static string[] unlockedWordList = {   "castle" ,"minion"};
-	public static List<gameStats> allGames;
+	public string[] unlockedWordList = {   "castle" ,"minion"};
+	public List<gameStats> allGames;
 	public static  GameControl control;
 	public int upperarm=0;
 	public bool isCharFlipCorrect=true;
@@ -111,6 +118,11 @@ public class GameControl : MonoBehaviour {
 			hair = data.hair;
 		}
 		SceneManager.LoadScene("customize",LoadSceneMode.Single);
+	}
+	public void changeScene(GameObject panel)
+	{
+		SceneManager.LoadScene (latestScene, LoadSceneMode.Additive);
+
 	}
 	public void StartGame()
 	{

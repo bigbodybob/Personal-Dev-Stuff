@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WordGenerator:MonoBehaviour  {
-	public static string[] wordList=GameControl.unlockedWordList;
+	public string[] wordList;
 	public  List<wordCount> wordC;
-
+	void Awake()
+	{
+		wordList = GameControl.control.unlockedWordList;
+	}
 	public List<wordCount> wordCList()
 	{
 		foreach (string word in wordList) {
