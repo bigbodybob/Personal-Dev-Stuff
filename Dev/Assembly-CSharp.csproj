@@ -58,6 +58,7 @@
      <Compile Include="Assets\changeFloor.cs" />
      <Compile Include="Assets\changeScene.cs" />
      <Compile Include="Assets\characterBodyControl.cs" />
+     <Compile Include="Assets\Computer.cs" />
      <Compile Include="Assets\controller.cs" />
      <Compile Include="Assets\CreatedGame.cs" />
      <Compile Include="Assets\fade.cs" />

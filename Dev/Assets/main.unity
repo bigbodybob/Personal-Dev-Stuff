@@ -466,6 +466,7 @@ MonoBehaviour:
   upperarmlist: []
   hairlist: []
   upperarm: 0
+  isCharFlipCorrect: 1
   charPositions: []
   currentCharPosition: {x: 0, y: 0, z: 0}
   lowerarm: 0
@@ -575,7 +576,7 @@ Prefab:
     - target: {fileID: 224286065549125816, guid: 50cc60c2516929e4498be59a47c62d61,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 91.5
+      value: 131
       objectReference: {fileID: 0}
     - target: {fileID: 224286065549125816, guid: 50cc60c2516929e4498be59a47c62d61,
         type: 2}
@@ -685,7 +686,7 @@ Prefab:
     - target: {fileID: 114304847283110346, guid: 50cc60c2516929e4498be59a47c62d61,
         type: 2}
       propertyPath: m_Type
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50cc60c2516929e4498be59a47c62d61, type: 2}
