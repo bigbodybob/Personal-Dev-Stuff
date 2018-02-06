@@ -30,6 +30,7 @@ public class WordDisplay : MonoBehaviour {
 	public void fade()
 	{
 		animator.SetBool ("isFaded", true);
+		wordDestroyed = true;
 		GameObject deadwordanim= Instantiate(deadword,new Vector3 (transform.position.x,transform.position.y,1),Quaternion.identity);
 		Destroy (deadwordanim, 6f);
 	}
@@ -59,10 +60,10 @@ public class WordDisplay : MonoBehaviour {
 			wordInView = true;
 		
 		}
-		if (wordInView && !(Camera.main.WorldToViewportPoint (transform.position).x > -.05 && Camera.main.WorldToViewportPoint (transform.position).x < 1)) {
+		if (!wordDestroyed && wordInView && !(Camera.main.WorldToViewportPoint (transform.position).x > -.05 && Camera.main.WorldToViewportPoint (transform.position).x < 1)) {
 			RemoveWord();
 			wordDestroyed = true;
-			GameObject.Find ("LifeManager").GetComponent<lifeManager>().removeLife();
+			lifeManager.control.removeLife ();
 		}
 		if (GameControl.control.isGameOver) {
 		

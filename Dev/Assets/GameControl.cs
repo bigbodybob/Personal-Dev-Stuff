@@ -6,6 +6,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour {
+	//Level system
+	public int programmingLevel=1;
+	public int bugCheckLevel=1;
 	//Scene Management
 	public string currentScene;
 	public string latestScene;
@@ -16,7 +19,8 @@ public class GameControl : MonoBehaviour {
 	public Sprite[] upperarmlist;
 	public Sprite[] hairlist;
 	public string[] unlockedWordList = {   "castle" ,"minion"};
-	public List<gameStats> allGames;
+	public List<string> allGamesNames;
+	public List<CreatedGame> allGames;
 	public static  GameControl control;
 	public int upperarm=0;
 	public bool isCharFlipCorrect=true;
@@ -121,11 +125,12 @@ public class GameControl : MonoBehaviour {
 	}
 	public void changeScene(GameObject panel)
 	{
-		SceneManager.LoadScene (latestScene, LoadSceneMode.Additive);
-
+		panel.GetComponent<FadeControl> ().levelChange (latestScene,panel);
 	}
+
 	public void StartGame()
 	{
+		
 		SceneManager.LoadScene("main",LoadSceneMode.Single);
 	}
 

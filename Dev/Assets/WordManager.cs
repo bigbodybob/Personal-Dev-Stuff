@@ -14,7 +14,6 @@ public class WordManager : MonoBehaviour {
 	public void Awake()
 	{
 		wordCounters=wordGenerator.wordCList();
-
 	}
 	public void AddWord ()
 	{
@@ -38,6 +37,8 @@ public class WordManager : MonoBehaviour {
 				activeWord.TypeLetter ();
 			} else if (activeWord.GetNextLetter () != letter) {
 				hasActiveWord = false;
+				lifeManager.control.removeLife ();
+
 				activeWord.display.fade();
 				words.Remove (activeWord);
 			}

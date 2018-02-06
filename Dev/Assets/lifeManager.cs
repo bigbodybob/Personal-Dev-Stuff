@@ -7,10 +7,17 @@ public class lifeManager : MonoBehaviour {
 	public int numLives = 3;
 	public GameObject canvas;
 	public GameObject lifeBar;
+	public static lifeManager control;
+	public GameObject wordManager;
 	public GameObject heartPrefab;
 	public GameObject gameStats;
 	public GameObject[] hearts;
+	public bool isGameOver;
 	private float spacing=0;
+	void Awake()
+	{
+		control = this;
+	}
 	void Start() {
 		hearts = new GameObject[numLives];
 		for (int i = 0; i < numLives; i++) {
@@ -21,12 +28,16 @@ public class lifeManager : MonoBehaviour {
 		}
 	}
 	public void removeLife(){
-		hearts[numLives-1].GetComponent<heart>().dead=true;
-		numLives--;
+		if (!isGameOver) {
+			hearts [numLives - 1].GetComponent<heart> ().dead = true;
+			numLives--;
+		}
 		if (numLives == 0) {
+			
 			gameStats currentStats=gameStats.GetComponent<gameStats> ();
+			currentStats.finalWC = wordManager.GetComponent<WordManager> ().wordCounters;
 			currentStats.gameComplete ();
-
+			isGameOver=true;
 		}
 	}
 	

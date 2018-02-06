@@ -11,7 +11,7 @@ public class WordGenerator:MonoBehaviour  {
 	}
 	public List<wordCount> wordCList()
 	{
-		foreach (string word in wordList) {
+		foreach (string word in GameControl.control.unlockedWordList) {
 			wordCount tempWord = new wordCount (0,word);
 			wordC.Add (tempWord);
 		}

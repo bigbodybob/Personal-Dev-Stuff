@@ -178,6 +178,7 @@ MonoBehaviour:
   deadword: {fileID: 1658140338998572, guid: 0ad348360e1904544af5cae6eb686a1d, type: 2}
   animator: {fileID: 95912049305388010}
   wordDestroyed: 0
+  myLifeManager: {fileID: 0}
 --- !u!222 &222382493457415920
 CanvasRenderer:
   m_ObjectHideFlags: 1

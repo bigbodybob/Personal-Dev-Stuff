@@ -46,7 +46,7 @@ public class characterBodyControl : MonoBehaviour {
 
 	}
 	void Start () {
-		transform.parent.position = GameControl.control.currentCharPosition;
+		transform.parent.position = GameControl.control.latestCharPositionInScene;
 		Color tmp= spriteRenderer.Color;
 		tmp.a = 1f;
 		spriteRenderer.Color = tmp;

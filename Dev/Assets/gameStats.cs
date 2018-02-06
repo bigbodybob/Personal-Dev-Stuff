@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class gameStats : MonoBehaviour {
 	public int bugs;
-	public string name;
+	public string name="";
+	bool isNameUsed=false;
+
 	public GameObject nameGamePanel;
 	public GameObject fadePanel;
 	public Animator nameGamePanelAnimator;
@@ -26,8 +28,21 @@ public class gameStats : MonoBehaviour {
 	}
 	public void addToGameList()
 	{
-		GameControl.control.allGames.Add (this);
-		GameControl.control.changeScene ( fadePanel);
+		foreach (string n in GameControl.control.allGamesNames) {
+		
+			if (name.Equals(n)) {
+				isNameUsed=true;
+			}
+		}
+		if (name != ""&& !isNameUsed) {
+			
+			CreatedGame game = new CreatedGame (name, bugs, finalWC, gameScore);
+			GameControl.control.allGames.Add (game);
+			GameControl.control.allGamesNames.Add (name);
+			gameScore = 0;
+			GameControl.control.changeScene (fadePanel);
+		}
+
 
 	}
 	public void gameName(string name)
