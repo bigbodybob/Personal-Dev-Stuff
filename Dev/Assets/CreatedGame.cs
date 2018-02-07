@@ -16,7 +16,7 @@ public class CreatedGame {
 		this.bugs = Random.Range(40, 55) - (GameControl.control.bugCheckLevel*3);
 		wordCount = wordC;
 		this.score = score;
-		rating = (GameControl.control.programmingLevel*.25)-(bugs*.05)+(score*.05);
+		rating = (GameControl.control.programmingLevel*.25)-(this.bugs*.07)+(score*.05);
 	}
 
 }

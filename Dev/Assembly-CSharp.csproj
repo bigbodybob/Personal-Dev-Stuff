@@ -64,10 +64,13 @@
      <Compile Include="Assets\fade.cs" />
      <Compile Include="Assets\FadeControl.cs" />
      <Compile Include="Assets\GameControl.cs" />
+     <Compile Include="Assets\GameName.cs" />
+     <Compile Include="Assets\GameRating.cs" />
      <Compile Include="Assets\gameStats.cs" />
      <Compile Include="Assets\heart.cs" />
      <Compile Include="Assets\housedoor.cs" />
      <Compile Include="Assets\lifeManager.cs" />
+     <Compile Include="Assets\NewGame.cs" />
      <Compile Include="Assets\Parallaxing.cs" />
      <Compile Include="Assets\Platformer2DUserControl.cs" />
      <Compile Include="Assets\PlatformerCharacter2D.cs" />

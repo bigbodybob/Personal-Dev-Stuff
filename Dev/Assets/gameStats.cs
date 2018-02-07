@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class gameStats : MonoBehaviour {
 	public int bugs;
 	public string name="";
@@ -11,6 +11,7 @@ public class gameStats : MonoBehaviour {
 	public GameObject fadePanel;
 	public Animator nameGamePanelAnimator;
 	public List<wordCount> finalWC;
+	public GameObject invalidName;
 	public static int gameScore=0;
 	// Use this for initialization
 	void Awake() {
@@ -28,21 +29,36 @@ public class gameStats : MonoBehaviour {
 	}
 	public void addToGameList()
 	{
+		Debug.Log (isNameUsed);
+
 		foreach (string n in GameControl.control.allGamesNames) {
 		
-			if (name.Equals(n)) {
-				isNameUsed=true;
+			if (name.Equals (n)) {
+				isNameUsed = true;
+			} else {
+				isNameUsed = false;
 			}
 		}
-		if (name != ""&& !isNameUsed) {
+		Debug.Log (isNameUsed);
+		if (name != "" && !isNameUsed) {
 			
 			CreatedGame game = new CreatedGame (name, bugs, finalWC, gameScore);
 			GameControl.control.allGames.Add (game);
 			GameControl.control.allGamesNames.Add (name);
 			gameScore = 0;
+			GameControl.control.isGameOver = false;
+			isNameUsed = false;
 			GameControl.control.changeScene (fadePanel);
+		} else {
+			TextMeshProUGUI[] textArray =nameGamePanel.GetComponentsInChildren<TextMeshProUGUI>();
+			foreach(TextMeshProUGUI text in textArray)
+			{
+				if (text.text =="Name your Game:") {
+					text.color = Color.red;
+					text.text="Invalid Name";
+				}
+			}
 		}
-
 
 	}
 	public void gameName(string name)

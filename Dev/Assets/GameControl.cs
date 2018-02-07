@@ -6,6 +6,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour {
+	//computer
+	public int gameCount=0;
+
 	//Level system
 	public int programmingLevel=1;
 	public int bugCheckLevel=1;

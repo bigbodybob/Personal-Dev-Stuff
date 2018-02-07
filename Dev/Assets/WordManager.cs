@@ -46,7 +46,7 @@ public class WordManager : MonoBehaviour {
 		{
 			foreach(Word word in words)
 			{
-				if (word.DoesWordExist() && word.GetNextLetter() == letter)
+				if (word.DoesWordExist() && word.display.wordInView && word.GetNextLetter() == letter)
 				{
 					
 					activeWord = word;

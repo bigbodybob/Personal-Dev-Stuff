@@ -7,6 +7,8 @@ public class Computer : MonoBehaviour {
 	public GameObject computerDisplay;
 	public TextMeshProUGUI prompt;
 	public GameObject panel;
+	public GameObject game;
+	public GameObject gameContainer;
 	public CanvasGroup promptCanvasGroup;
 	// Use this for initialization
 	void OnTriggerEnter2D()
@@ -27,9 +29,14 @@ public class Computer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.E) && promptCanvasGroup.alpha==1) {
-			GameControl.control.latestCharPositionInScene = transform.position;
-			GameControl.control.latestScene = SceneManager.GetActiveScene().name;
-			panel.GetComponent<FadeControl> ().levelChange ("programming", panel);
+			//GameControl.control.latestCharPositionInScene = transform.position;
+			//SGameControl.control.latestScene = SceneManager.GetActiveScene().name;
+			computerDisplay.GetComponent<Animator>().SetBool("isZoomedIn",true);
+			while (GameControl.control.gameCount < GameControl.control.allGames.Count) {
+				Instantiate (game,new Vector3(0,0) ,Quaternion.identity,gameContainer.transform);
+				GameControl.control.gameCount++;
+			}
+			//panel.GetComponent<FadeControl> ().levelChange ("programming", panel);
 
 		}
 	}

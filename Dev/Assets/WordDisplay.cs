@@ -12,7 +12,7 @@ public class WordDisplay : MonoBehaviour {
 	public Animator animator;
 	public bool wordDestroyed;
 	// has word entered screen?
-	private bool wordInView;
+	public bool wordInView;
 	private string itemType;
 	public void SetWord (string word)
 	{
