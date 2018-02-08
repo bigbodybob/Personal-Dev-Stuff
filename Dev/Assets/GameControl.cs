@@ -8,7 +8,12 @@ using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour {
 	//computer
 	public int gameCount=0;
-
+		//computer navigation
+	public int currentGameSelectionIndex=0;
+	public bool isPCOpen;
+	public bool isGameMenuSelected;
+	public bool isGameButtonsSelected;
+	public GameObject selectedGame;
 	//Level system
 	public int programmingLevel=1;
 	public int bugCheckLevel=1;
@@ -107,6 +112,29 @@ public class GameControl : MonoBehaviour {
 		hair = (int)hairS;
 		GameObject.Find ("hair").GetComponent<SpriteRenderer> ().sprite = hairlist[hair];
 
+
+	}
+	public  void Save()
+	{
+		if (File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
+		
+		} else {
+			BinaryFormatter bf = new BinaryFormatter ();
+			FileStream file = File.Create (Application.persistentDataPath + "/saveinfo.dat");
+			saveData data = new saveData ();
+			data.allGames = allGames;
+			data.upperarm = upperarm;
+			data.lowerarm = lowerarm;
+			data.lowerleg = lowerleg;
+			data.upperleg = upperleg;
+			data.body = body;
+			data.skintone = skintone;
+			data.shoes = this.shoes;
+			data.hair = hair;
+			data.hairColor = this.hairColor;
+			bf.Serialize (file, data);
+			file.Close ();
+		}
 	}
 	public  void StartButton(){
 		if (File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
@@ -115,6 +143,7 @@ public class GameControl : MonoBehaviour {
 			FileStream file=File.Open(Application.persistentDataPath+"/saveinfo.dat",FileMode.Open);
 			saveData data = (saveData)bf.Deserialize (file);
 			file.Close ();
+			allGames = data.allGames;
 			upperarm = data.upperarm;
 			lowerarm = data.lowerarm;
 			lowerleg = data.lowerleg;
@@ -123,6 +152,7 @@ public class GameControl : MonoBehaviour {
 			skintone = data.skintone;
 			shoes = data.shoes;
 			hair = data.hair;
+			hairColor = data.hairColor;
 		}
 		SceneManager.LoadScene("customize",LoadSceneMode.Single);
 	}
@@ -144,12 +174,14 @@ public class GameControl : MonoBehaviour {
 [System.Serializable]
 class saveData: System.Object
 {
+	public List<CreatedGame> allGames;
 	public int upperarm;
 	public int lowerarm;
 	public int lowerleg;
 	public int upperleg;
 	public int body;
 	public Color skintone;
+	public Color hairColor;
 	public int shoes;
 	public int hair;
 }

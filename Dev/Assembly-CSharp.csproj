@@ -66,6 +66,8 @@
      <Compile Include="Assets\GameControl.cs" />
      <Compile Include="Assets\GameName.cs" />
      <Compile Include="Assets\GameRating.cs" />
+     <Compile Include="Assets\GameSelectionArrow.cs" />
+     <Compile Include="Assets\GameSelectionObject.cs" />
      <Compile Include="Assets\gameStats.cs" />
      <Compile Include="Assets\heart.cs" />
      <Compile Include="Assets\housedoor.cs" />

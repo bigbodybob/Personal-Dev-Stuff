@@ -8,6 +8,7 @@ public class Computer : MonoBehaviour {
 	public TextMeshProUGUI prompt;
 	public GameObject panel;
 	public GameObject game;
+	public GameObject GameSelectionArrow;
 	public GameObject gameContainer;
 	public CanvasGroup promptCanvasGroup;
 	// Use this for initialization
@@ -33,9 +34,13 @@ public class Computer : MonoBehaviour {
 			//SGameControl.control.latestScene = SceneManager.GetActiveScene().name;
 			computerDisplay.GetComponent<Animator>().SetBool("isZoomedIn",true);
 			while (GameControl.control.gameCount < GameControl.control.allGames.Count) {
-				Instantiate (game,new Vector3(0,0) ,Quaternion.identity,gameContainer.transform);
+				GameObject gameObj= Instantiate (game,new Vector3(0,0) ,Quaternion.identity,gameContainer.transform);
+				gameObj.GetComponent<GameSelectionObject> ().index = GameControl.control.gameCount;
 				GameControl.control.gameCount++;
+
 			}
+			GameControl.control.isPCOpen = true;
+			GameSelectionArrow.transform.SetAsLastSibling ();
 			//panel.GetComponent<FadeControl> ().levelChange ("programming", panel);
 
 		}

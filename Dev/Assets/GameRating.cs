@@ -5,7 +5,7 @@ using TMPro;
 public class GameRating : MonoBehaviour {
 	public TextMeshProUGUI text;
 	// Use this for initialization
-	void Start()
+	void Awake()
 	{
 		text.text = string.Format("{0:N1}",GameControl.control.allGames [GameControl.control.gameCount].rating)+"/10";
 	}
