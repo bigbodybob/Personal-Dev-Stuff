@@ -51,10 +51,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042e1608485a8d544ace3bce792fcf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  gameCount: 0
+  currentGameSelectionIndex: 0
+  isClearBugsClicked: 0
+  currentGameButtonSelectionIndex: 0
+  isPCOpen: 0
+  selectedGame: {fileID: 0}
+  selectedButton: {fileID: 0}
+  programmingLevel: 1
+  bugCheckLevel: 1
+  currentScene: 
+  latestScene: 
+  latestCharPositionInScene: {x: 0, y: 0, z: 0}
+  isGameOver: 0
   upperarmlist: []
   hairlist: []
+  unlockedWordList:
+  - castle
+  - minion
+  allGamesNames: []
+  allGames:
+  - name: 0
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
+  - name: 1
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
+  - name: 2
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
+  - name: 3
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
+  - name: 4
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
+  - name: 5
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
+  - name: 6
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
+  - name: 7
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
+  - name: 8
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
+  - name: tester
+    bugs: 0
+    rating: 0
+    wordCount: []
+    score: 0
   upperarm: 0
-  charPositions: []
+  isCharFlipCorrect: 1
+  charPositions:
+  - {x: -8, y: 1.38, z: 0}
   currentCharPosition: {x: 13.8, y: 0, z: 0}
   lowerarm: 0
   lowerleg: 0

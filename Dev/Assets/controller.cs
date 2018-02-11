@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class controller : MonoBehaviour {
 	public bool facingRight = true; // For determining which way the player is currently facing.
-
 	[SerializeField] private float maxSpeed = 10f; // The fastest the player can travel in the x axis.
 	[SerializeField] private float jumpForce = 400f; // Amount of force added when the player jumps.	
 
@@ -24,7 +23,7 @@ public class controller : MonoBehaviour {
 
 	private void Awake()
 	{
-		
+
 		// Setting up references.
 		groundCheck = transform.Find("GroundCheck");
 		ceilingCheck = transform.Find("CeilingCheck");

@@ -1,25 +1,34 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Computer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\controller.cs">
     <Files>
-      <File FileName="Assets\GameControl.cs" Line="132" Column="3" />
-      <File FileName="Assets\controller.cs" Line="1" Column="1" />
+      <File FileName="Assets\controller.cs" Line="10" Column="66" />
       <File FileName="Assets\characterBodyControl.cs" Line="1" Column="1" />
       <File FileName="Assets\changeFloor.cs" Line="1" Column="1" />
       <File FileName="Assets\FadeControl.cs" Line="1" Column="1" />
       <File FileName="Assets\Camera2DFollow.cs" Line="1" Column="1" />
       <File FileName="Assets\Platformer2DUserControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Computer.cs" Line="34" Column="72" />
-      <File FileName="Assets\WordGenerator.cs" Line="17" Column="1" />
-      <File FileName="Assets\lifeManager.cs" Line="37" Column="33" />
-      <File FileName="Assets\WordDisplay.cs" Line="48" Column="118" />
-      <File FileName="Assets\Word.cs" Line="56" Column="1" />
-      <File FileName="Assets\gameStats.cs" Line="57" Column="29" />
-      <File FileName="Assets\CreatedGame.cs" Line="19" Column="69" />
-      <File FileName="Assets\WordManager.cs" Line="55" Column="6" />
-      <File FileName="Assets\GameName.cs" Line="8" Column="12" />
-      <File FileName="Assets\GameRating.cs" Line="10" Column="111" />
-      <File FileName="Assets\NewGame.cs" Line="8" Column="9" />
+      <File FileName="Assets\Computer.cs" Line="52" Column="4" />
+      <File FileName="Assets\WordGenerator.cs" Line="1" Column="1" />
+      <File FileName="Assets\lifeManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\WordDisplay.cs" Line="1" Column="1" />
+      <File FileName="Assets\Word.cs" Line="1" Column="1" />
+      <File FileName="Assets\gameStats.cs" Line="1" Column="1" />
+      <File FileName="Assets\CreatedGame.cs" Line="1" Column="1" />
+      <File FileName="Assets\WordManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameName.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameRating.cs" Line="1" Column="1" />
+      <File FileName="Assets\NewGame.cs" Line="17" Column="52" />
+      <File FileName="Assets\GameSelectionArrow.cs" Line="37" Column="12" />
+      <File FileName="Assets\GameSelectionObject.cs" Line="17" Column="64" />
+      <File FileName="Assets\GameActionSelectArrow.cs" Line="7" Column="1" />
+      <File FileName="Assets\ClearBugs.cs" Line="28" Column="52" />
+      <File FileName="Assets\GameControl.cs" Line="42" Column="25" />
+      <File FileName="Assets\ScrollControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\ComputerActionBar.cs" Line="13" Column="1" />
+      <File FileName="Assets\Tiling.cs" Line="1" Column="1" />
+      <File FileName="Assets\Parallaxing.cs" Line="17" Column="3" />
+      <File FileName="Assets\CameraScreenResolution.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -87,6 +87,7 @@
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\Note about Editor Folder.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\CameraScreenResolution.cs.txt" />
      <None Include="Assets\Standard Assets\Environment\Water (Pro Only)\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets\Environment\Water (Pro Only)\Shaders\FXWaterV4Pro.shader" />
      <None Include="Assets\Standard Assets\Vehicles\RollerBall\RollerBallGuidelines.txt" />

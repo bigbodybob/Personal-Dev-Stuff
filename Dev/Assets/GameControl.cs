@@ -6,14 +6,17 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour {
+	public Rect screenRect;
 	//computer
 	public int gameCount=0;
 		//computer navigation
 	public int currentGameSelectionIndex=0;
+	public bool isClearBugsClicked;
+	public int currentGameButtonSelectionIndex = 0;
 	public bool isPCOpen;
-	public bool isGameMenuSelected;
-	public bool isGameButtonsSelected;
+
 	public GameObject selectedGame;
+	public GameObject selectedButton;
 	//Level system
 	public int programmingLevel=1;
 	public int bugCheckLevel=1;
@@ -45,7 +48,8 @@ public class GameControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		
+		screenRect = new Rect (0,0, Screen.width, Screen.height-80);
+
 
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);

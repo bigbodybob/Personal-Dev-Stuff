@@ -10,4 +10,14 @@ public class NewGame : MonoBehaviour {
 		GameControl.control.latestScene = SceneManager.GetActiveScene().name;
 		panel.GetComponent<FadeControl> ().levelChange ("programming", panel);
 	}
+	 void Update()
+	{
+		if (GameControl.control.currentGameButtonSelectionIndex == 1) {
+			if(GameControl.control.selectedButton!=gameObject)
+			GameControl.control.selectedButton = gameObject;
+			if (Input.GetKeyDown (KeyCode.Return)) {
+				buttonClicked ();
+			}
+		}
+	}
 }

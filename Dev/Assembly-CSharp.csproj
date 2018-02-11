@@ -55,14 +55,18 @@
      <Compile Include="Assets\buttonscenetest.cs" />
      <Compile Include="Assets\Camera2DFollow.cs" />
      <Compile Include="Assets\CameraPan.cs" />
+     <Compile Include="Assets\CameraScreenResolution.cs" />
      <Compile Include="Assets\changeFloor.cs" />
      <Compile Include="Assets\changeScene.cs" />
      <Compile Include="Assets\characterBodyControl.cs" />
+     <Compile Include="Assets\ClearBugs.cs" />
      <Compile Include="Assets\Computer.cs" />
+     <Compile Include="Assets\ComputerActionBar.cs" />
      <Compile Include="Assets\controller.cs" />
      <Compile Include="Assets\CreatedGame.cs" />
      <Compile Include="Assets\fade.cs" />
      <Compile Include="Assets\FadeControl.cs" />
+     <Compile Include="Assets\GameActionSelectArrow.cs" />
      <Compile Include="Assets\GameControl.cs" />
      <Compile Include="Assets\GameName.cs" />
      <Compile Include="Assets\GameRating.cs" />
@@ -77,6 +81,7 @@
      <Compile Include="Assets\Platformer2DUserControl.cs" />
      <Compile Include="Assets\PlatformerCharacter2D.cs" />
      <Compile Include="Assets\score.cs" />
+     <Compile Include="Assets\ScrollControl.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\TextureController.cs" />
@@ -156,6 +161,7 @@
      <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
      <None Include="Assets\Note about Editor Folder.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\CameraScreenResolution.cs.txt" />
      <None Include="Assets\Standard Assets\Environment\Water (Pro Only)\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets\Environment\Water (Pro Only)\Shaders\FXWaterV4Pro.shader" />
      <None Include="Assets\Standard Assets\Vehicles\RollerBall\RollerBallGuidelines.txt" />
