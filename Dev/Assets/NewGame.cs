@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 public class NewGame : MonoBehaviour {
 	public GameObject panel;
 	// Use this for initialization
-	public 	void buttonClicked(){
-		GameControl.control.latestCharPositionInScene = transform.position;
+	private void buttonClicked(){
+		GameControl.control.gameCount = 0;
+		GameControl.control.latestCharPositionIndoors = PlatformerCharacter2D.control.transform.position;
 		GameControl.control.latestScene = SceneManager.GetActiveScene().name;
+		GameControl.control.isPCOpen = false;
+
 		panel.GetComponent<FadeControl> ().levelChange ("programming", panel);
 	}
 	 void Update()

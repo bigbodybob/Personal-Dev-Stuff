@@ -17,5 +17,6 @@ public class GameSelectionObject : MonoBehaviour {
 		if (index == GameControl.control.currentGameSelectionIndex) {
 			GameControl.control.selectedGame =gameObject;
 		}
+
 	}
 }

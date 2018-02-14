@@ -38,6 +38,7 @@ public class GameSelectionArrow : MonoBehaviour {
 				}
 			//	if (!screenRect.Contains (gameObject))
 			}
+			if(GameControl.control.selectedGame!=null)
 			transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x-5, GameControl.control.selectedGame.transform.position.y);
 
 		}

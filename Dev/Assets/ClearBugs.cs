@@ -1,32 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class ClearBugs : MonoBehaviour {
 	public int index;
 	public GameObject gameSelectionArrow;
 	public GameObject selectGamePrompt;
+	public GameObject panel;
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
+	private void buttonClicked(){
+		GameControl.control.latestCharPositionIndoors = PlatformerCharacter2D.control.transform.position;
+		GameControl.control.latestScene = SceneManager.GetActiveScene().name;
+		panel.GetComponent<FadeControl> ().levelChange ("bugcheck", panel);
+	}	
+
+
 	// Update is called once per frame
 	void Update () {
-		if (GameControl.control.currentGameButtonSelectionIndex == 0) {
+		if (GameControl.control.currentGameButtonSelectionIndex == 0 && GameControl.control.allGames.Count>0) {
 			if(GameControl.control.selectedButton!=gameObject)
 			GameControl.control.selectedButton = gameObject;
-			if (Input.GetKeyDown (KeyCode.Return)) {
+			if (Input.GetKeyDown (KeyCode.Return) && !GameControl.control.isClearBugsClicked) {
+				
 				gameSelectionArrow.GetComponent<CanvasGroup> ().alpha = 1;
 				selectGamePrompt.GetComponent<CanvasGroup> ().alpha = 1;
 				GameControl.control.isClearBugsClicked = true;
 
 			}
+			else if (Input.GetKeyDown (KeyCode.Return) && GameControl.control.isClearBugsClicked) {
+				if (GameControl.control.selectedGame != null) {
+					GameControl.control.isClearBugsClicked = false;
+					GameControl.control.isPCOpen = false;
+					GameControl.control.gameCount = 0;
+					buttonClicked ();
+				}		
+			}
 			if (Input.GetKeyDown(KeyCode.C) && GameControl.control.isClearBugsClicked) {
 				gameSelectionArrow.GetComponent<CanvasGroup> ().alpha = 0;
 				selectGamePrompt.GetComponent<CanvasGroup> ().alpha = 0;
 				GameControl.control.isClearBugsClicked = false;
+
 			}
+
 		}
 	}
 }

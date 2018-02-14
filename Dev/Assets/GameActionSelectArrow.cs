@@ -21,7 +21,7 @@ public class GameActionSelectArrow : MonoBehaviour {
 				spacing = 60;
 
 			}
-
+		
 			}
 
 		

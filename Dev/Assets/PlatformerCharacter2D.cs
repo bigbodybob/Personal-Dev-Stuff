@@ -24,10 +24,11 @@ using System.Collections.Generic;
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
         private Animator anim; // Reference to the player's animator component.
 
-
+	public static PlatformerCharacter2D control;
         private void Awake()
         {
             // Setting up references.
+		control=this;
             groundCheck = transform.Find("GroundCheck");
             ceilingCheck = transform.Find("CeilingCheck");
             anim = GetComponentInChildren<Animator>();

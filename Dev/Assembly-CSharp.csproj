@@ -66,9 +66,11 @@
      <Compile Include="Assets\ComputerActionBar.cs" />
      <Compile Include="Assets\controller.cs" />
      <Compile Include="Assets\CreatedGame.cs" />
+     <Compile Include="Assets\DialogActionSelectArrow.cs" />
      <Compile Include="Assets\EnemyManager.cs" />
      <Compile Include="Assets\fade.cs" />
      <Compile Include="Assets\FadeControl.cs" />
+     <Compile Include="Assets\Fundraise.cs" />
      <Compile Include="Assets\GameActionSelectArrow.cs" />
      <Compile Include="Assets\GameControl.cs" />
      <Compile Include="Assets\GameName.cs" />
@@ -91,6 +93,8 @@
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\TextureController.cs" />
+     <Compile Include="Assets\SubmitAGame.cs" />
+     <Compile Include="Assets\Teacher.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

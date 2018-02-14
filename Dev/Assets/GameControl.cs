@@ -7,6 +7,10 @@ using System.IO;
 using UnityEngine.SceneManagement;
 public class GameControl : MonoBehaviour {
 	public Rect screenRect;
+	//Dialog Box;
+	public bool isDialogOpen;
+	public int currentDialogButtonSelectionIndex = 0;
+	public GameObject selectedDialogButton;
 	//computer
 	public int gameCount=0;
 		//computer navigation
@@ -15,7 +19,7 @@ public class GameControl : MonoBehaviour {
 	public int currentGameButtonSelectionIndex = 0;
 	public bool isPCOpen;
 
-	public GameObject selectedGame;
+	public GameObject selectedGame=null;
 	public GameObject selectedButton;
 	//Level system
 	public int programmingLevel=1;
@@ -23,7 +27,9 @@ public class GameControl : MonoBehaviour {
 	//Scene Management
 	public string currentScene;
 	public string latestScene;
-	public Vector3 latestCharPositionInScene;
+	public Vector3 latestCharPositionIndoors;
+	public Vector3 latestCharPositionOutdoors;
+
 	//vars specific to TYPING GAME
 	public bool isGameOver=false;
 	//vars shared across game scenes
@@ -35,8 +41,6 @@ public class GameControl : MonoBehaviour {
 	public static  GameControl control;
 	public int upperarm=0;
 	public bool isCharFlipCorrect=true;
-	public Vector3[] charPositions;
-	public Vector3 currentCharPosition;
 	public int lowerarm= 0;
 	public int lowerleg= 0;
 	public int upperleg= 0;

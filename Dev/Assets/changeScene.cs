@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class changeScene : MonoBehaviour {
 	public GameObject panel;
 	public string placeToGo;
 	public int whichDoorId;
 	void OnTriggerEnter2D()
-	{
-		GameControl.control.currentCharPosition = GameControl.control.charPositions [whichDoorId];
+	{if (SceneManager.GetActiveScene ().name == "playerhome") {
+			GameControl.control.latestCharPositionIndoors = new Vector3 (PlatformerCharacter2D.control.transform.position.x - 3, PlatformerCharacter2D.control.transform.position.y);
+		}
 		panel.GetComponent<FadeControl>().levelChange(placeToGo,panel);
 
 	}

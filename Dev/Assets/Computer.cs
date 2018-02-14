@@ -33,6 +33,7 @@ public class Computer : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.E) ) {
 			if (!GameControl.control.isPCOpen && promptCanvasGroup.alpha == 1) {
+				PlatformerCharacter2D.control.GetComponent<Platformer2DUserControl> ().isMovementEnabled = false;
 				//GameControl.control.latestCharPositionInScene = transform.position;
 				//SGameControl.control.latestScene = SceneManager.GetActiveScene().name;
 				while (GameControl.control.gameCount < GameControl.control.allGames.Count) {
@@ -46,11 +47,13 @@ public class Computer : MonoBehaviour {
 				promptCanvasGroup.alpha = 0;
 				GameControl.control.isPCOpen = true;
 				GameSelectionArrow.transform.SetAsLastSibling ();
+				if(GameControl.control.isClearBugsClicked)
 				GameSelectionArrow.transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x - 5, GameControl.control.selectedGame.transform.position.y);
 
 				//panel.GetComponent<FadeControl> ().levelChange ("programming", panel);
 			} else if (GameControl.control.isPCOpen) {
 				computerDisplay.GetComponent<Animator> ().SetBool ("isZoomedIn", false);
+				PlatformerCharacter2D.control.GetComponent<Platformer2DUserControl> ().isMovementEnabled = true;
 
 
 				promptCanvasGroup.alpha = 1;
