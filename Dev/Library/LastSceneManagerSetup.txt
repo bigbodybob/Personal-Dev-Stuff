@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/playerhome.unity
+- path: Assets/bugcheck.unity
   isLoaded: 1
   isActive: 1

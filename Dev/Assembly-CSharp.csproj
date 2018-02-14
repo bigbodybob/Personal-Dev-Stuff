@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\behaviour.cs" />
+     <Compile Include="Assets\BodyOfMonsterCollision.cs" />
+     <Compile Include="Assets\BugCheckScore.cs" />
      <Compile Include="Assets\buttonscenetest.cs" />
      <Compile Include="Assets\Camera2DFollow.cs" />
      <Compile Include="Assets\CameraPan.cs" />
@@ -64,6 +66,7 @@
      <Compile Include="Assets\ComputerActionBar.cs" />
      <Compile Include="Assets\controller.cs" />
      <Compile Include="Assets\CreatedGame.cs" />
+     <Compile Include="Assets\EnemyManager.cs" />
      <Compile Include="Assets\fade.cs" />
      <Compile Include="Assets\FadeControl.cs" />
      <Compile Include="Assets\GameActionSelectArrow.cs" />
@@ -76,12 +79,15 @@
      <Compile Include="Assets\heart.cs" />
      <Compile Include="Assets\housedoor.cs" />
      <Compile Include="Assets\lifeManager.cs" />
+     <Compile Include="Assets\lifeManagerBugCheck.cs" />
      <Compile Include="Assets\NewGame.cs" />
+     <Compile Include="Assets\NormalMonster.cs" />
      <Compile Include="Assets\Parallaxing.cs" />
      <Compile Include="Assets\Platformer2DUserControl.cs" />
      <Compile Include="Assets\PlatformerCharacter2D.cs" />
      <Compile Include="Assets\score.cs" />
      <Compile Include="Assets\ScrollControl.cs" />
+     <Compile Include="Assets\SpikedMonsterMove.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\TextureController.cs" />
@@ -118,6 +124,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\Tiling.cs" />
+     <Compile Include="Assets\TopOfMonsterCollision.cs" />
      <Compile Include="Assets\Word.cs" />
      <Compile Include="Assets\wordCount.cs" />
      <Compile Include="Assets\WordDisplay.cs" />
