@@ -5,7 +5,29 @@ using UnityEngine.UI;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
+using System;
 public class GameControl : MonoBehaviour {
+
+	//compete
+	public double rating;
+	public double[] competeingRatings;
+	public DateTime resultReleaseDate;
+	public bool isCompeting;
+
+	//fundraiser
+	public float totalMoney;
+	public int moneyClickMultiplier = 0;
+
+	public List<ShopItem> shopItems;
+	public int[] shopCounts={0,0,0,0};
+	public float[] shopItemValue={.1f,1,10,50};
+	public float[] shopPrices={10,100,1000,10000};
+	public float donutsPerSecond;
+	public  DateTime latestTime;
+	//donut shop
+	public bool isDonutShopOpen;
+	public GameObject selectedDonutShopButton=null;
+	public int currentDonutShopSelection = 0;
 	public Rect screenRect;
 	//Dialog Box;
 	public bool isDialogOpen;
@@ -66,7 +88,11 @@ public class GameControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (isCompeting && DateTime.Now>=resultReleaseDate) {
+	
+			isCompeting = false;
+		}
+	
 	}
 	public  void changeSkinTone(float newskintone, GameObject headS, GameObject lowerarmS, GameObject lowerarmleftS, GameObject neckS, GameObject handS, GameObject handleftS)
 	{

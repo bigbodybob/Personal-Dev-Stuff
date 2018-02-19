@@ -67,6 +67,10 @@
      <Compile Include="Assets\controller.cs" />
      <Compile Include="Assets\CreatedGame.cs" />
      <Compile Include="Assets\DialogActionSelectArrow.cs" />
+     <Compile Include="Assets\Donut.cs" />
+     <Compile Include="Assets\DonutScore.cs" />
+     <Compile Include="Assets\DonutShop.cs" />
+     <Compile Include="Assets\DonutsPerSecond.cs" />
      <Compile Include="Assets\EnemyManager.cs" />
      <Compile Include="Assets\fade.cs" />
      <Compile Include="Assets\FadeControl.cs" />
@@ -75,6 +79,7 @@
      <Compile Include="Assets\GameControl.cs" />
      <Compile Include="Assets\GameName.cs" />
      <Compile Include="Assets\GameRating.cs" />
+     <Compile Include="Assets\gameSelectcompete.cs" />
      <Compile Include="Assets\GameSelectionArrow.cs" />
      <Compile Include="Assets\GameSelectionObject.cs" />
      <Compile Include="Assets\gameStats.cs" />
@@ -89,11 +94,15 @@
      <Compile Include="Assets\PlatformerCharacter2D.cs" />
      <Compile Include="Assets\score.cs" />
      <Compile Include="Assets\ScrollControl.cs" />
+     <Compile Include="Assets\Shop.cs" />
+     <Compile Include="Assets\ShopArrow.cs" />
+     <Compile Include="Assets\ShopItem.cs" />
      <Compile Include="Assets\SpikedMonsterMove.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\TextureController.cs" />
      <Compile Include="Assets\SubmitAGame.cs" />
+     <Compile Include="Assets\SubmitGameButton.cs" />
      <Compile Include="Assets\Teacher.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

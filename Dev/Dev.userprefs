@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Computer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameControl.cs">
     <Files>
       <File FileName="Assets\controller.cs" Line="1" Column="1" />
-      <File FileName="Assets\characterBodyControl.cs" Line="37" Column="9" />
+      <File FileName="Assets\characterBodyControl.cs" Line="1" Column="1" />
       <File FileName="Assets\changeFloor.cs" Line="1" Column="1" />
       <File FileName="Assets\FadeControl.cs" Line="1" Column="1" />
       <File FileName="Assets\Camera2DFollow.cs" Line="1" Column="1" />
       <File FileName="Assets\Platformer2DUserControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Computer.cs" Line="53" Column="77" />
+      <File FileName="Assets\Computer.cs" Line="51" Column="1" />
       <File FileName="Assets\WordGenerator.cs" Line="1" Column="1" />
       <File FileName="Assets\lifeManager.cs" Line="1" Column="1" />
       <File FileName="Assets\WordDisplay.cs" Line="1" Column="1" />
@@ -18,12 +18,11 @@
       <File FileName="Assets\WordManager.cs" Line="1" Column="1" />
       <File FileName="Assets\GameName.cs" Line="1" Column="1" />
       <File FileName="Assets\GameRating.cs" Line="1" Column="1" />
-      <File FileName="Assets\NewGame.cs" Line="25" Column="3" />
-      <File FileName="Assets\GameSelectionArrow.cs" Line="41" Column="46" />
-      <File FileName="Assets\GameSelectionObject.cs" Line="20" Column="3" />
-      <File FileName="Assets\GameActionSelectArrow.cs" Line="14" Column="53" />
-      <File FileName="Assets\ClearBugs.cs" Line="24" Column="5" />
-      <File FileName="Assets\GameControl.cs" Line="13" Column="41" />
+      <File FileName="Assets\NewGame.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameSelectionArrow.cs" Line="22" Column="30" />
+      <File FileName="Assets\GameSelectionObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameActionSelectArrow.cs" Line="1" Column="1" />
+      <File FileName="Assets\ClearBugs.cs" Line="1" Column="1" />
       <File FileName="Assets\ScrollControl.cs" Line="1" Column="1" />
       <File FileName="Assets\ComputerActionBar.cs" Line="1" Column="1" />
       <File FileName="Assets\Tiling.cs" Line="1" Column="1" />
@@ -36,12 +35,21 @@
       <File FileName="Assets\NormalMonster.cs" Line="1" Column="1" />
       <File FileName="Assets\BugCheckScore.cs" Line="1" Column="1" />
       <File FileName="Assets\PlatformerCharacter2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\changeScene.cs" Line="13" Column="66" />
-      <File FileName="Assets\housedoor.cs" Line="32" Column="4" />
-      <File FileName="Assets\DialogActionSelectArrow.cs" Line="14" Column="18" />
-      <File FileName="Assets\Fundraise.cs" Line="19" Column="3" />
-      <File FileName="Assets\SubmitAGame.cs" Line="4" Column="35" />
-      <File FileName="Assets\Teacher.cs" Line="45" Column="5" />
+      <File FileName="Assets\changeScene.cs" Line="1" Column="1" />
+      <File FileName="Assets\housedoor.cs" Line="1" Column="1" />
+      <File FileName="Assets\DialogActionSelectArrow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Fundraise.cs" Line="20" Column="101" />
+      <File FileName="Assets\SubmitAGame.cs" Line="1" Column="1" />
+      <File FileName="Assets\Teacher.cs" Line="1" Column="1" />
+      <File FileName="Assets\ShopItem.cs" Line="32" Column="42" />
+      <File FileName="Assets\DonutShop.cs" Line="1" Column="1" />
+      <File FileName="Assets\ShopArrow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Donut.cs" Line="44" Column="50" />
+      <File FileName="Assets\DonutsPerSecond.cs" Line="14" Column="83" />
+      <File FileName="Assets\GameControl.cs" Line="93" Column="10" />
+      <File FileName="Assets\DonutScore.cs" Line="13" Column="64" />
+      <File FileName="Assets\gameSelectcompete.cs" Line="17" Column="43" />
+      <File FileName="Assets\SubmitGameButton.cs" Line="26" Column="75" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

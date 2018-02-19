@@ -23,3 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/bugcheck.unity
     guid: 51245618e9cb54646a5471fa21812d28
+  - enabled: 1
+    path: Assets/fblabuilding.unity
+    guid: 2fb56b7e6a7bd7a4ab80fdff1dda6241
+  - enabled: 1
+    path: Assets/fundraise.unity
+    guid: aaf7ddb022e07374c872a49f14f6a82d
+  - enabled: 1
+    path: Assets/SubmitAGame.unity
+    guid: 4840afd1ab1a1c84e9f3967bc3c5e65d

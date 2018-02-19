@@ -51,12 +51,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042e1608485a8d544ace3bce792fcf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalMoney: 0
+  moneyClickMultiplier: 0
+  shopItems: []
+  shopCounts: 00000000000000000000000000000000
+  shopItemValue:
+  - 0.1
+  - 1
+  - 10
+  - 50
+  shopPrices:
+  - 10
+  - 100
+  - 1000
+  - 10000
+  donutsPerSecond: 0
+  isDonutShopOpen: 0
+  selectedDonutShopButton: {fileID: 0}
+  currentDonutShopSelection: 0
   screenRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
+  isDialogOpen: 0
+  currentDialogButtonSelectionIndex: 0
+  selectedDialogButton: {fileID: 0}
   gameCount: 0
   currentGameSelectionIndex: 0
   isClearBugsClicked: 0
@@ -68,7 +89,8 @@ MonoBehaviour:
   bugCheckLevel: 1
   currentScene: 
   latestScene: 
-  latestCharPositionInScene: {x: 0, y: 0, z: 0}
+  latestCharPositionIndoors: {x: 0, y: 0, z: 0}
+  latestCharPositionOutdoors: {x: 0, y: 0, z: 0}
   isGameOver: 0
   upperarmlist: []
   hairlist: []
@@ -129,9 +151,6 @@ MonoBehaviour:
     score: 0
   upperarm: 0
   isCharFlipCorrect: 1
-  charPositions:
-  - {x: -8, y: 1.38, z: 0}
-  currentCharPosition: {x: 13.8, y: 0, z: 0}
   lowerarm: 0
   lowerleg: 0
   upperleg: 0
