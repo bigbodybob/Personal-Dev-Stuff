@@ -51,6 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042e1608485a8d544ace3bce792fcf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rating: 0
+  competeingRatings: []
+  isCompeting: 0
+  results: {fileID: 1138292029081882, guid: 212e360e4975e27409041bc7150b90ca, type: 2}
+  HUD: {fileID: 0}
   totalMoney: 0
   moneyClickMultiplier: 0
   shopItems: []
@@ -81,7 +86,7 @@ MonoBehaviour:
   gameCount: 0
   currentGameSelectionIndex: 0
   isClearBugsClicked: 0
-  currentGameButtonSelectionIndex: 0
+  currentGameButtonSelectionIndex: 1
   isPCOpen: 0
   selectedGame: {fileID: 0}
   selectedButton: {fileID: 0}
@@ -99,52 +104,7 @@ MonoBehaviour:
   - minion
   allGamesNames: []
   allGames:
-  - name: 0
-    bugs: 0
-    rating: 0
-    wordCount: []
-    score: 0
-  - name: 1
-    bugs: 0
-    rating: 0
-    wordCount: []
-    score: 0
-  - name: 2
-    bugs: 0
-    rating: 0
-    wordCount: []
-    score: 0
-  - name: 3
-    bugs: 0
-    rating: 0
-    wordCount: []
-    score: 0
-  - name: 4
-    bugs: 0
-    rating: 0
-    wordCount: []
-    score: 0
-  - name: 5
-    bugs: 0
-    rating: 0
-    wordCount: []
-    score: 0
-  - name: 6
-    bugs: 0
-    rating: 0
-    wordCount: []
-    score: 0
-  - name: 7
-    bugs: 0
-    rating: 0
-    wordCount: []
-    score: 0
-  - name: 8
-    bugs: 0
-    rating: 0
-    wordCount: []
-    score: 0
-  - name: tester
+  - name: 
     bugs: 0
     rating: 0
     wordCount: []
@@ -159,3 +119,4 @@ MonoBehaviour:
   hairColor: {r: 0, g: 0, b: 0, a: 1}
   shoes: 0
   hair: 0
+  sceneName: 

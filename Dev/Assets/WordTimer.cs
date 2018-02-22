@@ -8,6 +8,9 @@ public class WordTimer : MonoBehaviour {
 
 
 	public int wordNum;
+	public float timer = 5f;
+
+	public float standardtime=5f;
 	private void Start()
 	{
 		for(int i=0; i<wordNum;i++){
@@ -15,5 +18,14 @@ public class WordTimer : MonoBehaviour {
 
 		}
 	}
+	void Update()
+	{
+		timer -= .05f;
+		if (timer <= 0) {
+			wordManager.AddWord ();
+		
+			timer =5f;
 
+		}
+	}
 }

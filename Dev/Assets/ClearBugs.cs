@@ -17,7 +17,7 @@ public class ClearBugs : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (GameControl.control.currentGameButtonSelectionIndex == 0 && GameControl.control.allGames.Count>0) {
+		if (GameControl.control.currentGameButtonSelectionIndex == 0 && GameControl.control.isPCOpen&&GameControl.control.allGames.Count>0) {
 			if(GameControl.control.selectedButton!=gameObject)
 			GameControl.control.selectedButton = gameObject;
 			if (Input.GetKeyDown (KeyCode.Return) && !GameControl.control.isClearBugsClicked) {

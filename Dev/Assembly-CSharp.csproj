@@ -55,6 +55,7 @@
      <Compile Include="Assets\BodyOfMonsterCollision.cs" />
      <Compile Include="Assets\BugCheckScore.cs" />
      <Compile Include="Assets\buttonscenetest.cs" />
+     <Compile Include="Assets\buy.cs" />
      <Compile Include="Assets\Camera2DFollow.cs" />
      <Compile Include="Assets\CameraPan.cs" />
      <Compile Include="Assets\CameraScreenResolution.cs" />
@@ -74,6 +75,7 @@
      <Compile Include="Assets\EnemyManager.cs" />
      <Compile Include="Assets\fade.cs" />
      <Compile Include="Assets\FadeControl.cs" />
+     <Compile Include="Assets\FBLAdoor.cs" />
      <Compile Include="Assets\Fundraise.cs" />
      <Compile Include="Assets\GameActionSelectArrow.cs" />
      <Compile Include="Assets\GameControl.cs" />
@@ -85,6 +87,8 @@
      <Compile Include="Assets\gameStats.cs" />
      <Compile Include="Assets\heart.cs" />
      <Compile Include="Assets\housedoor.cs" />
+     <Compile Include="Assets\ItemName.cs" />
+     <Compile Include="Assets\itemPrice.cs" />
      <Compile Include="Assets\lifeManager.cs" />
      <Compile Include="Assets\lifeManagerBugCheck.cs" />
      <Compile Include="Assets\NewGame.cs" />
@@ -96,7 +100,13 @@
      <Compile Include="Assets\ScrollControl.cs" />
      <Compile Include="Assets\Shop.cs" />
      <Compile Include="Assets\ShopArrow.cs" />
+     <Compile Include="Assets\shopButt.cs" />
+     <Compile Include="Assets\Shopdoor.cs" />
+     <Compile Include="Assets\shopGuy.cs" />
      <Compile Include="Assets\ShopItem.cs" />
+     <Compile Include="Assets\ShopSelectionArrow.cs" />
+     <Compile Include="Assets\shopSelectionObject.cs" />
+     <Compile Include="Assets\ShopTotalMoney.cs" />
      <Compile Include="Assets\SpikedMonsterMove.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />

@@ -49,12 +49,19 @@ public class EnemyManager : MonoBehaviour {
 			currentTime -= Time.deltaTime;
 			if (currentTime < 0) {
 				if (tempCount == 5 && numberOfUnkillableBugs >= 1) {
-					Instantiate (spikedMonster, new Vector3 (Random.Range (-20, 20), 0), Quaternion.identity);
+					float range = Random.Range (-20, 20);
+					while (range < PlatformerCharacter2D.control.transform.position.x + 2 && range > PlatformerCharacter2D.control.transform.position.x - 2) {
+						range =Random.Range (-20, 20);
+					}
+					Instantiate (spikedMonster, new Vector3 (range, 0), Quaternion.identity);
 					numberOfUnkillableBugs--;
 					tempCount = 0;
 				} else if (numberOfBugs >= 1) {
-
-					Instantiate (normalMonster, new Vector3 (Random.Range (-20, 20), 0), Quaternion.identity);
+					float range = Random.Range (-20, 20);
+					while (range < PlatformerCharacter2D.control.transform.position.x + 2 && range > PlatformerCharacter2D.control.transform.position.x - 2) {
+						range =Random.Range (-20, 20);
+					}
+					Instantiate (normalMonster, new Vector3 (range, 0), Quaternion.identity);
 					numberOfBugs--;
 					tempCount++;
 

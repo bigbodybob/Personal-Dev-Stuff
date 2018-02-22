@@ -7,13 +7,21 @@ using System.IO;
 using UnityEngine.SceneManagement;
 using System;
 public class GameControl : MonoBehaviour {
+	//shop
+	public bool isShopItselfOpen;
 
+	public bool isShopOpen;
+	public List<string> gameShopItems;
+	public List<float> shopItemsCosts;
+	public GameObject selectedItem;
+	public int itemCount = 0;
+	public int selectedItemIndex;
 	//compete
 	public double rating;
 	public double[] competeingRatings;
 	public DateTime resultReleaseDate;
 	public bool isCompeting;
-
+	public GameObject results;
 	//fundraiser
 	public float totalMoney;
 	public int moneyClickMultiplier = 0;
@@ -57,7 +65,7 @@ public class GameControl : MonoBehaviour {
 	//vars shared across game scenes
 	public Sprite[] upperarmlist;
 	public Sprite[] hairlist;
-	public string[] unlockedWordList = {   "castle" ,"minion"};
+	public List<string> unlockedWordList;
 	public List<string> allGamesNames;
 	public List<CreatedGame> allGames;
 	public static  GameControl control;
@@ -72,11 +80,13 @@ public class GameControl : MonoBehaviour {
 	public int shoes= 0;
 	public int hair= 0;
 
+	//current scene
+	public string sceneName;
 	// Use this for initialization
 	void Awake () {
 		screenRect = new Rect (0,0, Screen.width, Screen.height-80);
 
-
+		sceneName = SceneManager.GetActiveScene ().name;
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
 			control = this;
@@ -85,11 +95,37 @@ public class GameControl : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
-	
+	public void sceneChanged()
+	{
+		
+	}public  float DonutsPerClick()
+	{
+		float value = 0;
+		for (int x = 0; x <4; x++)
+			value += GameControl.control.shopCounts [x] * GameControl.control.shopItemValue[x];
+		return value;
+	}
+	public void addDonut(){
+		GameControl.control.totalMoney += DonutsPerClick () / 10;
+	}
+	public void catchUp(){
+		float timeElapse = (float) DateTime.Now.Subtract (GameControl.control.latestTime).TotalSeconds;
+		GameControl.control.totalMoney += DonutsPerClick () * timeElapse;
+	}
+
 	// Update is called once per frame
 	void Update () {
+		if (sceneName != SceneManager.GetActiveScene ().name) {
+		
+			isPCOpen = false;
+			isClearBugsClicked = false;
+			gameCount = 0;
+			isDialogOpen = false;
+			isDonutShopOpen = false;
+			sceneName = SceneManager.GetActiveScene ().name;
+		}
 		if (isCompeting && DateTime.Now>=resultReleaseDate) {
-	
+			Instantiate (results);
 			isCompeting = false;
 		}
 	

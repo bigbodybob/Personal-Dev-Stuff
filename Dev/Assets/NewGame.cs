@@ -15,7 +15,7 @@ public class NewGame : MonoBehaviour {
 	}
 	 void Update()
 	{
-		if (GameControl.control.currentGameButtonSelectionIndex == 1) {
+		if (GameControl.control.currentGameButtonSelectionIndex == 1 && GameControl.control.isPCOpen) {
 			if(GameControl.control.selectedButton!=gameObject)
 			GameControl.control.selectedButton = gameObject;
 			if (Input.GetKeyDown (KeyCode.Return)) {

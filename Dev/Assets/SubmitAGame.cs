@@ -12,11 +12,11 @@ public class SubmitAGame : MonoBehaviour {
 		GameControl.control.latestScene = SceneManager.GetActiveScene().name;
 		GameControl.control.isPCOpen = false;
 
-		panel.GetComponent<FadeControl> ().levelChange ("programming", panel);
+		panel.GetComponent<FadeControl> ().levelChange ("SubmitAGame", panel);
 	}
 	void Update()
 	{
-		if (GameControl.control.currentDialogButtonSelectionIndex == 1) {
+		if (GameControl.control.currentDialogButtonSelectionIndex == 0 &&GameControl.control.isDialogOpen) {
 			if(GameControl.control.selectedDialogButton!=gameObject)
 				GameControl.control.selectedDialogButton = gameObject;
 			if (Input.GetKeyDown (KeyCode.Return)) {

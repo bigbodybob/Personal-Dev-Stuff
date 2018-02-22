@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WordGenerator:MonoBehaviour  {
-	public string[] wordList;
+	public List<string> wordList;
 	public  List<wordCount> wordC;
 	void Awake()
 	{
@@ -21,7 +21,7 @@ public class WordGenerator:MonoBehaviour  {
 
 	public string GetRandomWord ()
 	{
-		int randomIndex = Random.Range(0, wordList.Length);
+		int randomIndex = Random.Range(0, wordList.Count);
 		string randomWord = wordList[randomIndex];
 
 		return randomWord;

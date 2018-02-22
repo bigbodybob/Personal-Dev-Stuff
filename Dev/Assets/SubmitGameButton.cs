@@ -18,7 +18,7 @@ public class SubmitGameButton : MonoBehaviour {
 			text.text = "Game Submitted! Results will be posted in 30 minutes. Press 'B' to return";
 			GameControl.control.rating=GameControl.control.allGames [GameControl.control.currentGameSelectionIndex].rating;
 			GameControl.control.isCompeting = true;
-			GameControl.control.resultReleaseDate=DateTime.Now.AddMinutes(30);
+			GameControl.control.resultReleaseDate=DateTime.Now.AddMinutes(1);
 			submitted = true;
 		}
 		else if(Input.GetKeyDown(KeyCode.B))

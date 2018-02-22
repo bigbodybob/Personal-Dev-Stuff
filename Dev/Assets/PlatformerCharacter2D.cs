@@ -22,7 +22,7 @@ using System.Collections.Generic;
         private bool grounded = false; // Whether or not the player is grounded.
         private Transform ceilingCheck; // A position marking where to check for ceilings
         private float ceilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
-        private Animator anim; // Reference to the player's animator component.
+        public Animator anim; // Reference to the player's animator component.
 
 	public static PlatformerCharacter2D control;
         private void Awake()

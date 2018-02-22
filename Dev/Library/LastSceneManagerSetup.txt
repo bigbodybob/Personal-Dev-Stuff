@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/fundraise.unity
+- path: Assets/programming.unity
   isLoaded: 1
   isActive: 1

@@ -7,6 +7,7 @@ using UnitySampleAssets.CrossPlatformInput;
     {
 		private PlatformerCharacter2D character;
         private bool jump;
+
 		public bool isMovementEnabled = true;
         private void Awake()
         {
@@ -15,11 +16,14 @@ using UnitySampleAssets.CrossPlatformInput;
 
         private void Update()
         {
-			if (isMovementEnabled) {
-				if (!jump)
+		if (isMovementEnabled) {
+			if (!jump)
             // Read the jump input in Update so button presses aren't missed.
             jump = CrossPlatformInputManager.GetButtonDown ("Jump");
-			}
+		} else {
+			character.anim.SetFloat ("Speed", 0);
+
+		}
         }
 
         private void FixedUpdate()
@@ -34,5 +38,6 @@ using UnitySampleAssets.CrossPlatformInput;
 				}
 				jump = false;
 			}
+	
 		}
     }
