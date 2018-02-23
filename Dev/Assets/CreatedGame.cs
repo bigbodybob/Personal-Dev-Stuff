@@ -13,10 +13,15 @@ public class CreatedGame {
 	{
 		this.name=name;
 		this.bugs = bugs;
-		this.bugs = Random.Range(40, 55) - (GameControl.control.bugCheckLevel*3);
+		this.bugs = Random.Range(40, 55) ;
 		wordCount = wordC;
 		this.score = score;
-		rating = (GameControl.control.programmingLevel*.25)-(this.bugs*.07)+(score*.05);
+		rating = (.5*wordC.Count)-(this.bugs*.05)+(score*.001);
+	}
+	public void reCalculateRating()
+	{
+		rating = (.5*wordCount.Count)-(this.bugs*.05)+(score*.001);
+
 	}
 
 }

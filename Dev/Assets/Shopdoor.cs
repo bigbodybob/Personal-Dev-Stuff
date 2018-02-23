@@ -31,6 +31,7 @@ public class Shopdoor : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.E) && animator.GetBool("isOpen")) {
 			GameControl.control.latestCharPositionOutdoors = PlatformerCharacter2D.control.transform.position;
+			GameControl.control.latestCharPositionIndoors = new Vector3 (12f, 0);
 
 			panel.GetComponent<FadeControl>().levelChange("shop",panel);
 

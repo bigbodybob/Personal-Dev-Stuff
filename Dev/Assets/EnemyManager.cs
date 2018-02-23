@@ -25,10 +25,10 @@ public class EnemyManager : MonoBehaviour {
 		
 		control = this;
 		selectedGameIndex = GameControl.control.currentGameSelectionIndex;
-		numberOfUnkillableBugs = (int)Random.Range (20,30)-GameControl.control.bugCheckLevel ;
+		numberOfUnkillableBugs = (int)Random.Range (5,10);
 		//numberOfBugs = GameControl.control.allGames [selectedGameIndex].bugs-numberOfUnkillableBugs;
 
-		numberOfBugs = 50-numberOfUnkillableBugs;
+		numberOfBugs = 50;
 	}
 	void Start()
 	{
@@ -39,7 +39,7 @@ public class EnemyManager : MonoBehaviour {
 		mainCharacter.GetComponent<Platformer2DUserControl> ().isMovementEnabled = false;
 		lifeManagerBugCheck.control.isGameOver = true;
 		GameControl.control.allGames [GameControl.control.currentGameSelectionIndex].bugs -= EnemyManager.control.score;
-
+		GameControl.control.allGames [GameControl.control.currentGameSelectionIndex].reCalculateRating ();
 		winMessage.GetComponent<CanvasGroup> ().alpha = 1;
 
 	}

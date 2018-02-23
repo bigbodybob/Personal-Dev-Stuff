@@ -51,12 +51,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042e1608485a8d544ace3bce792fcf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShopItselfOpen: 0
+  isShopOpen: 0
+  gameShopItems:
+  - quest
+  - achievement
+  shopItemsCosts:
+  - 300
+  - 1000
+  selectedItem: {fileID: 0}
+  itemCount: 0
+  selectedItemIndex: 0
   rating: 0
   competeingRatings: []
   isCompeting: 0
-  results: {fileID: 1138292029081882, guid: 212e360e4975e27409041bc7150b90ca, type: 2}
-  HUD: {fileID: 0}
-  totalMoney: 0
+  canCompete: 1
+  results: {fileID: 1633510033938580, guid: 212e360e4975e27409041bc7150b90ca, type: 2}
+  totalMoney: 1000
   moneyClickMultiplier: 0
   shopItems: []
   shopCounts: 00000000000000000000000000000000
@@ -93,15 +104,19 @@ MonoBehaviour:
   programmingLevel: 1
   bugCheckLevel: 1
   currentScene: 
-  latestScene: 
+  latestScene: playerhome
   latestCharPositionIndoors: {x: 0, y: 0, z: 0}
   latestCharPositionOutdoors: {x: 0, y: 0, z: 0}
+  wordStarted: 0
   isGameOver: 0
   upperarmlist: []
   hairlist: []
   unlockedWordList:
   - castle
   - minion
+  - key
+  - spikes
+  - sign
   allGamesNames: []
   allGames:
   - name: 

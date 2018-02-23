@@ -91,11 +91,13 @@
      <Compile Include="Assets\itemPrice.cs" />
      <Compile Include="Assets\lifeManager.cs" />
      <Compile Include="Assets\lifeManagerBugCheck.cs" />
+     <Compile Include="Assets\maintainWidth.cs" />
      <Compile Include="Assets\NewGame.cs" />
      <Compile Include="Assets\NormalMonster.cs" />
      <Compile Include="Assets\Parallaxing.cs" />
      <Compile Include="Assets\Platformer2DUserControl.cs" />
      <Compile Include="Assets\PlatformerCharacter2D.cs" />
+     <Compile Include="Assets\results.cs" />
      <Compile Include="Assets\score.cs" />
      <Compile Include="Assets\ScrollControl.cs" />
      <Compile Include="Assets\Shop.cs" />
@@ -111,6 +113,7 @@
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\TextureController.cs" />
+     <Compile Include="Assets\StartScript.cs" />
      <Compile Include="Assets\SubmitAGame.cs" />
      <Compile Include="Assets\SubmitGameButton.cs" />
      <Compile Include="Assets\Teacher.cs" />

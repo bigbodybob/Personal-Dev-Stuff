@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   sodipodi:docname="MAINCUSTOMTEMPLATE.svg">
+   sodipodi:docname="SHOPDUDE.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="865.39882"
-     inkscape:cy="1122.2428"
+     inkscape:zoom="1.4"
+     inkscape:cx="371.29229"
+     inkscape:cy="851.97632"
      inkscape:document-units="mm"
      inkscape:current-layer="g4559"
      showgrid="false"
@@ -50,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -66,20 +66,6 @@
        sodipodi:nodetypes="cscsc"
        inkscape:transform-center-x="-0.11561943"
        inkscape:transform-center-y="5.8305713" />
-    <path
-       style="fill:#00ff00;fill-opacity:1;stroke-width:0.23972565"
-       id="path38"
-       sodipodi:type="arc"
-       sodipodi:cx="47.454052"
-       sodipodi:cy="81.847984"
-       sodipodi:rx="8.3154764"
-       sodipodi:ry="2.0168886"
-       sodipodi:start="0"
-       sodipodi:end="0.047930756"
-       d="m 55.769528,81.847984 a 8.3154764,2.0168886 0 0 1 -0.0096,0.09663 l -8.305926,-0.09663 z"
-       inkscape:export-filename="C:\Users\Admin\Documents\GitHub\Personal-Dev-Stuff\Dev\Assets\FBLA GAME SPRITER\head\head.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
     <g
        id="g4559"
        transform="matrix(0.69864278,0,0,0.65358615,39.825252,18.613246)">
@@ -119,11 +105,14 @@
          inkscape:export-xdpi="96"
          inkscape:export-ydpi="96" />
       <path
-         sodipodi:nodetypes="sssssssss"
+         sodipodi:nodetypes="csscccccc"
          inkscape:connector-curvature="0"
          id="path3759"
-         d="m 134.71106,85.074845 c -0.25024,16.074575 -18.01402,31.629075 -32.50546,31.886405 -12.305138,0.21851 -3.551298,-16.42606 -3.778458,-28.088989 -0.12787,-6.565069 -0.52818,-13.657407 -5.78896,-14.906266 -10.32305,-2.450596 -30.127743,-2.264766 -37.612363,-0.01814 -5.457734,1.638227 -4.574984,6.212856 -5.725229,10.144494 -2.48828,8.505166 -1.972807,16.783011 -7.542839,5.415367 -15.766607,-32.177392 7.610063,-57.90405 44.098771,-56.53335 28.601488,1.074416 49.330588,21.519608 48.854538,52.100475 z"
-         style="fill:#000000;stroke-width:0.32110411" />
+         d="m 98.418495,119.85281 c -3.774901,-5.86035 1.420563,-20.161906 0.0086,-30.980549 -0.848758,-6.503513 -0.90125,-12.480209 -5.78896,-14.906266 -10.32305,-5.123935 -31.48028,-6.291566 -38.9649,0.849327 -8.364911,2.372854 -8.008548,53.959498 -12.847463,2.186765 C 31.550897,70.867591 13.501881,70.779786 14.99298,53.472191 8.4883381,45.173816 71.267059,47.45345 86.126982,48.010457 122.50602,48.121056 119.95587,111.44788 98.418448,119.85281 Z"
+         style="fill:#000000;stroke-width:0.32110411"
+         inkscape:export-filename="C:\Users\Admin\Documents\GitHub\Personal-Dev-Stuff\Dev\Assets\FBLA GAME SPRITER\head\shopguyhair.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
       <ellipse
          transform="rotate(11.760155)"
          ry="7.1815476"
@@ -353,8 +342,8 @@
          inkscape:connector-curvature="0"
          id="path39-4-1-1"
          d="m 69.967237,39.635847 c 3.7335,8.35654 -1.39561,8.77155 -4.53629,11.6233 -4.94331,4.48856 -8.20661,3.65641 -9.50335,0.21024 -0.51608,-1.37146 2.20844,-5.13229 6.08537,-8.40007 3.87694,-3.26779 7.43819,-4.80501 7.95427,-3.43353 z"
-         style="fill:#2d5016;fill-opacity:1;stroke:none;stroke-width:0.3548016"
-         inkscape:export-filename="C:\Users\Admin\Documents\FBLA GAME SPRITER\arm\upper.png"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.3548016"
+         inkscape:export-filename="C:\Users\Admin\Documents\GitHub\Personal-Dev-Stuff\Dev\Assets\FBLA GAME SPRITER\Arm\blackupper.png"
          inkscape:export-xdpi="96"
          inkscape:export-ydpi="96" />
       <g
@@ -374,17 +363,18 @@
       </g>
     </g>
     <g
-       transform="translate(34.832693,-0.37113669)"
+       transform="translate(37.289538,-0.93810098)"
        id="g457"
-       inkscape:export-filename="C:\Users\Admin\Documents\FBLA GAME SPRITER\body/body.png"
+       inkscape:export-filename="C:\Users\Admin\Documents\GitHub\Personal-Dev-Stuff\Dev\Assets\FBLA GAME SPRITER\body/blackbody.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96">
       <g
-         id="g445">
+         id="g445"
+         style="fill:#000000">
         <path
            id="path33-1"
            d="m 93.692707,98.953058 c -4.336389,0 -6.998663,1.775542 -8.54696,4.500502 -1.38952,2.44553 -1.881728,5.65576 -1.881726,9.03407 0,3.30698 2.90969,5.48384 4.232942,7.63209 0.192206,0.31205 0.364115,0.61946 0.526525,0.91881 5.871351,0.60118 10.654402,0.74381 15.074082,0.28267 1.59626,-4.42864 2.28977,-5.91824 3.25861,-9.43508 1.96724,-7.14099 -1.78709,-12.933062 -12.663473,-12.933062 z m 2.359228,25.851652 c -0.252276,0.004 -0.503534,0.0103 -0.757498,0.0119 0.253307,-0.002 0.505866,-0.006 0.757498,-0.0119 z m -2.888109,0.002 c 0.170145,0.008 0.344605,0.0124 0.528881,0.0124 -0.186762,0 -0.356617,-0.006 -0.528881,-0.0124 z"
-           style="fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.21439517"
+           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.21439517"
            inkscape:connector-curvature="0"
            inkscape:export-filename="C:\Users\Admin\Documents\FBLA GAME SPRITER\body\body.png"
            inkscape:export-xdpi="96"
@@ -451,7 +441,8 @@
        id="g123"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:export-filename="C:\Users\Admin\Documents\FBLA GAME SPRITER\body\hip.png">
+       inkscape:export-filename="C:\Users\Admin\Documents\FBLA GAME SPRITER\body\hip.png"
+       style="fill:#000000">
       <path
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
@@ -460,7 +451,7 @@
          inkscape:connector-curvature="0"
          id="path33-9"
          d="m 87.469814,122.31446 c 1.559036,1.84532 1.949619,3.44518 6.653342,3.44518 4.22347,0 8.889354,0.0912 10.115134,-2.31055 0.21027,-0.41199 0.25008,-0.85565 0.43457,-1.20925 -5.080026,0.5055 -10.573262,0.34487 -17.428314,-0.32062 z"
-         style="fill:#4d4d4d;fill-opacity:1;stroke:none;stroke-width:0.19675615" />
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19675615" />
     </g>
     <g
        id="g47"

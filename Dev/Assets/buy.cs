@@ -20,6 +20,11 @@ public class buy : MonoBehaviour {
 				GameControl.control.gameShopItems.RemoveAt(GameControl.control.selectedItemIndex);
 				GameControl.control.shopItemsCosts.RemoveAt(GameControl.control.selectedItemIndex);
 				Destroy(GameControl.control.selectedItem);
+				if (GameControl.control.selectedItemIndex == 0) {
+					GameControl.control.selectedItemIndex++;
+				} else {
+					GameControl.control.selectedItemIndex--;
+				}
 			}
 
 		}	

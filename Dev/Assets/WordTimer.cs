@@ -8,24 +8,26 @@ public class WordTimer : MonoBehaviour {
 
 
 	public int wordNum;
-	public float timer = 5f;
+	public float timer = 0f;
 
-	public float standardtime=5f;
+	public float standardtime=2f;
 	private void Start()
 	{
-		for(int i=0; i<wordNum;i++){
+		/*for(int i=0; i<wordNum;i++){
 			wordManager.AddWord();
 
-		}
+		}*/
 	}
 	void Update()
 	{
-		timer -= .05f;
-		if (timer <= 0) {
-			wordManager.AddWord ();
+		if (GameControl.control.wordStarted) {
+			timer -= .05f;
+			if (timer <= 0) {
+				wordManager.AddWord ();
 		
-			timer =5f;
+				timer = 2f;
 
+			}
 		}
 	}
 }

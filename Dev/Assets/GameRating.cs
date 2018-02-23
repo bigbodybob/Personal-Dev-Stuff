@@ -7,6 +7,7 @@ public class GameRating : MonoBehaviour {
 	// Use this for initialization
 	void Awake()
 	{
+		GameControl.control.allGames [GameControl.control.gameCount].reCalculateRating ();
 		text.text = string.Format("{0:N1}",GameControl.control.allGames [GameControl.control.gameCount].rating)+"/10";
 	}
 }

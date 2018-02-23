@@ -6,6 +6,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
 using System;
+using Random = UnityEngine.Random;
+
 public class GameControl : MonoBehaviour {
 	//shop
 	public bool isShopItselfOpen;
@@ -18,9 +20,10 @@ public class GameControl : MonoBehaviour {
 	public int selectedItemIndex;
 	//compete
 	public double rating;
-	public double[] competeingRatings;
-	public DateTime resultReleaseDate;
+	public double[] competeingRatings=new double[3];
+	public DateTime competeAgainDate;
 	public bool isCompeting;
+	public bool canCompete = true;
 	public GameObject results;
 	//fundraiser
 	public float totalMoney;
@@ -61,6 +64,7 @@ public class GameControl : MonoBehaviour {
 	public Vector3 latestCharPositionOutdoors;
 
 	//vars specific to TYPING GAME
+	public bool wordStarted;
 	public bool isGameOver=false;
 	//vars shared across game scenes
 	public Sprite[] upperarmlist;
@@ -116,19 +120,37 @@ public class GameControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (sceneName != SceneManager.GetActiveScene ().name) {
-		
+			if (SceneManager.GetActiveScene ().name == "playerhome"&& isCompeting) {
+				StartCoroutine (compete());
+			}
 			isPCOpen = false;
 			isClearBugsClicked = false;
 			gameCount = 0;
 			isDialogOpen = false;
+			itemCount = 0;
 			isDonutShopOpen = false;
 			sceneName = SceneManager.GetActiveScene ().name;
 		}
-		if (isCompeting && DateTime.Now>=resultReleaseDate) {
-			Instantiate (results);
-			isCompeting = false;
+	if (!isCompeting && !canCompete &&DateTime.Now>=competeAgainDate) {
+			canCompete = true;
 		}
 	
+	}
+	IEnumerator compete()
+	{
+		yield return new WaitForSeconds (1);
+		int rank = 4;
+		for (int x=0; x<competeingRatings.Length;x++){
+			competeingRatings[x] = (Double)Random.Range (6, 9);
+			if (competeingRatings[x]<= rating) {
+				rank--;
+			}
+		}
+
+		GameObject obj=Instantiate (results);
+		obj.GetComponent<results> ().rank = rank;
+		isCompeting = false;
+		competeAgainDate = DateTime.Now.AddMinutes (15);
 	}
 	public  void changeSkinTone(float newskintone, GameObject headS, GameObject lowerarmS, GameObject lowerarmleftS, GameObject neckS, GameObject handS, GameObject handleftS)
 	{
