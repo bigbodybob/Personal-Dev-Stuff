@@ -78,6 +78,7 @@
      <Compile Include="Assets\FBLAdoor.cs" />
      <Compile Include="Assets\Fundraise.cs" />
      <Compile Include="Assets\GameActionSelectArrow.cs" />
+     <Compile Include="Assets\GameBugCount.cs" />
      <Compile Include="Assets\GameControl.cs" />
      <Compile Include="Assets\GameName.cs" />
      <Compile Include="Assets\GameRating.cs" />

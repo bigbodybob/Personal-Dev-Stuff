@@ -21,6 +21,7 @@ using UnitySampleAssets.CrossPlatformInput;
             // Read the jump input in Update so button presses aren't missed.
             jump = CrossPlatformInputManager.GetButtonDown ("Jump");
 		} else {
+			character.GetComponent<Rigidbody2D> ().velocity = Vector3.zero;
 			character.anim.SetFloat ("Speed", 0);
 
 		}

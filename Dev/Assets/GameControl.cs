@@ -9,6 +9,8 @@ using System;
 using Random = UnityEngine.Random;
 
 public class GameControl : MonoBehaviour {
+	//General
+	public bool doesCurrentGameExist;
 	//shop
 	public bool isShopItselfOpen;
 
@@ -67,8 +69,7 @@ public class GameControl : MonoBehaviour {
 	public bool wordStarted;
 	public bool isGameOver=false;
 	//vars shared across game scenes
-	public Sprite[] upperarmlist;
-	public Sprite[] hairlist;
+
 	public List<string> unlockedWordList;
 	public List<string> allGamesNames;
 	public List<CreatedGame> allGames;
@@ -83,6 +84,14 @@ public class GameControl : MonoBehaviour {
 	public Color hairColor;
 	public int shoes= 0;
 	public int hair= 0;
+	//sprite lists
+	public Sprite[] hairSpriteList;
+	public Sprite[] bodySpriteList;
+	public Sprite[] upperSpriteList;
+	public Sprite[] faceSpriteList;
+	public int selectedBody;
+	public int selectedFace;
+	public int selectedHair;
 
 	//current scene
 	public string sceneName;
@@ -97,6 +106,11 @@ public class GameControl : MonoBehaviour {
 		}
 		else if (control != this) {
 			Destroy(gameObject);
+		}
+		if (!File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
+			doesCurrentGameExist = false;
+		} else if (File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
+			doesCurrentGameExist = true;
 		}
 	}
 	public void sceneChanged()
@@ -126,6 +140,9 @@ public class GameControl : MonoBehaviour {
 			isPCOpen = false;
 			isClearBugsClicked = false;
 			gameCount = 0;
+			//selectedDialogButtonIndex = 0;
+			//selectedButton = 0;
+			currentDialogButtonSelectionIndex = 0;
 			isDialogOpen = false;
 			itemCount = 0;
 			isDonutShopOpen = false;
@@ -199,17 +216,11 @@ public class GameControl : MonoBehaviour {
 		GameObject.Find ("hair").GetComponent<SpriteRenderer> ().color = hairc;
 		hairColor = hairc;
 	}
-	public void changeHair(float hairS)
-	{
-		hair = (int)hairS;
-		GameObject.Find ("hair").GetComponent<SpriteRenderer> ().sprite = hairlist[hair];
 
-
-	}
-	public  void Save()
+	public  void SaveLoad()
 	{
 		if (File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
-		
+
 		} else {
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Create (Application.persistentDataPath + "/saveinfo.dat");
@@ -224,6 +235,27 @@ public class GameControl : MonoBehaviour {
 			data.shoes = this.shoes;
 			data.hair = hair;
 			data.hairColor = this.hairColor;
+			data.selectedBody=selectedBody;
+			data.selectedFace=selectedFace;
+			data.selectedHair=selectedHair;
+			data.unlockedWordList=unlockedWordList;
+			data.allGamesNames=allGamesNames;
+			data.rating=rating;
+			data.competeingRatings=competeingRatings;
+			data.competeAgainDate=competeAgainDate;
+			data.isCompeting=isCompeting;
+			data.canCompete = canCompete;
+			data.totalMoney=totalMoney;
+			data.moneyClickMultiplier =moneyClickMultiplier;
+
+			data.shopItems=shopItems;
+			data.shopCounts=shopCounts;
+			data.shopItemValue = shopItemValue;
+			data.shopPrices=data.shopPrices;
+			data.donutsPerSecond=donutsPerSecond;
+			data.latestTime=latestTime;
+
+			 
 			bf.Serialize (file, data);
 			file.Close ();
 		}
@@ -276,4 +308,24 @@ class saveData: System.Object
 	public Color hairColor;
 	public int shoes;
 	public int hair;
+	public int selectedBody;
+	public int selectedFace;
+	public int selectedHair;
+	public List<string> unlockedWordList;
+	public List<string> allGamesNames;
+	public double rating;
+	public double[] competeingRatings=new double[3];
+	public DateTime competeAgainDate;
+	public bool isCompeting;
+	public bool canCompete = true;
+	public float totalMoney;
+	public int moneyClickMultiplier = 0;
+
+	public List<ShopItem> shopItems;
+	public int[] shopCounts={0,0,0,0};
+	public float[] shopItemValue={.1f,1,10,50};
+	public float[] shopPrices={10,100,1000,10000};
+	public float donutsPerSecond;
+	public  DateTime latestTime;
+
 }

@@ -44,13 +44,23 @@ public class EnemyManager : MonoBehaviour {
 
 	}
 	// Update is called once per frame
+	public bool isRangeBad(float r)
+	{
+		if (r < PlatformerCharacter2D.control.transform.position.x + 2 && r > PlatformerCharacter2D.control.transform.position.x - 2)
+			return true;
+		else if (r + 5.5f > 14.31 || r < -14.21) {
+			return true;
+		} else
+			return false;
+		
+	}
 	void Update () {
 		if (isGameStarted) {
 			currentTime -= Time.deltaTime;
 			if (currentTime < 0) {
 				if (tempCount == 5 && numberOfUnkillableBugs >= 1) {
 					float range = Random.Range (-20, 20);
-					while (range < PlatformerCharacter2D.control.transform.position.x + 2 && range > PlatformerCharacter2D.control.transform.position.x - 2) {
+					while (isRangeBad(range)) {
 						range =Random.Range (-20, 20);
 					}
 					Instantiate (spikedMonster, new Vector3 (range, 0), Quaternion.identity);
@@ -58,7 +68,7 @@ public class EnemyManager : MonoBehaviour {
 					tempCount = 0;
 				} else if (numberOfBugs >= 1) {
 					float range = Random.Range (-20, 20);
-					while (range < PlatformerCharacter2D.control.transform.position.x + 2 && range > PlatformerCharacter2D.control.transform.position.x - 2) {
+					while (isRangeBad(range)) {
 						range =Random.Range (-20, 20);
 					}
 					Instantiate (normalMonster, new Vector3 (range, 0), Quaternion.identity);

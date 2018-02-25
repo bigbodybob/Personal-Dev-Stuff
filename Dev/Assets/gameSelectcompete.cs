@@ -25,30 +25,31 @@ public class gameSelectcompete : MonoBehaviour {
 			gameObj.GetComponent<GameSelectionObject> ().index = GameControl.control.gameCount;
 			GameControl.control.gameCount++;
 			transform.SetAsLastSibling ();
+			GetComponent<CanvasGroup> ().alpha = 1;
 		}
 
 			if (Input.GetKeyDown (KeyCode.DownArrow) && GameControl.control.allGames.Count>0&& GameControl.control.currentGameSelectionIndex!=GameControl.control.allGames.Count-1) {
 				GameControl.control.currentGameSelectionIndex++;
-				if (-transform.localPosition.y > maxY) {
-					Vector3 newPos = layout.transform.localPosition;
-					newPos.y += GameControl.control.selectedGame.GetComponent<RectTransform>().rect.height;
-					layout.transform.localPosition = newPos;
-					maxY += GameControl.control.selectedGame.GetComponent<RectTransform>().rect.height;
-				}
+				
 				//transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x-5, GameControl.control.selectedGame.transform.position.y);
 
 			}
 			if (Input.GetKeyDown (KeyCode.UpArrow)&&  GameControl.control.allGames.Count>0&& GameControl.control.currentGameSelectionIndex!=0) {
 				GameControl.control.currentGameSelectionIndex--;			transform.position = new Vector3 (transform.position.x, GameControl.control.selectedGame.transform.position.y);
 				//transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x-5, GameControl.control.selectedGame.transform.position.y);
-				if (-transform.localPosition.y < maxY) {
-					Vector3 newPos = layout.transform.localPosition;
-					newPos.y -= GameControl.control.selectedGame.GetComponent<RectTransform>().rect.height;
-					layout.transform.localPosition = newPos;
-					maxY -= GameControl.control.selectedGame.GetComponent<RectTransform>().rect.height;
-				}
+				
 				//	if (!screenRect.Contains (gameObject))
 			}
+		if (transform.localPosition.y <= -172) {
+			Vector3 newPos = layout.transform.localPosition;
+			newPos.y += GameControl.control.selectedGame.GetComponent<RectTransform>().rect.height+6;
+			layout.transform.localPosition = newPos;
+		}
+		if (transform.localPosition.y >= 172) {
+			Vector3 newPos = layout.transform.localPosition;
+			newPos.y -= GameControl.control.selectedGame.GetComponent<RectTransform>().rect.height+6;
+			layout.transform.localPosition = newPos;
+		}
 			if(GameControl.control.selectedGame!=null)
 				transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x-5, GameControl.control.selectedGame.transform.position.y);
 

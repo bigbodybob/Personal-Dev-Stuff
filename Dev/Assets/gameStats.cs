@@ -78,10 +78,12 @@ public class gameStats : MonoBehaviour {
 				if (text.text =="Name your Game:") {
 					text.color = Color.red;
 					text.text="Invalid Name";
+				
 				}
 			}
 		}
-
+		nameInput.Select ();
+		nameInput.ActivateInputField ();
 	}
 	public void gameName(string name)
 

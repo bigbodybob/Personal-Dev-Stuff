@@ -51,13 +51,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042e1608485a8d544ace3bce792fcf3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doesCurrentGameExist: 0
   isShopItselfOpen: 0
   isShopOpen: 0
   gameShopItems:
-  - quest
-  - achievement
+  - coin
+  - gem
+  - heart
+  - star
+  - powerup
   shopItemsCosts:
   - 300
+  - 600
+  - 600
+  - 1000
   - 1000
   selectedItem: {fileID: 0}
   itemCount: 0

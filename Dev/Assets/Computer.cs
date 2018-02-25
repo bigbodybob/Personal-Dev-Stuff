@@ -33,6 +33,7 @@ public class Computer : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.E) ) {
 			if (!GameControl.control.isPCOpen && promptCanvasGroup.alpha == 1) {
+				
 				PlatformerCharacter2D.control.GetComponent<Platformer2DUserControl> ().isMovementEnabled = false;
 				//GameControl.control.latestCharPositionInScene = transform.position;
 				//SGameControl.control.latestScene = SceneManager.GetActiveScene().name;

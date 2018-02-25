@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+
 using UnityEngine.SceneManagement;
 public class StartScript : MonoBehaviour {
 
@@ -12,7 +15,12 @@ public class StartScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Return)) {
-			SceneManager.LoadScene ("main", LoadSceneMode.Additive);
+			if (File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
+				SceneManager.LoadScene ("main", LoadSceneMode.Single);
+			} else {
+				SceneManager.LoadScene ("customize", LoadSceneMode.Single);
+
+			}
 		}
 	}
 }

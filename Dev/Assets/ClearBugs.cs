@@ -27,7 +27,7 @@ public class ClearBugs : MonoBehaviour {
 				GameControl.control.isClearBugsClicked = true;
 
 			}
-			else if (Input.GetKeyDown (KeyCode.Return) && GameControl.control.isClearBugsClicked) {
+			else if (Input.GetKeyDown (KeyCode.Return) && GameControl.control.isClearBugsClicked &&GameControl.control.allGames[GameControl.control.currentGameSelectionIndex].bugs>0) {
 				if (GameControl.control.selectedGame != null) {
 					GameControl.control.isClearBugsClicked = false;
 					GameControl.control.isPCOpen = false;
