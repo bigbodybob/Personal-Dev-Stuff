@@ -15,7 +15,7 @@ public class SpikedMonsterMove : MonoBehaviour {
 	private float rightBound;
 	// Use this for initialization
 	void Start () {
-		
+		Destroy (gameObject, 10f);
 		leftBound = transform.position.x;
 		rightBound = leftBound + 6f;
 	}

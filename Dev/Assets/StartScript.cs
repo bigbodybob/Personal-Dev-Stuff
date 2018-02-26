@@ -6,6 +6,7 @@ using System.IO;
 
 using UnityEngine.SceneManagement;
 public class StartScript : MonoBehaviour {
+	public GameObject panel;
 
 	// Use this for initialization
 	void Start () {
@@ -16,9 +17,10 @@ public class StartScript : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Return)) {
 			if (File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
-				SceneManager.LoadScene ("main", LoadSceneMode.Single);
+				GameControl.control.Load ();
+				panel.GetComponent<FadeControl>().levelChange ("main", panel);
 			} else {
-				SceneManager.LoadScene ("customize", LoadSceneMode.Single);
+				panel.GetComponent<FadeControl>().levelChange ("customize", panel);
 
 			}
 		}

@@ -16,6 +16,10 @@ public class characterBodyControl : MonoBehaviour {
 	public GameObject upperarm2 = null;
 	public Transform[] bodyParts;
 	public EntityRenderer spriteRenderer;
+	void Awake()
+	{
+
+	}
 	public void assignParts()
 	{
 		bodyParts = transform.GetComponentsInChildren<Transform> ();
@@ -51,11 +55,7 @@ public class characterBodyControl : MonoBehaviour {
 		//hair.GetComponents<SpriteRenderer> ().sprite = GameControl.control.bodylist [selectedBody];
 
 	}
-	void Awake()
-	{
-		assignParts ();
 
-	}
 	public void changeHair(float hairS)
 	{
 		GameControl.control.selectedHair = (int)hairS;
@@ -93,6 +93,11 @@ public class characterBodyControl : MonoBehaviour {
 		changeColorVals ();
 	}
 	void Start () {
+		//GameControl.control.SaveLoad ();
+
+		assignParts ();
+		changeColorVals ();
+
 		if(SceneManager.GetActiveScene().name=="main") 
 			transform.parent.position = GameControl.control.latestCharPositionOutdoors;
 		else if(SceneManager.GetActiveScene().name!="bugcheck" && SceneManager.GetActiveScene().name!="customize")
@@ -103,6 +108,7 @@ public class characterBodyControl : MonoBehaviour {
 		tmp.a = 1f;
 		spriteRenderer.Color = tmp;
 		changeColorVals ();
+
 	}
 
 	// Update is called once per frame

@@ -69,7 +69,7 @@ public class GameControl : MonoBehaviour {
 	public bool wordStarted;
 	public bool isGameOver=false;
 	//vars shared across game scenes
-
+	public bool hasMainHelpMenuBeenSeen;
 	public List<string> unlockedWordList;
 	public List<string> allGamesNames;
 	public List<CreatedGame> allGames;
@@ -92,11 +92,22 @@ public class GameControl : MonoBehaviour {
 	public int selectedBody;
 	public int selectedFace;
 	public int selectedHair;
-
+	public AudioClip[] music;
+	public AudioSource mainAudio;
 	//current scene
 	public string sceneName;
 	// Use this for initialization
+	void OnApplicationQuit()
+	{
+		if (SceneManager.GetActiveScene ().name == "fundraise") {
+			latestTime = DateTime.Now;
+		}
+		if(SceneManager.GetActiveScene().name!="customize"&& SceneManager.GetActiveScene().name!="startreal") 
+		Save ();
+		Debug.Log ("finita");
+	}
 	void Awake () {
+//File.Delete (Application.persistentDataPath + "/saveinfo.dat");
 		screenRect = new Rect (0,0, Screen.width, Screen.height-80);
 
 		sceneName = SceneManager.GetActiveScene ().name;
@@ -133,7 +144,20 @@ public class GameControl : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit ();
+		}
 		if (sceneName != SceneManager.GetActiveScene ().name) {
+			if (SceneManager.GetActiveScene ().name == "startreal") {
+				mainAudio.clip = music [0];
+				mainAudio.Play ();
+			}
+			if (SceneManager.GetActiveScene ().name == "bugcheck" || SceneManager.GetActiveScene ().name == "programming") {
+				mainAudio.clip = music [2];
+			} else {
+				mainAudio.clip = music [1];
+				mainAudio.Play ();
+			}
 			if (SceneManager.GetActiveScene ().name == "playerhome"&& isCompeting) {
 				StartCoroutine (compete());
 			}
@@ -143,6 +167,7 @@ public class GameControl : MonoBehaviour {
 			//selectedDialogButtonIndex = 0;
 			//selectedButton = 0;
 			currentDialogButtonSelectionIndex = 0;
+			currentGameButtonSelectionIndex = 1;
 			isDialogOpen = false;
 			itemCount = 0;
 			isDonutShopOpen = false;
@@ -157,8 +182,8 @@ public class GameControl : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (1);
 		int rank = 4;
-		for (int x=0; x<competeingRatings.Length;x++){
-			competeingRatings[x] = (Double)Random.Range (6, 9);
+		for (int x=0; x<3;x++){
+			competeingRatings[x] = (Double)Random.Range (5.0f, 8.0f);
 			if (competeingRatings[x]<= rating) {
 				rank--;
 			}
@@ -203,25 +228,119 @@ public class GameControl : MonoBehaviour {
 		} else if (haircolorvalue == 5) {
 			hairc = new Color (.98F, .94F, .74F, 1.0F);
 		} else if (haircolorvalue == 6) {
-			hairc = new Color (0F, 0F, .78F, 1.0F);
+			hairc = new Color (0.3F, 0F, .78F, 1.0F);
 		} else if (haircolorvalue == 7) {
 			hairc = new Color (0F, .78F, 0F, 1.0F);
 		} else if (haircolorvalue == 8) {
 			hairc = new Color (.78F, 0F, 0F, 1.0F);
-		}
-		else {
+		} else if (haircolorvalue == 9) {
 			hairc = new Color (1F, 1F, 1F, 1.0F);
+		} else if (haircolorvalue == 10) {
+			hairc = new Color (1F, .3F, .5F, 1.0F);
+
+		} else if(haircolorvalue==11){
+			hairc = new Color (.1F, .6F, .7F, 1.0F);
+		}
+		else{
+			hairc = new Color (0f, 0f, .78F, 1.0F);
+
 		}
 			
 		GameObject.Find ("hair").GetComponent<SpriteRenderer> ().color = hairc;
 		hairColor = hairc;
 	}
+	public void Save()
+	{
+		Debug.Log ("saving");
 
+		BinaryFormatter bf = new BinaryFormatter ();
+		FileStream file = File.Create (Application.persistentDataPath + "/saveinfo.dat");
+		saveData data = new saveData ();
+		data.allGames = allGames;
+		data.upperarm = upperarm;
+		data.lowerarm = lowerarm;
+		data.lowerleg = lowerleg;
+		data.upperleg = upperleg;
+		data.body = body;
+		data.skintoneR = skintone.r;
+		data.skintoneG= skintone.g;
+		data.skintoneB = skintone.b;
+
+
+		data.shoes = this.shoes;
+		data.hair = hair;
+		data.hairR =hairColor.r;			
+		data.hairG =hairColor.g;
+		data.hairB =hairColor.b;
+
+
+
+		data.selectedBody=selectedBody;
+		data.selectedFace=selectedFace;
+		data.selectedHair=selectedHair;
+		data.unlockedWordList=unlockedWordList;
+		data.allGamesNames=allGamesNames;
+		data.rating=rating;
+		data.competeingRatings=competeingRatings;
+		data.competeAgainDate=competeAgainDate;
+		data.isCompeting=isCompeting;
+		data.canCompete = canCompete;
+		data.totalMoney=totalMoney;
+		data.moneyClickMultiplier =moneyClickMultiplier;
+
+		data.shopCounts=shopCounts;
+		data.shopItemValue = shopItemValue;
+		data.shopPrices=shopPrices;
+		data.donutsPerSecond=donutsPerSecond;
+		data.latestTime=latestTime;
+
+
+		bf.Serialize (file, data);
+		file.Close ();
+	}
 	public  void SaveLoad()
 	{
 		if (File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
+			Debug.Log ("loading");
+			BinaryFormatter bf = new BinaryFormatter ();
+			FileStream file=File.Open(Application.persistentDataPath+"/saveinfo.dat",FileMode.Open);
+			saveData data = (saveData)bf.Deserialize (file);
+			file.Close ();
+			allGames = data.allGames;
+			upperarm = data.upperarm;
+			lowerarm = data.lowerarm;
+			lowerleg = data.lowerleg;
+			upperleg = data.upperleg;
+			body = data.body;
+			skintone = new Color(data.skintoneR,data.skintoneG,data.skintoneB,1f);
+			shoes = data.shoes;
+			hair = data.hair;
+			hairColor = new Color(data.hairR,data.hairG,data.hairB,1f);
+
+			selectedBody=data.selectedBody;
+			selectedFace=data.selectedFace;
+			selectedHair=data.selectedHair;
+			unlockedWordList=data.unlockedWordList;
+			allGamesNames=data.allGamesNames;
+			rating=data.rating;
+			competeingRatings=data.competeingRatings;
+			competeAgainDate=data.competeAgainDate;
+			isCompeting=data.isCompeting;
+			canCompete = data.canCompete;
+			totalMoney=data.totalMoney;
+			moneyClickMultiplier =data.moneyClickMultiplier;
+
+			shopCounts=data.shopCounts;
+			shopItemValue = data.shopItemValue;
+			shopPrices=data.shopPrices;
+			donutsPerSecond=data.donutsPerSecond;
+			latestTime=data.latestTime;
+
+
 
 		} else {
+			Debug.Log ("saving");
+
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Create (Application.persistentDataPath + "/saveinfo.dat");
 			saveData data = new saveData ();
@@ -231,10 +350,19 @@ public class GameControl : MonoBehaviour {
 			data.lowerleg = lowerleg;
 			data.upperleg = upperleg;
 			data.body = body;
-			data.skintone = skintone;
+			data.skintoneR = skintone.r;
+			data.skintoneG= skintone.g;
+			data.skintoneB = skintone.b;
+
+
 			data.shoes = this.shoes;
 			data.hair = hair;
-			data.hairColor = this.hairColor;
+			data.hairR =hairColor.r;			
+			data.hairG =hairColor.g;
+			data.hairB =hairColor.b;
+
+
+
 			data.selectedBody=selectedBody;
 			data.selectedFace=selectedFace;
 			data.selectedHair=selectedHair;
@@ -248,10 +376,9 @@ public class GameControl : MonoBehaviour {
 			data.totalMoney=totalMoney;
 			data.moneyClickMultiplier =moneyClickMultiplier;
 
-			data.shopItems=shopItems;
 			data.shopCounts=shopCounts;
 			data.shopItemValue = shopItemValue;
-			data.shopPrices=data.shopPrices;
+			data.shopPrices=shopPrices;
 			data.donutsPerSecond=donutsPerSecond;
 			data.latestTime=latestTime;
 
@@ -273,10 +400,9 @@ public class GameControl : MonoBehaviour {
 			lowerleg = data.lowerleg;
 			upperleg = data.upperleg;
 			body = data.body;
-			skintone = data.skintone;
+			skintone = new Color(data.skintoneR,data.skintoneB,data.skintoneG);
 			shoes = data.shoes;
 			hair = data.hair;
-			hairColor = data.hairColor;
 		}
 		SceneManager.LoadScene("customize",LoadSceneMode.Single);
 	}
@@ -290,13 +416,51 @@ public class GameControl : MonoBehaviour {
 		
 		SceneManager.LoadScene("main",LoadSceneMode.Single);
 	}
+	public void Load()
+	{
+		Debug.Log ("loading");
+		BinaryFormatter bf = new BinaryFormatter ();
+		FileStream file=File.Open(Application.persistentDataPath+"/saveinfo.dat",FileMode.Open);
+		saveData data = (saveData)bf.Deserialize (file);
+		file.Close ();
+		allGames = data.allGames;
+		upperarm = data.upperarm;
+		lowerarm = data.lowerarm;
+		lowerleg = data.lowerleg;
+		upperleg = data.upperleg;
+		body = data.body;
+		skintone = new Color(data.skintoneR,data.skintoneG,data.skintoneB,1f);
+		shoes = data.shoes;
+		hair = data.hair;
+		hairColor = new Color(data.hairR,data.hairG,data.hairB,1f);
 
+		selectedBody=data.selectedBody;
+		selectedFace=data.selectedFace;
+		selectedHair=data.selectedHair;
+		unlockedWordList=data.unlockedWordList;
+		allGamesNames=data.allGamesNames;
+		rating=data.rating;
+		competeingRatings=data.competeingRatings;
+		competeAgainDate=data.competeAgainDate;
+		isCompeting=data.isCompeting;
+		canCompete = data.canCompete;
+		totalMoney=data.totalMoney;
+		moneyClickMultiplier =data.moneyClickMultiplier;
+
+		shopCounts=data.shopCounts;
+		shopItemValue = data.shopItemValue;
+		shopPrices=data.shopPrices;
+		donutsPerSecond=data.donutsPerSecond;
+		latestTime=data.latestTime;
+
+
+	}
 	void OnGUI()
 	{
 	}
 }
 [System.Serializable]
-class saveData: System.Object
+class saveData:System.Object
 {
 	public List<CreatedGame> allGames;
 	public int upperarm;
@@ -304,8 +468,12 @@ class saveData: System.Object
 	public int lowerleg;
 	public int upperleg;
 	public int body;
-	public Color skintone;
-	public Color hairColor;
+	public float skintoneR;
+	public float skintoneG;
+	public float skintoneB;
+	public float hairR;
+	public float hairG;
+	public float hairB;
 	public int shoes;
 	public int hair;
 	public int selectedBody;
@@ -321,7 +489,6 @@ class saveData: System.Object
 	public float totalMoney;
 	public int moneyClickMultiplier = 0;
 
-	public List<ShopItem> shopItems;
 	public int[] shopCounts={0,0,0,0};
 	public float[] shopItemValue={.1f,1,10,50};
 	public float[] shopPrices={10,100,1000,10000};

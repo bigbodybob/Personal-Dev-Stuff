@@ -16,11 +16,11 @@ public class CreatedGame {
 		this.bugs = Random.Range(40, 55) ;
 		wordCount = wordC;
 		this.score = score;
-		rating = (.5*wordC.Count)-(this.bugs*.05)+(score*.001);
+		rating = (.5*wordC.Count)-(this.bugs*.05)+(score*.00167);
 	}
 	public void reCalculateRating()
 	{
-		rating = (.5*wordCount.Count)-(this.bugs*.05)+(score*.001);
+		rating = (.5*wordCount.Count)-(this.bugs*.05)+(score*.00167);
 
 	}
 

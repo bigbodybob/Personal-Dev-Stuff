@@ -116,8 +116,6 @@ MonoBehaviour:
   latestCharPositionOutdoors: {x: 0, y: 0, z: 0}
   wordStarted: 0
   isGameOver: 0
-  upperarmlist: []
-  hairlist: []
   unlockedWordList:
   - castle
   - minion
@@ -137,8 +135,36 @@ MonoBehaviour:
   lowerleg: 0
   upperleg: 0
   body: 0
-  skintone: {r: 1, g: 0.43448275, b: 0, a: 1}
+  skintone: {r: 1, g: 0.6, b: 0.4, a: 1}
   hairColor: {r: 0, g: 0, b: 0, a: 1}
   shoes: 0
-  hair: 0
+  hair: 1
+  hairSpriteList:
+  - {fileID: 21300000, guid: 4ddb905450262404d92e06df2ce588f8, type: 3}
+  - {fileID: 21300000, guid: d3a3496028ffe954697dd4e9f241a215, type: 3}
+  - {fileID: 21300000, guid: f6666d30b26977e4d9e6ae866edf2fcd, type: 3}
+  - {fileID: 21300000, guid: 05ece00d0e7f892498e0313d60a0f864, type: 3}
+  - {fileID: 21300000, guid: 627d41aae92e08d4abd11302b29e9ade, type: 3}
+  bodySpriteList:
+  - {fileID: 21300000, guid: 2d549f73cf944894385cef1369cb975b, type: 3}
+  - {fileID: 21300000, guid: 0c33b1e4757acda4993a0f52428c3ae0, type: 3}
+  - {fileID: 21300000, guid: b3d3ddb953f73284ba43618931329379, type: 3}
+  - {fileID: 21300000, guid: ec64be31376fa65409804d5f8ed43b29, type: 3}
+  - {fileID: 21300000, guid: 19e4b64a46de11e4ebb1d22e2b078729, type: 3}
+  - {fileID: 21300000, guid: 52e301d60dac0834a95fcb3494221395, type: 3}
+  - {fileID: 21300000, guid: 9bc292d2e141f11409b90e0b329e9ec7, type: 3}
+  upperSpriteList:
+  - {fileID: 21300000, guid: 085ccdd8dcbe433408c022b82c17c598, type: 3}
+  - {fileID: 21300000, guid: 91b976d6593a4c240838f38d178e69ac, type: 3}
+  - {fileID: 21300000, guid: 8d3460faa69a90e44b729af373fdf7c3, type: 3}
+  - {fileID: 21300000, guid: 7084c5519251d7f46a9d03ee80b900f6, type: 3}
+  - {fileID: 21300000, guid: f1a47298433db754a9cb20effebcba90, type: 3}
+  - {fileID: 21300000, guid: c3ca6ebe3ce854c4482db8ce1ce81a35, type: 3}
+  - {fileID: 21300000, guid: 011ea80334cd4074fa95179ac89b7d4f, type: 3}
+  faceSpriteList:
+  - {fileID: 21300000, guid: c9f2aa151e1bb20499fe91e524c73274, type: 3}
+  - {fileID: 21300000, guid: ec2e50b03a6cf1244b86f6c9092bbe1a, type: 3}
+  selectedBody: 0
+  selectedFace: 0
+  selectedHair: 0
   sceneName: 

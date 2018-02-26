@@ -44,6 +44,8 @@ public class gameStats : MonoBehaviour {
 		}
 		if (!GameControl.control.wordStarted && Input.GetKeyDown (KeyCode.Space)) {
 			begin.GetComponent<CanvasGroup> ().alpha = 0;
+			GameControl.control.mainAudio.Play ();
+
 			GameControl.control.wordStarted = true;
 		}
 	}

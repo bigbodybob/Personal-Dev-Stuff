@@ -67,6 +67,7 @@
      <Compile Include="Assets\ComputerActionBar.cs" />
      <Compile Include="Assets\controller.cs" />
      <Compile Include="Assets\CreatedGame.cs" />
+     <Compile Include="Assets\DeleteScript.cs" />
      <Compile Include="Assets\DialogActionSelectArrow.cs" />
      <Compile Include="Assets\Donut.cs" />
      <Compile Include="Assets\DonutScore.cs" />
@@ -87,6 +88,7 @@
      <Compile Include="Assets\GameSelectionObject.cs" />
      <Compile Include="Assets\gameStats.cs" />
      <Compile Include="Assets\heart.cs" />
+     <Compile Include="Assets\HelpScript.cs" />
      <Compile Include="Assets\housedoor.cs" />
      <Compile Include="Assets\ItemName.cs" />
      <Compile Include="Assets\itemPrice.cs" />
@@ -114,6 +116,7 @@
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
      <Compile Include="Assets\Spriter2UnityDX-master\Assets\Spriter2UnityDX\Runtime\TextureController.cs" />
+     <Compile Include="Assets\startFromCustom.cs" />
      <Compile Include="Assets\StartScript.cs" />
      <Compile Include="Assets\SubmitAGame.cs" />
      <Compile Include="Assets\SubmitGameButton.cs" />
@@ -152,6 +155,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <Compile Include="Assets\Tiling.cs" />
      <Compile Include="Assets\TopOfMonsterCollision.cs" />
+     <Compile Include="Assets\warp.cs" />
      <Compile Include="Assets\Word.cs" />
      <Compile Include="Assets\wordCount.cs" />
      <Compile Include="Assets\WordDisplay.cs" />

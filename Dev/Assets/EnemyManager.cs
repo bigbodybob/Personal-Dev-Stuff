@@ -85,6 +85,8 @@ public class EnemyManager : MonoBehaviour {
 			}
 		} else if (Input.GetKeyDown (KeyCode.Space)) {
 			startMessage.GetComponent<CanvasGroup> ().alpha = 0;
+			GameControl.control.mainAudio.Play ();
+
 			isGameStarted = true;
 			mainCharacter.GetComponent<Platformer2DUserControl> ().isMovementEnabled = true;
 		}
