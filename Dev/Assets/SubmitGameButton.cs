@@ -18,7 +18,7 @@ public class SubmitGameButton : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if (!submitted&& GameControl.control.allGames.Count > 0 && Input.GetKeyDown (KeyCode.Return)) {
+		if (!submitted&& GameControl.control.allGames.Count > 0 && Input.GetKeyDown (KeyCode.Return) &&GameControl.control.canCompete) {
 			text.text = "Game Submitted! You can compete again 15 minutes after going home and viewing your results. Press 'B' to return";
 			GameControl.control.rating=GameControl.control.allGames [GameControl.control.currentGameSelectionIndex].rating;
 			GameControl.control.isCompeting = true;

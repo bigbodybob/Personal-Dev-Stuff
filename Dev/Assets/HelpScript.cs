@@ -9,8 +9,11 @@ public class HelpScript : MonoBehaviour {
 	public TextMeshProUGUI header;
 	// Use this for initialization
 	void Start () {
-		if (GameControl.control.hasMainHelpMenuBeenSeen) {
+		if (GameControl.control.hasMainHelpMenuBeenSeen && SceneManager.GetActiveScene ().name == "main") {
 			animator.SetBool ("isZoomedIn", false);
+		} else {
+			animator.SetBool ("isZoomedIn", true);
+
 		}
 	}
 	
@@ -20,10 +23,15 @@ public class HelpScript : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "main") {
 				GameControl.control.hasMainHelpMenuBeenSeen = true;
 			}
+
 			animator.SetBool ("isZoomedIn", false);
 		}
 		else if (!animator.GetBool ("isZoomedIn") && (Input.GetKeyDown(KeyCode.H))) {
 			animator.SetBool ("isZoomedIn", true);
+		}
+		else if(animator.GetBool ("isZoomedIn") && Input.GetKeyDown(KeyCode.Space)&& SceneManager.GetActiveScene().name=="bugcheck"){
+			animator.SetBool ("isZoomedIn", false);
+
 		}
 	}
 }

@@ -1,27 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DeleteScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Leaderboard.cs">
     <Files>
-      <File FileName="Assets\GameControl.cs" Line="5" Column="1" />
-      <File FileName="Assets\characterBodyControl.cs" Line="96" Column="5" />
-      <File FileName="Assets\StartScript.cs" Line="23" Column="62" />
-      <File FileName="Assets\startFromCustom.cs" Line="21" Column="1" />
-      <File FileName="Assets\FadeControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\CreatedGame.cs" Line="23" Column="62" />
-      <File FileName="Assets\ClearBugs.cs" Line="1" Column="1" />
-      <File FileName="Assets\lifeManagerBugCheck.cs" Line="1" Column="1" />
-      <File FileName="Assets\EnemyManager.cs" Line="88" Column="15" />
-      <File FileName="Assets\WordSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\WordManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\WordGenerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\WordDisplay.cs" Line="1" Column="1" />
-      <File FileName="Assets\WordTimer.cs" Line="1" Column="1" />
-      <File FileName="Assets\gameStats.cs" Line="48" Column="4" />
-      <File FileName="Assets\results.cs" Line="21" Column="14" />
-      <File FileName="Assets\HelpScript.cs" Line="13" Column="43" />
-      <File FileName="Assets\SpikedMonsterMove.cs" Line="18" Column="29" />
-      <File FileName="Assets\Donut.cs" Line="39" Column="3" />
-      <File FileName="Assets\DeleteScript.cs" Line="11" Column="23" />
+      <File FileName="Assets\GameControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\HelpScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SpikedMonsterMove.cs" Line="1" Column="1" />
+      <File FileName="Assets\Donut.cs" Line="1" Column="1" />
+      <File FileName="Assets\DeleteScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SubmitAGame.cs" Line="1" Column="1" />
+      <File FileName="Assets\SubmitGameButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\DonutsPerSecond.cs" Line="1" Column="1" />
+      <File FileName="Assets\DonutScore.cs" Line="1" Column="1" />
+      <File FileName="Assets\TopOfMonsterCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets\LeaderboardEntry.cs" Line="7" Column="8" />
+      <File FileName="Assets\EntryDisplay.cs" Line="14" Column="2" />
+      <File FileName="Assets\Leaderboard.cs" Line="51" Column="3" />
+      <File FileName="Assets\Computer.cs" Line="46" Column="76" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

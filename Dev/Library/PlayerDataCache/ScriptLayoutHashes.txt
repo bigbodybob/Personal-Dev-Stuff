@@ -1,4 +1,4 @@
-WindowsStandalone
+WebGL
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:.LevelReset
 75cd0c6c744b9733ef29aa6c59ece2b1 Assembly-CSharp.dll:TMPro.Examples.VertexZoom
 c906602d9b43cc5e075f80e1d8ae7c79 Assembly-CSharp.dll:TMPro.Examples.Benchmark01_UGUI
@@ -352,6 +352,7 @@ b0142fd52cc3c1fae4f7aa18aee50719 Assembly-CSharp.dll:.controller
 28092bb674ff4e7aaead920ba2d41959 Assembly-CSharp.dll:.gameSelectcompete
 782155584b486247c2079f380bdd92b5 Assembly-CSharp.dll:.GameSelectionObject
 020550babdb991365f61c5bffe1f4f52 Assembly-CSharp.dll:TMPro.Examples.TextMeshSpawner
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DeleteScript
 aa5b0ff7f7782cc4528babd18cba5e65 Assembly-CSharp.dll:.ComputerActionBar
 af7666733efcc974926d7d470e1732a6 Assembly-CSharp.dll:TMPro.Examples.SkewTextExample
 44cd0516ac8bb252c4a6978cfcf5fbf0 Assembly-CSharp.dll:.score
@@ -362,4 +363,3 @@ d5f0460d1f2971f0d2f7efb063e325b1 Assembly-CSharp.dll:.gameStats
 34e025057ef78b1bf238460cdf6583a3 Assembly-CSharp.dll:TMPro.Examples.ObjectSpin
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:TMPro.Examples.SimpleScript
 8300a5eeb1af34f182cf2e246ffc120f Assembly-CSharp-firstpass.dll:UnitySampleAssets.Utility.AutoMobileShaderSwitch
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DeleteScript

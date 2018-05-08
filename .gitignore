@@ -12,7 +12,9 @@
 sysinfo.txt
 # Unity3D generated meta files
 *.pidb.meta
-
+/Immortal Enemy
+/SCienceFair
+/FBLA DEV
 ###
 # VS/MD solution and project files
 ###

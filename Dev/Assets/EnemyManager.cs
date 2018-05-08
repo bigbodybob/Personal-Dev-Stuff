@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour {
 		numberOfUnkillableBugs = (int)Random.Range (5,10);
 		//numberOfBugs = GameControl.control.allGames [selectedGameIndex].bugs-numberOfUnkillableBugs;
 
-		numberOfBugs = 50;
+		numberOfBugs =  GameControl.control.allGames [selectedGameIndex].bugs;
 	}
 	void Start()
 	{
@@ -36,9 +36,8 @@ public class EnemyManager : MonoBehaviour {
 	}
 	public void gameOverWin()
 	{
-		mainCharacter.GetComponent<Platformer2DUserControl> ().isMovementEnabled = false;
 		lifeManagerBugCheck.control.isGameOver = true;
-		GameControl.control.allGames [GameControl.control.currentGameSelectionIndex].bugs -= EnemyManager.control.score;
+		GameControl.control.allGames [GameControl.control.currentGameSelectionIndex].bugs = numberOfBugs;
 		GameControl.control.allGames [GameControl.control.currentGameSelectionIndex].reCalculateRating ();
 		winMessage.GetComponent<CanvasGroup> ().alpha = 1;
 
@@ -46,7 +45,8 @@ public class EnemyManager : MonoBehaviour {
 	// Update is called once per frame
 	public bool isRangeBad(float r)
 	{
-		if (r < PlatformerCharacter2D.control.transform.position.x + 2 && r > PlatformerCharacter2D.control.transform.position.x - 2)
+		
+		if (r < PlatformerCharacter2D.control.transform.position.x + 4 && PlatformerCharacter2D.control!=null&& r > PlatformerCharacter2D.control.transform.position.x - 4)
 			return true;
 		else if (r + 5.5f > 14.31 || r < -14.21) {
 			return true;
@@ -60,23 +60,24 @@ public class EnemyManager : MonoBehaviour {
 			if (currentTime < 0) {
 				if (tempCount == 5 && numberOfUnkillableBugs >= 1) {
 					float range = Random.Range (-20, 20);
-					while (isRangeBad(range)) {
-						range =Random.Range (-20, 20);
+					while (isRangeBad (range)) {
+						range = Random.Range (-20, 20);
 					}
 					Instantiate (spikedMonster, new Vector3 (range, 0), Quaternion.identity);
 					numberOfUnkillableBugs--;
 					tempCount = 0;
 				} else if (numberOfBugs >= 1) {
 					float range = Random.Range (-20, 20);
-					while (isRangeBad(range)) {
-						range =Random.Range (-20, 20);
+					while (isRangeBad (range)) {
+						range = Random.Range (-20, 20);
 					}
+				
 					Instantiate (normalMonster, new Vector3 (range, 0), Quaternion.identity);
 					numberOfBugs--;
 					tempCount++;
 
 			
-				}
+				} 
 
 				if (spawnDelay > 2) {
 					spawnDelay -= .2f;

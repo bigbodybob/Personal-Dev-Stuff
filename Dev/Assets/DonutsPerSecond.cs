@@ -11,6 +11,6 @@ public class DonutsPerSecond : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = "$" +GameControl.control.donutsPerSecond.ToString("F1")+" per second";
+		text.text = "$" +GameControl.control.donutsPerSecond.ToString("F2")+" per second";
 	}
 }
