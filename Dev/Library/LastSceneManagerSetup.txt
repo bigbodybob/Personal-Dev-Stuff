@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/LeaderBoard.unity
+- path: Assets/playerhome.unity
   isLoaded: 1
   isActive: 1

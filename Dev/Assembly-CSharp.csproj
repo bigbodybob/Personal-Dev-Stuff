@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\behaviour.cs" />
+     <Compile Include="Assets\BoardAccessor.cs" />
      <Compile Include="Assets\BodyOfMonsterCollision.cs" />
      <Compile Include="Assets\BugCheckScore.cs" />
      <Compile Include="Assets\buttonscenetest.cs" />
@@ -93,7 +94,9 @@
      <Compile Include="Assets\housedoor.cs" />
      <Compile Include="Assets\ItemName.cs" />
      <Compile Include="Assets\itemPrice.cs" />
+     <Compile Include="Assets\JSONHelper.cs" />
      <Compile Include="Assets\Leaderboard.cs" />
+     <Compile Include="Assets\LeaderboardActionSelectArrow.cs" />
      <Compile Include="Assets\LeaderboardEntry.cs" />
      <Compile Include="Assets\lifeManager.cs" />
      <Compile Include="Assets\lifeManagerBugCheck.cs" />

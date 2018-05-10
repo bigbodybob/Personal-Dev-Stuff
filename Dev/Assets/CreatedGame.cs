@@ -18,6 +18,12 @@ public class CreatedGame {
 		this.score = score;
 		rating = (.5*wordC.Count)-(this.bugs*.05)+(score*.00167);
 	}
+	public CreatedGame(string name, int score)
+	{
+		this.name=name;
+
+		this.score = score;
+	}
 	public void reCalculateRating()
 	{
 		rating = (.5*wordCount.Count)-(this.bugs*.05)+(score*.00167);

@@ -9,8 +9,15 @@ using System;
 using Random = UnityEngine.Random;
 
 public class GameControl : MonoBehaviour {
+	//UI bindings
+	public KeyCode eInput= KeyCode.E;
 	//General
 	public bool doesCurrentGameExist;
+	//Leaderboard Variables
+	public int topGameRank;
+	public string topGameIdentifier;
+
+	public string topGameName;
 	//shop
 	public bool isShopItselfOpen;
 
@@ -306,6 +313,8 @@ public class GameControl : MonoBehaviour {
 			FileStream file=File.Open(Application.persistentDataPath+"/saveinfo.dat",FileMode.Open);
 			saveData data = (saveData)bf.Deserialize (file);
 			file.Close ();
+			topGameName = data.topGameName;
+			topGameIdentifier = data.topGameIdentifier;
 			allGames = data.allGames;
 			upperarm = data.upperarm;
 			lowerarm = data.lowerarm;
@@ -344,6 +353,8 @@ public class GameControl : MonoBehaviour {
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Create (Application.persistentDataPath + "/saveinfo.dat");
 			saveData data = new saveData ();
+			data.topGameIdentifier = topGameIdentifier;
+			data.topGameName = topGameName;
 			data.allGames = allGames;
 			data.upperarm = upperarm;
 			data.lowerarm = lowerarm;
@@ -423,6 +434,8 @@ public class GameControl : MonoBehaviour {
 		FileStream file=File.Open(Application.persistentDataPath+"/saveinfo.dat",FileMode.Open);
 		saveData data = (saveData)bf.Deserialize (file);
 		file.Close ();
+		topGameName = data.topGameName;
+		topGameIdentifier = data.topGameIdentifier;
 		allGames = data.allGames;
 		upperarm = data.upperarm;
 		lowerarm = data.lowerarm;
@@ -462,6 +475,8 @@ public class GameControl : MonoBehaviour {
 [System.Serializable]
 class saveData:System.Object
 {
+	public string topGameName;
+	public string topGameIdentifier;
 	public List<CreatedGame> allGames;
 	public int upperarm;
 	public int lowerarm;
