@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowObject: {fileID: 245937431}
   leaderboard: {fileID: 1049254367}
-  panel: {fileID: 0}
+  panel: {fileID: 900149464}
   text: {fileID: 1071698632}
   connectToWifi: {fileID: 431143790}
   positions:
@@ -226,7 +226,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 431143788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 99, z: 0}
+  m_LocalPosition: {x: 0, y: 98.89879, z: 0}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 571742307}
@@ -522,8 +522,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 571742303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 280, y: 157.5, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalPosition: {x: 247, y: 139, z: 0}
+  m_LocalScale: {x: 0.6175, y: 0.6175, z: 0.6175}
   m_Children:
   - {fileID: 245937431}
   - {fileID: 995612366}
@@ -566,7 +566,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747549384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 99, z: 0}
+  m_LocalPosition: {x: 0, y: 98.89879, z: 0}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 571742307}
@@ -707,6 +707,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747549384}
+--- !u!1 &900149464 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1107855147636122, guid: 109d46aaccdb14a4fb03c66a4bf1ae88,
+    type: 2}
+  m_PrefabInternal: {fileID: 1453952993}
 --- !u!1 &995612365
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +933,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1071698630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -200, z: 0}
+  m_LocalPosition: {x: 0, y: -200.10121, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 571742307}

@@ -69,6 +69,9 @@ public class Leaderboard : MonoBehaviour {
 
 	void updateLeaderboardEntries(int entryCount)
 	{
+		if (entryCount == 0) {
+			text.alpha=0;
+		}
 		for (int x = 0; x < entryCount; x++) {
 			FirebaseDatabase.DefaultInstance.GetReference ("Leaderboard").Child ("Scores").Child(x.ToString()).GetValueAsync ().ContinueWith (task => {
 				
@@ -91,9 +94,9 @@ public class Leaderboard : MonoBehaviour {
 						{
 							if(allEntries[j].getRating()>allEntries[j-1].getRating())
 							{
-								temp=allEntries[j-1];
-								allEntries[j-1]=allEntries[j];
-								allEntries[j]=temp;
+								temp=allEntries[j];
+								allEntries[j]=allEntries[j-1];
+								allEntries[j-1]=temp;
 							}
 						}
 					}
@@ -107,22 +110,12 @@ public class Leaderboard : MonoBehaviour {
 	}
 	void updateBoardDisplay()
 	{
-		CreatedGame topGame=new CreatedGame("NULL",-1);
-		foreach (CreatedGame x in GameControl.control.allGames) {
-			if (x.name == GameControl.control.topGameName) {
-				topGame = x;
-			}
-		}
+		int gC = 0;
+	
+			
+		allEntries [0].setRank(1);
 
-			for (int i = 0; i < allEntries.Count; i++) {
-			if (allEntries [i].name == GameControl.control.topGameIdentifier) {
-				FirebaseDatabase.DefaultInstance.GetReference ("Leaderboard").Child ("Scores").Child (i.ToString ()).Child ("rating").SetValueAsync (topGame.rating);
-
-				}
-			}
-		
 		for (int x = 1; x < allEntries.Count; x++) {
-			allEntries [0].setRank(1);
 			if (allEntries [x-1].rating == allEntries [x].rating) {
 				allEntries [x].setRank (allEntries [x-1].getRank ());
 			}
@@ -134,11 +127,11 @@ public class Leaderboard : MonoBehaviour {
 			if (allEntries [x].name == GameControl.control.topGameIdentifier) {
 				if (x < 5 && displayValues.Count < 6) {
 
-					displayValues [x].rank.text = allEntries[x].getRank().ToString ();
+					displayValues [x].rank.text = allEntries[x].getRank().ToString ()+".";
 					displayValues [x].rank.color = Color.yellow;
 					displayValues [x].nameText.text = allEntries [x].getName ();
 					displayValues [x].nameText.color = Color.yellow;
-					displayValues [x].rating.text = allEntries [x].getRating ().ToString ();
+					displayValues [x].rating.text =  string.Format("{0:N1}",allEntries [x].getRating ().ToString ())+"/10";
 					displayValues [x].rating.color = Color.yellow;
 				} else if (displayValues.Count < 6) {
 
@@ -147,14 +140,14 @@ public class Leaderboard : MonoBehaviour {
 					entryScript.rank.text =allEntries[x].getRank().ToString ();
 					entryScript.nameText.text = allEntries [x].name;
 				
-					entryScript.rating.text = allEntries [x].getRating ().ToString ();
+					entryScript.rating.text =  string.Format("{0:N1}",allEntries [x].getRating ().ToString ())+"/10";
 					displayValues.Add (entryScript);
 				
 					displayValues [displayValues.Count - 1].rank.color = Color.yellow;
 					displayValues [displayValues.Count - 1].nameText.color = Color.yellow;
 					displayValues [displayValues.Count - 1].rating.color = Color.yellow;
 				} else {
-					displayValues[displayValues.Count - 1].rank.text =allEntries[x].getRank().ToString ();
+					displayValues[displayValues.Count - 1].rank.text =allEntries[x].getRank().ToString ()+".";
 					displayValues[displayValues.Count - 1].nameText.text = allEntries [x].name;
 					displayValues [displayValues.Count - 1].rating.text = allEntries [x].getRating ().ToString ();
 
@@ -162,13 +155,28 @@ public class Leaderboard : MonoBehaviour {
 			} 
 		}
 		for(int x=0; x<5 && x<allEntries.Count; x++)			{
-			displayValues[x].rank.text = allEntries[x].getRank().ToString();
+			displayValues[x].rank.text = allEntries[x].getRank().ToString()+".";
 			displayValues[x].nameText.text=allEntries[x].getName();
-			displayValues[x].rating.text =allEntries[x].getRating().ToString();
+			displayValues[x].rating.text = string.Format("{0:N1}",allEntries[x].getRating().ToString())+"/10";
 
 			}
 		text.alpha = 0;
+		CreatedGame topGame=new CreatedGame("NULL",-1);
+		foreach (CreatedGame x in GameControl.control.allGames) {
+			if (x.name == GameControl.control.topGameName) {
+				topGame = x;
+			}
+		}
 
+		if (allEntries [gC].name == GameControl.control.topGameIdentifier) {
+			Debug.Log(GameControl.control.topGameIdentifier);
+			Debug.Log (allEntries [gC].name);
+			Debug.Log ("GOTCHA");
+			if(allEntries[gC].rating!=topGame.rating)
+			FirebaseDatabase.DefaultInstance.GetReference ("Leaderboard").Child ("Scores").Child (gC.ToString ()).Child ("rating").SetValueAsync (topGame.rating);
+
+		}
+		gC++;
 	}
 	void HandleValueChanged(object senders, ValueChangedEventArgs args)
 	{allEntries.RemoveRange (0, allEntries.Count);

@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AwardBoard.cs" />
      <Compile Include="Assets\behaviour.cs" />
      <Compile Include="Assets\BoardAccessor.cs" />
      <Compile Include="Assets\BodyOfMonsterCollision.cs" />

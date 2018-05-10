@@ -46,7 +46,7 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 
 			}
 		if (buttonIndex == 1 && Input.GetKeyDown(KeyCode.Return)) {
-			text.gameObject.GetComponent<TextMeshProUGUI> ().text = "Press " +GameControl.control.eInput.ToString()+" to close leaderboard";
+			text.gameObject.GetComponent<TextMeshProUGUI> ().text = "Press '" +GameControl.control.eInput.ToString()+"' to close leaderboard";
 
 			leaderboard.SetBool ("zoomedIn", true);
 			text.alpha = 1;
@@ -60,7 +60,7 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 			canSubmit = false;
 			submitGame();
 		}
-		if (Input.GetKeyDown (KeyCode.B)) {
+		if (Input.GetKeyDown (GameControl.control.backInput)) {
 			panel.GetComponent<FadeControl> ().levelChange ("playerhome", panel);
 
 		}
@@ -87,6 +87,7 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 			else  {
 				text.gameObject.GetComponent<TextMeshProUGUI> ().text = "You have no applicable games to submit!";
 			
+			text.alpha = 1;
 
 		}
 
@@ -134,7 +135,10 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 	}
 	void checkForEqualGamesTwo( int gameNumber, CreatedGame game)
 	{
-		string gameIdentifier = game.name;
+		string gameIdentifier = game.name;	
+		GameControl.control.topGameIdentifier = game.name;
+
+
 		GameControl.control.topGameName = game.name;
 		for(int x=0;x<allEntries.Count;x++)
 		{

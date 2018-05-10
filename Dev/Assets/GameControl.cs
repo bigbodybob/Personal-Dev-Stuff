@@ -9,8 +9,23 @@ using System;
 using Random = UnityEngine.Random;
 
 public class GameControl : MonoBehaviour {
+	//Lifetime awards
+	public int awardPointCount=0;
+	//Tier1
+	public bool buyWord;
+	public bool placingMedal;
+	public bool raising100k;
+	public bool submitToLeaderboard;
+	//Tier2
+	public bool placeFirst;
+	public bool buyAllWords;
+	public bool raise1m;
+	public bool placeOnLeaderboard;
+	//FBLA ULTIMATE MEDAL
+	public bool FblaExcellenceAward;
 	//UI bindings
 	public KeyCode eInput= KeyCode.E;
+	public KeyCode backInput=KeyCode.B;
 	//General
 	public bool doesCurrentGameExist;
 	//Leaderboard Variables
