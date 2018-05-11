@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AwardBoard : MonoBehaviour {
+	//prompt
+	public CanvasGroup prompt;
+	public bool isInRange;
+	public Animator AchievementBoard;
+	public bool isZoomedIn;
 	//Tier1
 	public SpriteRenderer buyWord;
 	public SpriteRenderer placingMedal;
@@ -14,7 +19,17 @@ public class AwardBoard : MonoBehaviour {
 	public SpriteRenderer raise500k;
 	//FBLA ULTIMATE MEDAL
 	public SpriteRenderer FblaExcellenceAward;
+	void OnTriggerEnter2D()
+	{
+		prompt.alpha = 1;
+		isInRange = true;
+	}
+	void OnTriggerExit2D()
+	{
+		prompt.alpha = 0;
+		isInRange = false;
 
+	}
 	// Use this for initialization
 	void Start () {
 		if (GameControl.control.buyWord) {
@@ -49,6 +64,20 @@ public class AwardBoard : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (GameControl.control.eInput) && isInRange) {
+			if (!isZoomedIn) {
+				AchievementBoard.SetBool ("zoomedIn", true);
+				PlatformerCharacter2D.control.GetComponent<Platformer2DUserControl> ().isMovementEnabled = false;
+
+				isZoomedIn = true;
+			}
 		
+			else if (isZoomedIn) {
+				AchievementBoard.SetBool ("zoomedIn", false);
+				isZoomedIn = false;
+				PlatformerCharacter2D.control.GetComponent<Platformer2DUserControl> ().isMovementEnabled = true;
+
+			}
+		}
 	}
 }

@@ -20,6 +20,8 @@ public class FadeControl : MonoBehaviour {
 	}
 	IEnumerator floorChangeAnim(Vector3 pos,GameObject character)
 	{
+		PlatformerCharacter2D.control.GetComponent<Platformer2DUserControl> ().isMovementEnabled = false;
+
 		animator.SetBool ("fadeIn", true);
 		while (gameObject.GetComponent<CanvasGroup> ().alpha < 1) {
 			yield return null;
@@ -30,6 +32,8 @@ public class FadeControl : MonoBehaviour {
 			Camera.main.GetComponent<Camera2DFollow> ().damping=0.1f;
 		animator.SetBool ("fadeIn", false);
 		yield return new WaitForSeconds (1);
+		PlatformerCharacter2D.control.GetComponent<Platformer2DUserControl> ().isMovementEnabled = true;
+
 		Camera.main.GetComponent<Camera2DFollow> ().damping=1f;
 
 	}

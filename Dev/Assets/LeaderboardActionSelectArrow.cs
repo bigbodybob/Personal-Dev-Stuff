@@ -64,6 +64,7 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 				GameControl.control.submitToLeaderboard = true;
 				GameControl.control.awardPointCount += 1;
 				GameControl.control.checkForGoalPoints();
+				GameControl.control.awardUnlocked();
 			}
 		}
 		if (Input.GetKeyDown (GameControl.control.backInput)) {

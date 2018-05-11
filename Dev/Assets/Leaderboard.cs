@@ -157,6 +157,8 @@ public class Leaderboard : MonoBehaviour {
 		for(int x=0; x<5 && x<allEntries.Count; x++)			{
 			displayValues[x].rank.text = allEntries[x].getRank().ToString()+".";
 			displayValues[x].nameText.text=allEntries[x].getName();
+			Debug.Log (allEntries [x].rating);
+
 			displayValues[x].rating.text = string.Format("{0:N1}",allEntries[x].getRating().ToString())+"/10";
 
 			}
@@ -173,6 +175,7 @@ public class Leaderboard : MonoBehaviour {
 			Debug.Log (allEntries [gC].name);
 			Debug.Log ("GOTCHA");
 			if (allEntries [gC].rating != topGame.rating) {
+
 				FirebaseDatabase.DefaultInstance.GetReference ("Leaderboard").Child ("Scores").Child (gC.ToString ()).Child ("rating").SetValueAsync (topGame.rating);
 				FirebaseDatabase.DefaultInstance.GetReference ("Leaderboard").Child ("Scores").Child ("placeholder").SetValueAsync (topGame.rating);
 

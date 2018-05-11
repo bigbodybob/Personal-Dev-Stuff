@@ -11,6 +11,7 @@ using Random = UnityEngine.Random;
 public class GameControl : MonoBehaviour {
 	//Lifetime awards
 	public int awardPointCount=0;
+	public GameObject awardAnim;
 	//Tier1
 	public bool buyWord;
 	public bool placingMedal;
@@ -125,7 +126,13 @@ public class GameControl : MonoBehaviour {
 	{
 		if (awardPointCount >= 3) {
 			FblaExcellenceAward = true;
+		
 		}
+	}
+	public void awardUnlocked()
+	{
+		GameObject award = Instantiate (awardAnim);
+		Destroy (award, 3f);
 	}
 	void OnApplicationQuit()
 	{
