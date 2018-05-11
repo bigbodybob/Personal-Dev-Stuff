@@ -18,7 +18,7 @@ public class ShopSelectionArrow : MonoBehaviour {
 	void Update () {
 		if (GameControl.control.isShopItselfOpen) {
 
-			if (Input.GetKeyDown (KeyCode.DownArrow) && GameControl.control.selectedItemIndex != GameControl.control.gameShopItems.Count-1) {
+			if (Input.GetKeyDown (KeyCode.DownArrow) && GameControl.control.selectedItemIndex < GameControl.control.gameShopItems.Count-1) {
 				GameControl.control.selectedItemIndex++;
 				/*if (-transform.localPosition.y > maxY) {
 					Vector3 newPos = layout.transform.localPosition;

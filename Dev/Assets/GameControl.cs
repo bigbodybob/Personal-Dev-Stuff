@@ -39,6 +39,7 @@ public class GameControl : MonoBehaviour {
 	public bool isShopOpen;
 	public List<string> gameShopItems;
 	public List<float> shopItemsCosts;
+	public List<GameObject> shopItemsObject;
 	public GameObject selectedItem;
 	public int itemCount = 0;
 	public int selectedItemIndex;
@@ -334,7 +335,8 @@ public class GameControl : MonoBehaviour {
 		data.totalMoney=totalMoney;		
 		data.totalMoneyEver=totalMoneyEver;
 
-
+		data.gameShopItems = gameShopItems;
+		data.shopItemsCosts = shopItemsCosts;
 		data.moneyClickMultiplier =moneyClickMultiplier;
 
 		data.shopCounts=shopCounts;
@@ -367,7 +369,8 @@ public class GameControl : MonoBehaviour {
 			shoes = data.shoes;
 			hair = data.hair;
 			hairColor = new Color(data.hairR,data.hairG,data.hairB,1f);
-
+			gameShopItems = data.gameShopItems;
+			shopItemsCosts = data.shopItemsCosts;
 			selectedBody=data.selectedBody;
 			selectedFace=data.selectedFace;
 			selectedHair=data.selectedHair;
@@ -409,7 +412,8 @@ public class GameControl : MonoBehaviour {
 			data.skintoneR = skintone.r;
 			data.skintoneG= skintone.g;
 			data.skintoneB = skintone.b;
-
+			data.gameShopItems = gameShopItems;
+			data.shopItemsCosts = shopItemsCosts;
 
 			data.shoes = this.shoes;
 			data.hair = hair;
@@ -506,13 +510,29 @@ public class GameControl : MonoBehaviour {
 		canCompete = data.canCompete;
 		totalMoney=data.totalMoney;
 		moneyClickMultiplier =data.moneyClickMultiplier;
-
+		gameShopItems = data.gameShopItems;
+		shopItemsCosts = data.shopItemsCosts;
 		shopCounts=data.shopCounts;
 		shopItemValue = data.shopItemValue;
 		shopPrices=data.shopPrices;
 		donutsPerSecond=data.donutsPerSecond;
 		latestTime=data.latestTime;
 
+
+
+		awardPointCount=data.awardPointCount;
+		awardAnim=data.awardAnim;
+		//Tier1
+		buyWord=data.buyWord;
+		placingMedal=data.placingMedal;
+		raising10k=data.raising10k;
+		submitToLeaderboard=data.submitToLeaderboard;
+		//Tier2
+		placeFirst=data.placeFirst;
+		buyAllWords=data.buyAllWords;
+		raise500k=data.raise500k;
+		//FBLA ULTIMATE MEDAL
+		FblaExcellenceAward=data.FblaExcellenceAward;
 
 	}
 	void OnGUI()
@@ -522,6 +542,21 @@ public class GameControl : MonoBehaviour {
 [System.Serializable]
 class saveData:System.Object
 {
+	public int awardPointCount;
+	public GameObject awardAnim;
+	//Tier1
+	public bool buyWord;
+	public bool placingMedal;
+	public bool raising10k;
+	public bool submitToLeaderboard;
+	//Tier2
+	public bool placeFirst;
+	public bool buyAllWords;
+	public bool raise500k;
+	//FBLA ULTIMATE MEDAL
+	public bool FblaExcellenceAward;
+	public List<string> gameShopItems;
+	public List<float> shopItemsCosts;
 	public float totalMoneyEver;
 	public string topGameName;
 	public string topGameIdentifier;

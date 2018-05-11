@@ -13,8 +13,8 @@ public class shopButt : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		while(GameControl.control.itemCount<GameControl.control.gameShopItems.Count){
-			GameObject itemG=Instantiate (item, itemContainer.transform);
-			itemG.GetComponent<shopSelectionObject> ().index = GameControl.control.itemCount;
+			GameControl.control.shopItemsObject.Add(Instantiate (item, itemContainer.transform));
+			GameControl.control.shopItemsObject[GameControl.control.itemCount].GetComponent<shopSelectionObject>().index = GameControl.control.itemCount;
 			GameControl.control.itemCount++;
 		}
 		itemSelectionArrow.transform.SetAsLastSibling ();
