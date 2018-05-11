@@ -58,7 +58,13 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 		}
 		if (buttonIndex == 0 && Input.GetKeyDown(KeyCode.Return)) {
 			canSubmit = false;
+
 			submitGame();
+			if (!GameControl.control.submitToLeaderboard) {
+				GameControl.control.submitToLeaderboard = true;
+				GameControl.control.awardPointCount += 1;
+				GameControl.control.checkForGoalPoints();
+			}
 		}
 		if (Input.GetKeyDown (GameControl.control.backInput)) {
 			panel.GetComponent<FadeControl> ().levelChange ("playerhome", panel);

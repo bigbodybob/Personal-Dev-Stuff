@@ -23,10 +23,23 @@ public class results : MonoBehaviour {
 				isTextAssigned = true;
 
 
-			} else if (rank == 1) {
+			} 
+			else{
+				if (!GameControl.control.placingMedal) {
+					GameControl.control.placingMedal = true;
+					GameControl.control.awardPointCount += 1;
+					GameControl.control.checkForGoalPoints();
+
+				}
+				if (rank == 1) {
 				text.text = "Congratulations, you got 1st!";
 				isTextAssigned = true;
+				if(!GameControl.control.placeFirst)
+						GameControl.control.placeFirst = true;{
+						GameControl.control.awardPointCount += 2;
+						GameControl.control.checkForGoalPoints();
 
+					}
 
 			} else if (rank == 2) {
 				text.text = "Congratulations, you got 2nd!";
@@ -35,6 +48,8 @@ public class results : MonoBehaviour {
 			} else if (rank == 3) {
 				text.text = "Congratulations, you got 3rd!";
 				isTextAssigned = true;
+			}
+			
 			}
 		}
 	}

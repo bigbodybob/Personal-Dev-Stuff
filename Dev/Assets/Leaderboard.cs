@@ -172,11 +172,14 @@ public class Leaderboard : MonoBehaviour {
 			Debug.Log(GameControl.control.topGameIdentifier);
 			Debug.Log (allEntries [gC].name);
 			Debug.Log ("GOTCHA");
-			if(allEntries[gC].rating!=topGame.rating)
-			FirebaseDatabase.DefaultInstance.GetReference ("Leaderboard").Child ("Scores").Child (gC.ToString ()).Child ("rating").SetValueAsync (topGame.rating);
+			if (allEntries [gC].rating != topGame.rating) {
+				FirebaseDatabase.DefaultInstance.GetReference ("Leaderboard").Child ("Scores").Child (gC.ToString ()).Child ("rating").SetValueAsync (topGame.rating);
+				FirebaseDatabase.DefaultInstance.GetReference ("Leaderboard").Child ("Scores").Child ("placeholder").SetValueAsync (topGame.rating);
 
+			}
 		}
 		gC++;
+
 	}
 	void HandleValueChanged(object senders, ValueChangedEventArgs args)
 	{allEntries.RemoveRange (0, allEntries.Count);

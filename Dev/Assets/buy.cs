@@ -15,6 +15,10 @@ public class buy : MonoBehaviour {
 		{
 			if(GameControl.control.totalMoney>=GameControl.control.shopItemsCosts[GameControl.control.selectedItemIndex])
 			{
+				if (!GameControl.control.buyWord) {
+					GameControl.control.buyWord = true;
+					GameControl.control.awardPointCount += 1;
+				}
 				GameControl.control.totalMoney-=GameControl.control.shopItemsCosts[GameControl.control.selectedItemIndex];
 				GameControl.control.unlockedWordList.Add (GameControl.control.gameShopItems [GameControl.control.selectedItemIndex]);
 				GameControl.control.gameShopItems.RemoveAt(GameControl.control.selectedItemIndex);

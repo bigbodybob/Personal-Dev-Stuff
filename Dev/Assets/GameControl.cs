@@ -14,13 +14,12 @@ public class GameControl : MonoBehaviour {
 	//Tier1
 	public bool buyWord;
 	public bool placingMedal;
-	public bool raising100k;
+	public bool raising10k;
 	public bool submitToLeaderboard;
 	//Tier2
 	public bool placeFirst;
 	public bool buyAllWords;
-	public bool raise1m;
-	public bool placeOnLeaderboard;
+	public bool raise500k;
 	//FBLA ULTIMATE MEDAL
 	public bool FblaExcellenceAward;
 	//UI bindings
@@ -51,6 +50,7 @@ public class GameControl : MonoBehaviour {
 	public GameObject results;
 	//fundraiser
 	public float totalMoney;
+	public float totalMoneyEver;
 	public int moneyClickMultiplier = 0;
 
 	public List<ShopItem> shopItems;
@@ -119,6 +119,14 @@ public class GameControl : MonoBehaviour {
 	//current scene
 	public string sceneName;
 	// Use this for initialization
+//Awards, check if enough points have been achieved for fbla award,
+// If so, award it!
+	public void checkForGoalPoints()
+	{
+		if (awardPointCount >= 3) {
+			FblaExcellenceAward = true;
+		}
+	}
 	void OnApplicationQuit()
 	{
 		if (SceneManager.GetActiveScene ().name == "fundraise") {
@@ -149,7 +157,8 @@ public class GameControl : MonoBehaviour {
 	public void sceneChanged()
 	{
 		
-	}public  float DonutsPerClick()
+	}
+	public  float DonutsPerClick()
 	{
 		float value = 0;
 		for (int x = 0; x <4; x++)
@@ -158,14 +167,22 @@ public class GameControl : MonoBehaviour {
 	}
 	public void addDonut(){
 		GameControl.control.totalMoney += DonutsPerClick () / 10;
+		GameControl.control.totalMoneyEver += DonutsPerClick () / 10;
 	}
 	public void catchUp(){
 		float timeElapse = (float) DateTime.Now.Subtract (GameControl.control.latestTime).TotalSeconds;
 		GameControl.control.totalMoney += DonutsPerClick () * timeElapse;
+		GameControl.control.totalMoneyEver += DonutsPerClick () * timeElapse;
+
 	}
 
 	// Update is called once per frame
 	void Update () {
+		if (gameShopItems.Count <= 0 && !GameControl.control.buyAllWords) {
+			GameControl.control.buyAllWords = true;
+			GameControl.control.awardPointCount += 2;
+			GameControl.control.checkForGoalPoints ();
+		}
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			Application.Quit ();
 		}
@@ -307,7 +324,10 @@ public class GameControl : MonoBehaviour {
 		data.competeAgainDate=competeAgainDate;
 		data.isCompeting=isCompeting;
 		data.canCompete = canCompete;
-		data.totalMoney=totalMoney;
+		data.totalMoney=totalMoney;		
+		data.totalMoneyEver=totalMoneyEver;
+
+
 		data.moneyClickMultiplier =moneyClickMultiplier;
 
 		data.shopCounts=shopCounts;
@@ -351,7 +371,10 @@ public class GameControl : MonoBehaviour {
 			competeAgainDate=data.competeAgainDate;
 			isCompeting=data.isCompeting;
 			canCompete = data.canCompete;
-			totalMoney=data.totalMoney;
+			totalMoney=data.totalMoney;			
+			totalMoneyEver=data.totalMoneyEver;
+		
+
 			moneyClickMultiplier =data.moneyClickMultiplier;
 
 			shopCounts=data.shopCounts;
@@ -400,6 +423,8 @@ public class GameControl : MonoBehaviour {
 			data.isCompeting=isCompeting;
 			data.canCompete = canCompete;
 			data.totalMoney=totalMoney;
+			data.totalMoneyEver=totalMoneyEver;
+
 			data.moneyClickMultiplier =moneyClickMultiplier;
 
 			data.shopCounts=shopCounts;
@@ -490,6 +515,7 @@ public class GameControl : MonoBehaviour {
 [System.Serializable]
 class saveData:System.Object
 {
+	public float totalMoneyEver;
 	public string topGameName;
 	public string topGameIdentifier;
 	public List<CreatedGame> allGames;

@@ -21,10 +21,13 @@ public class Donut : MonoBehaviour {
 	}
 	public void addDonut(){
 		GameControl.control.totalMoney += DonutsPerClick () / 10;
+		GameControl.control.totalMoneyEver+= DonutsPerClick () / 10;
 	}
 	public void catchUp(){
 		float timeElapse = (float) DateTime.Now.Subtract (GameControl.control.latestTime).TotalSeconds;
 		GameControl.control.totalMoney += DonutsPerClick () * timeElapse;
+		GameControl.control.totalMoneyEver += DonutsPerClick () * timeElapse;
+
 	}
 	IEnumerator addDonutCoroutine()
 	{
@@ -40,6 +43,22 @@ public class Donut : MonoBehaviour {
 		{
 			
 		}*/
+		if(GameControl.control.totalMoneyEver>=10000 && !GameControl.control.raising10k)
+		{
+			GameControl.control.raising10k = true;
+			GameControl.control.awardPointCount += 1;
+			GameControl.control.checkForGoalPoints();
+
+
+		}
+		if(GameControl.control.totalMoneyEver>=500000 && !GameControl.control.raise500k)
+		{
+			GameControl.control.raise500k = true;
+			GameControl.control.awardPointCount += 2;
+			GameControl.control.checkForGoalPoints();
+
+
+		}
 		if (Input.GetKeyDown (KeyCode.B)) {
 			GameControl.control.latestTime = DateTime.Now;
 			panel.GetComponent<FadeControl> ().levelChange ("fblabuilding", panel);
@@ -54,6 +73,7 @@ public class Donut : MonoBehaviour {
 			if (Input.GetKeyUp (KeyCode.Space)) {
 				gameObject.GetComponent<RectTransform> ().localScale = new Vector2 (1, 1);
 				GameControl.control.totalMoney += 1+GameControl.control.moneyClickMultiplier;
+				GameControl.control.totalMoneyEver += 1 + GameControl.control.moneyClickMultiplier;
 			}
 		}
 	}

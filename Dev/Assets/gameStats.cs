@@ -71,6 +71,7 @@ public class gameStats : MonoBehaviour {
 			GameControl.control.isGameOver = false;
 			isNameUsed = false;
 			GameControl.control.wordStarted = false;
+
 			GameControl.control.changeScene (fadePanel);
 
 		} else {
