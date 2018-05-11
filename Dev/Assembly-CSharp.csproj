@@ -64,6 +64,7 @@
      <Compile Include="Assets\CameraScreenResolution.cs" />
      <Compile Include="Assets\changeFloor.cs" />
      <Compile Include="Assets\changeScene.cs" />
+     <Compile Include="Assets\ChangeUI.cs" />
      <Compile Include="Assets\characterBodyControl.cs" />
      <Compile Include="Assets\ClearBugs.cs" />
      <Compile Include="Assets\Computer.cs" />

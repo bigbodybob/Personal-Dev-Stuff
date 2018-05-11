@@ -48,6 +48,7 @@ public class Donut : MonoBehaviour {
 			GameControl.control.raising10k = true;
 			GameControl.control.awardPointCount += 1;
 			GameControl.control.checkForGoalPoints();
+			GameControl.control.awardUnlocked ();
 
 
 		}
@@ -57,7 +58,7 @@ public class Donut : MonoBehaviour {
 			GameControl.control.awardPointCount += 2;
 			GameControl.control.checkForGoalPoints();
 
-
+			GameControl.control.awardUnlocked ();
 		}
 		if (Input.GetKeyDown (KeyCode.B)) {
 			GameControl.control.latestTime = DateTime.Now;

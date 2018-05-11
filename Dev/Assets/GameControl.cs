@@ -9,6 +9,7 @@ using System;
 using Random = UnityEngine.Random;
 
 public class GameControl : MonoBehaviour {
+	
 	//Lifetime awards
 	public int awardPointCount=0;
 	public GameObject awardAnim;
@@ -26,6 +27,14 @@ public class GameControl : MonoBehaviour {
 	//UI bindings
 	public KeyCode eInput= KeyCode.E;
 	public KeyCode backInput=KeyCode.B;
+
+	public KeyCode leftInput= KeyCode.LeftArrow;
+	public KeyCode rightInput= KeyCode.RightArrow;
+	public KeyCode upInput= KeyCode.UpArrow;
+	public KeyCode downInput= KeyCode.DownArrow;
+
+	public KeyCode cancelInput=KeyCode.C;
+
 	//General
 	public bool doesCurrentGameExist;
 	//Leaderboard Variables
@@ -123,11 +132,47 @@ public class GameControl : MonoBehaviour {
 	// Use this for initialization
 //Awards, check if enough points have been achieved for fbla award,
 // If so, award it!
+	public void changeEInput(float x)
+	{
+		if (x == 1) {
+			eInput = KeyCode.E;
+		} else
+			eInput = KeyCode.T;
+	}
+	public void changeCancelInput(float x)
+	{
+		if (x == 1) {
+			cancelInput = KeyCode.C;
+		} else
+			cancelInput = KeyCode.X;
+		
+	}
+	public void changeBackInput(float x)
+	{
+		if (x == 1) {
+			eInput = KeyCode.B;
+		} else
+			eInput = KeyCode.Backspace;
+	}
+	public void changeNavInput(float x)
+	{
+		if (x == 1) {
+			leftInput = KeyCode.LeftArrow;
+			rightInput = KeyCode.RightArrow;
+			upInput = KeyCode.UpArrow;
+			downInput = KeyCode.DownArrow;
+		} else {
+			leftInput = KeyCode.A;
+			rightInput = KeyCode.D;
+			upInput = KeyCode.W;
+			downInput = KeyCode.S;
+		}
+	}
 	public void checkForGoalPoints()
 	{
 		if (awardPointCount >= 3) {
 			FblaExcellenceAward = true;
-		
+			awardUnlocked ();
 		}
 	}
 	public void awardUnlocked()
@@ -190,6 +235,7 @@ public class GameControl : MonoBehaviour {
 			GameControl.control.buyAllWords = true;
 			GameControl.control.awardPointCount += 2;
 			GameControl.control.checkForGoalPoints ();
+			awardUnlocked ();
 		}
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			Application.Quit ();
@@ -344,6 +390,19 @@ public class GameControl : MonoBehaviour {
 		data.shopPrices=shopPrices;
 		data.donutsPerSecond=donutsPerSecond;
 		data.latestTime=latestTime;
+		data.awardPointCount=awardPointCount;
+		data.awardAnim=awardAnim;
+		//Tier1
+		data.buyWord=buyWord;
+		data.placingMedal=placingMedal;
+		data.raising10k=raising10k;
+		data.submitToLeaderboard=submitToLeaderboard;
+		//Tier2
+		data.placeFirst=placeFirst;
+		data.buyAllWords=buyAllWords;
+		data.raise500k=raise500k;
+		//FBLA ULTIMATE MEDAL
+		data.FblaExcellenceAward=FblaExcellenceAward;
 
 
 		bf.Serialize (file, data);
@@ -393,6 +452,19 @@ public class GameControl : MonoBehaviour {
 			donutsPerSecond=data.donutsPerSecond;
 			latestTime=data.latestTime;
 
+			awardPointCount=data.awardPointCount;
+			awardAnim=data.awardAnim;
+			//Tier1
+			buyWord=data.buyWord;
+			placingMedal=data.placingMedal;
+			raising10k=data.raising10k;
+			submitToLeaderboard=data.submitToLeaderboard;
+			//Tier2
+			placeFirst=data.placeFirst;
+			buyAllWords=data.buyAllWords;
+			raise500k=data.raise500k;
+			//FBLA ULTIMATE MEDAL
+			FblaExcellenceAward=data.FblaExcellenceAward;
 
 
 		} else {
@@ -420,6 +492,19 @@ public class GameControl : MonoBehaviour {
 			data.hairR =hairColor.r;			
 			data.hairG =hairColor.g;
 			data.hairB =hairColor.b;
+			data.awardPointCount=awardPointCount;
+			data.awardAnim=awardAnim;
+			//Tier1
+			data.buyWord=buyWord;
+			data.placingMedal=placingMedal;
+			data.raising10k=raising10k;
+			data.submitToLeaderboard=submitToLeaderboard;
+			//Tier2
+			data.placeFirst=placeFirst;
+			data.buyAllWords=buyAllWords;
+			data.raise500k=raise500k;
+			//FBLA ULTIMATE MEDAL
+			data.FblaExcellenceAward=FblaExcellenceAward;
 
 
 

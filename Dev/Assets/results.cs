@@ -13,7 +13,7 @@ public class results : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (Input.GetKeyDown (GameControl.control.eInput)) {
 		
 			Destroy (gameObject);
 		}
@@ -29,6 +29,7 @@ public class results : MonoBehaviour {
 					GameControl.control.placingMedal = true;
 					GameControl.control.awardPointCount += 1;
 					GameControl.control.checkForGoalPoints();
+					GameControl.control.awardUnlocked ();
 
 				}
 				if (rank == 1) {
@@ -38,6 +39,7 @@ public class results : MonoBehaviour {
 						GameControl.control.placeFirst = true;{
 						GameControl.control.awardPointCount += 2;
 						GameControl.control.checkForGoalPoints();
+						GameControl.control.awardUnlocked ();
 
 					}
 

@@ -11,11 +11,11 @@ public class DonutShop : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!GameControl.control.isDonutShopOpen && Input.GetKeyDown (KeyCode.E)) {
+		if (!GameControl.control.isDonutShopOpen && Input.GetKeyDown (GameControl.control.eInput)) {
 			animator.SetBool ("isSlidIn", true);
 			GameControl.control.isDonutShopOpen = true;
 		}
-		else if (GameControl.control.isDonutShopOpen && Input.GetKeyDown (KeyCode.E)) {
+		else if (GameControl.control.isDonutShopOpen && Input.GetKeyDown (GameControl.control.eInput)) {
 			animator.SetBool ("isSlidIn", false);
 			GameControl.control.isDonutShopOpen = false;
 

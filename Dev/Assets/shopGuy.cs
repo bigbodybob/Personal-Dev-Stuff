@@ -31,7 +31,7 @@ public class shopGuy : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.E) ) {
+		if (Input.GetKeyDown (GameControl.control.eInput) ) {
 			if (!GameControl.control.isDialogOpen && promptCanvasGroup.alpha == 1) {
 				GameControl.control.isShopOpen = true;
 				dialogDisplay.GetComponent<Animator> ().SetBool ("isZoomedIn", true);

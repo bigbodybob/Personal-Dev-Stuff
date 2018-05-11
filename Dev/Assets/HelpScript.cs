@@ -19,7 +19,7 @@ public class HelpScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (animator.GetBool ("isZoomedIn") && (Input.GetKeyDown(KeyCode.E)|| Input.GetKeyDown(KeyCode.H))) {
+		if (animator.GetBool ("isZoomedIn") && (Input.GetKeyDown(GameControl.control.eInput)|| Input.GetKeyDown(KeyCode.H))) {
 			if (SceneManager.GetActiveScene ().name == "main") {
 				GameControl.control.hasMainHelpMenuBeenSeen = true;
 			}

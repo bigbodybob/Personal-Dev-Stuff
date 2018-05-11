@@ -31,7 +31,7 @@ public class shopButt : MonoBehaviour {
 			GameControl.control.isShopItselfOpen = true;
 
 		}
-		if (GameControl.control.isShopItselfOpen && Input.GetKeyDown (KeyCode.E)) {
+		if (GameControl.control.isShopItselfOpen && Input.GetKeyDown (GameControl.control.eInput)) {
 			shopDisplay.GetComponent<Animator> ().SetBool ("isZoomedIn", false);
 			GameControl.control.isShopItselfOpen = false;
 		}

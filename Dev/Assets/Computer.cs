@@ -31,7 +31,7 @@ public class Computer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.E) ) {
+		if (Input.GetKeyDown (GameControl.control.eInput) ) {
 			if (!GameControl.control.isPCOpen && promptCanvasGroup.alpha == 1) {
 				
 				PlatformerCharacter2D.control.GetComponent<Platformer2DUserControl> ().isMovementEnabled = false;
