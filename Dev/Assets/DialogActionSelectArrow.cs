@@ -14,11 +14,11 @@ public class DialogActionSelectArrow : MonoBehaviour {
 	void Update () {
 		if (GameControl.control.isDialogOpen ) {
 			transform.localPosition = new Vector3 (spacing, transform.localPosition.y);
-			if (Input.GetKeyDown (KeyCode.LeftArrow)&&GameControl.control.currentDialogButtonSelectionIndex!=0) {
+			if (Input.GetKeyDown (GameControl.control.leftInput)&&GameControl.control.currentDialogButtonSelectionIndex!=0) {
 				GameControl.control.currentDialogButtonSelectionIndex--;
 				spacing = -360;
 			}
-			if (Input.GetKeyDown (KeyCode.RightArrow) &&GameControl.control.currentDialogButtonSelectionIndex!=1) {
+			if (Input.GetKeyDown (GameControl.control.rightInput) &&GameControl.control.currentDialogButtonSelectionIndex!=1) {
 				GameControl.control.currentDialogButtonSelectionIndex++;
 				spacing = 60;
 

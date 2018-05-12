@@ -30,7 +30,7 @@ public class GameControl : MonoBehaviour {
 
 	public KeyCode leftInput= KeyCode.LeftArrow;
 	public KeyCode rightInput= KeyCode.RightArrow;
-	public KeyCode upInput= KeyCode.UpArrow;
+	public KeyCode upInput=KeyCode.UpArrow;
 	public KeyCode downInput= KeyCode.DownArrow;
 
 	public KeyCode cancelInput=KeyCode.C;
@@ -134,14 +134,14 @@ public class GameControl : MonoBehaviour {
 // If so, award it!
 	public void changeEInput(float x)
 	{
-		if (x == 1) {
+		if (x == 0) {
 			eInput = KeyCode.E;
 		} else
 			eInput = KeyCode.T;
 	}
 	public void changeCancelInput(float x)
 	{
-		if (x == 1) {
+		if (x == 0) {
 			cancelInput = KeyCode.C;
 		} else
 			cancelInput = KeyCode.X;
@@ -149,18 +149,18 @@ public class GameControl : MonoBehaviour {
 	}
 	public void changeBackInput(float x)
 	{
-		if (x == 1) {
-			eInput = KeyCode.B;
+		if (x == 0) {
+			backInput = KeyCode.B;
 		} else
-			eInput = KeyCode.Backspace;
+			backInput = KeyCode.Backspace;
 	}
 	public void changeNavInput(float x)
 	{
-		if (x == 1) {
-			leftInput = KeyCode.LeftArrow;
-			rightInput = KeyCode.RightArrow;
-			upInput = KeyCode.UpArrow;
-			downInput = KeyCode.DownArrow;
+		if (x == 0) {
+			leftInput = GameControl.control.leftInput;
+			rightInput = GameControl.control.rightInput;
+			upInput = GameControl.control.upInput;
+			downInput = GameControl.control.downInput;
 		} else {
 			leftInput = KeyCode.A;
 			rightInput = KeyCode.D;
@@ -391,7 +391,6 @@ public class GameControl : MonoBehaviour {
 		data.donutsPerSecond=donutsPerSecond;
 		data.latestTime=latestTime;
 		data.awardPointCount=awardPointCount;
-		data.awardAnim=awardAnim;
 		//Tier1
 		data.buyWord=buyWord;
 		data.placingMedal=placingMedal;
@@ -453,7 +452,7 @@ public class GameControl : MonoBehaviour {
 			latestTime=data.latestTime;
 
 			awardPointCount=data.awardPointCount;
-			awardAnim=data.awardAnim;
+
 			//Tier1
 			buyWord=data.buyWord;
 			placingMedal=data.placingMedal;
@@ -493,7 +492,6 @@ public class GameControl : MonoBehaviour {
 			data.hairG =hairColor.g;
 			data.hairB =hairColor.b;
 			data.awardPointCount=awardPointCount;
-			data.awardAnim=awardAnim;
 			//Tier1
 			data.buyWord=buyWord;
 			data.placingMedal=placingMedal;
@@ -606,7 +604,6 @@ public class GameControl : MonoBehaviour {
 
 
 		awardPointCount=data.awardPointCount;
-		awardAnim=data.awardAnim;
 		//Tier1
 		buyWord=data.buyWord;
 		placingMedal=data.placingMedal;
@@ -628,7 +625,6 @@ public class GameControl : MonoBehaviour {
 class saveData:System.Object
 {
 	public int awardPointCount;
-	public GameObject awardAnim;
 	//Tier1
 	public bool buyWord;
 	public bool placingMedal;

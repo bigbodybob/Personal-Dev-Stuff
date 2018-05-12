@@ -19,13 +19,13 @@ public class SubmitGameButton : MonoBehaviour {
 	void Update () {
 		
 		if (!submitted&& GameControl.control.allGames.Count > 0 && Input.GetKeyDown (KeyCode.Return) &&GameControl.control.canCompete) {
-			text.text = "Game Submitted! You can compete again 15 minutes after going home and viewing your results. Press 'B' to return";
+			text.text = "Game Submitted! You can compete again 15 minutes after going home and viewing your results. Press '"+GameControl.control.backInput+"' to return";
 			GameControl.control.rating=GameControl.control.allGames [GameControl.control.currentGameSelectionIndex].rating;
 			GameControl.control.isCompeting = true;
 			GameControl.control.canCompete=false;
 			submitted = true;
 		}
-		else if(Input.GetKeyDown(KeyCode.B))
+		else if(Input.GetKeyDown(GameControl.control.backInput))
 		{
 			panel.GetComponent<FadeControl> ().levelChange ("fblabuilding", panel);	
 		}

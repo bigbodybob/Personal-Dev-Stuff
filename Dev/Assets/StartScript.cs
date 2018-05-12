@@ -7,7 +7,7 @@ using System.IO;
 using UnityEngine.SceneManagement;
 public class StartScript : MonoBehaviour {
 	public GameObject panel;
-
+	public Animator menu;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,6 +15,7 @@ public class StartScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(!menu.GetBool("isZoomedIn")){
 		if (Input.GetKeyDown (KeyCode.Return)) {
 			if (File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
 				GameControl.control.Load ();
@@ -24,5 +25,6 @@ public class StartScript : MonoBehaviour {
 
 			}
 		}
+			}
 	}
 }

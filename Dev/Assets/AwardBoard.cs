@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class AwardBoard : MonoBehaviour {
 	//prompt
 	public CanvasGroup prompt;
@@ -32,6 +32,8 @@ public class AwardBoard : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+		prompt.gameObject.GetComponent<TextMeshProUGUI>().text= "Press '" + GameControl.control.eInput + "' to toggle achievement board";
+
 		if (GameControl.control.buyWord) {
 			buyWord.color = Color.white;
 		}

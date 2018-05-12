@@ -60,7 +60,7 @@ public class Donut : MonoBehaviour {
 
 			GameControl.control.awardUnlocked ();
 		}
-		if (Input.GetKeyDown (KeyCode.B)) {
+		if (Input.GetKeyDown (GameControl.control.backInput)) {
 			GameControl.control.latestTime = DateTime.Now;
 			panel.GetComponent<FadeControl> ().levelChange ("fblabuilding", panel);
 		

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class housedoor : MonoBehaviour {
 	public Animator animator;
 	public CanvasGroup prompt;
@@ -22,7 +22,8 @@ public class housedoor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		prompt.GetComponent<TextMeshProUGUI> ().text = "Press '" + GameControl.control.eInput + "' to enter";
+
 	}
 	
 	// Update is called once per frame

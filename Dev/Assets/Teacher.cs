@@ -24,6 +24,7 @@ public class Teacher : MonoBehaviour {
 	}
 	void Awake () {
 		promptCanvasGroup=prompt.GetComponent<CanvasGroup>();
+		prompt.text = "Press '" + GameControl.control.eInput + "' to talk to your teacher";
 
 	}
 

@@ -18,7 +18,7 @@ public class ShopSelectionArrow : MonoBehaviour {
 	void Update () {
 		if (GameControl.control.isShopItselfOpen) {
 
-			if (Input.GetKeyDown (KeyCode.DownArrow) && GameControl.control.selectedItemIndex < GameControl.control.gameShopItems.Count-1) {
+			if (Input.GetKeyDown (GameControl.control.downInput) && GameControl.control.selectedItemIndex < GameControl.control.gameShopItems.Count-1) {
 				GameControl.control.selectedItemIndex++;
 				/*if (-transform.localPosition.y > maxY) {
 					Vector3 newPos = layout.transform.localPosition;
@@ -31,7 +31,7 @@ public class ShopSelectionArrow : MonoBehaviour {
 				//transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x-5, GameControl.control.selectedGame.transform.position.y);
 
 			}
-			if (Input.GetKeyDown (KeyCode.UpArrow) && GameControl.control.selectedItemIndex> 0) {
+			if (Input.GetKeyDown (GameControl.control.upInput) && GameControl.control.selectedItemIndex> 0) {
 				GameControl.control.selectedItemIndex--;
 
 				//transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x-5, GameControl.control.selectedGame.transform.position.y);

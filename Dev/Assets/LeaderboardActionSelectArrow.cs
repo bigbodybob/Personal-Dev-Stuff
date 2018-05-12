@@ -37,10 +37,10 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 	} 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.UpArrow) && buttonIndex < 1) {
+		if (Input.GetKeyDown (GameControl.control.upInput) && buttonIndex < 1) {
 			buttonIndex++;
 			arrowObject.localPosition = positions [buttonIndex];
-		} else if (Input.GetKeyDown (KeyCode.DownArrow) && buttonIndex > 0) {
+		} else if (Input.GetKeyDown (GameControl.control.downInput) && buttonIndex > 0) {
 			buttonIndex--;
 			arrowObject.localPosition = positions [buttonIndex];
 

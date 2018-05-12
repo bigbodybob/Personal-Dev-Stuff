@@ -25,6 +25,7 @@ public class Computer : MonoBehaviour {
 	}
 	void Awake () {
 		 promptCanvasGroup=prompt.GetComponent<CanvasGroup>();
+		prompt.GetComponent<TextMeshProUGUI> ().text = "Press '" + GameControl.control.eInput + "' to access PC";
 
 	}
 

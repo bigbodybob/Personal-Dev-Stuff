@@ -45,7 +45,7 @@ public class lifeManagerBugCheck : MonoBehaviour {
 	}
 	void Update()
 	{
-		if (isGameOver&& Input.GetKeyDown(KeyCode.B)) {
+		if (isGameOver&& Input.GetKeyDown(GameControl.control.backInput)) {
 			GameControl.control.changeScene (panel);
 		}
 	}

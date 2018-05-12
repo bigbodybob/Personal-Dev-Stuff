@@ -25,7 +25,7 @@ public class shopGuy : MonoBehaviour {
 	}
 	void Awake () {
 		promptCanvasGroup=prompt.GetComponent<CanvasGroup>();
-
+		prompt.text = "Press '" + GameControl.control.eInput + "' to talk to the vendor";
 	}
 
 

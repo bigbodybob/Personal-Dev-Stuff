@@ -17,7 +17,7 @@ public class GameSelectionArrow : MonoBehaviour {
 	void Update () {
 		if (GameControl.control.isPCOpen && GameControl.control.isClearBugsClicked) {
 			
-			if (Input.GetKeyDown (KeyCode.DownArrow) && GameControl.control.allGames.Count>0&& GameControl.control.currentGameSelectionIndex!=GameControl.control.allGames.Count-1) {
+			if (Input.GetKeyDown (GameControl.control.downInput) && GameControl.control.allGames.Count>0&& GameControl.control.currentGameSelectionIndex!=GameControl.control.allGames.Count-1) {
 				GameControl.control.currentGameSelectionIndex++;
 
 				//Debug.Log(	IsPointInRT (transform.localPosition, boundingBox));
@@ -31,7 +31,7 @@ public class GameSelectionArrow : MonoBehaviour {
 				//transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x-5, GameControl.control.selectedGame.transform.position.y);
 
 				}
-			if (Input.GetKeyDown (KeyCode.UpArrow)&&  GameControl.control.allGames.Count>0&& GameControl.control.currentGameSelectionIndex!=0) {
+			if (Input.GetKeyDown (GameControl.control.upInput)&&  GameControl.control.allGames.Count>0&& GameControl.control.currentGameSelectionIndex!=0) {
 				GameControl.control.currentGameSelectionIndex--;		
 				transform.position = new Vector3 (transform.position.x, GameControl.control.selectedGame.transform.position.y);
 			

@@ -12,11 +12,11 @@ public class GameActionSelectArrow : MonoBehaviour {
 	void Update () {
 		if (GameControl.control.isPCOpen && !GameControl.control.isClearBugsClicked) {
 			transform.localPosition = new Vector3 (spacing, transform.localPosition.y);
-				if (Input.GetKeyDown (KeyCode.LeftArrow)&&GameControl.control.currentGameButtonSelectionIndex!=0) {
+				if (Input.GetKeyDown (GameControl.control.leftInput)&&GameControl.control.currentGameButtonSelectionIndex!=0) {
 				GameControl.control.currentGameButtonSelectionIndex--;
 				spacing = -360;
 			}
-			if (Input.GetKeyDown (KeyCode.RightArrow) &&GameControl.control.currentGameButtonSelectionIndex!=1) {
+			if (Input.GetKeyDown (GameControl.control.rightInput) &&GameControl.control.currentGameButtonSelectionIndex!=1) {
 				GameControl.control.currentGameButtonSelectionIndex++;
 				spacing = 60;
 

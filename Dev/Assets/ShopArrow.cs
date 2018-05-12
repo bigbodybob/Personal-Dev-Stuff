@@ -17,7 +17,7 @@ public class ShopArrow : MonoBehaviour {
 	void Update () {
 		if (GameControl.control.isDonutShopOpen) {
 
-			if (Input.GetKeyDown (KeyCode.DownArrow) && GameControl.control.currentDonutShopSelection != 4) {
+			if (Input.GetKeyDown (GameControl.control.downInput) && GameControl.control.currentDonutShopSelection != 4) {
 				GameControl.control.currentDonutShopSelection++;
 			/*	if (-transform.localPosition.y > maxY) {
 					Vector3 newPos = layout.transform.localPosition;
@@ -30,7 +30,7 @@ public class ShopArrow : MonoBehaviour {
 				//transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x-5, GameControl.control.selectedGame.transform.position.y);
 
 			}
-			if (Input.GetKeyDown (KeyCode.UpArrow) && GameControl.control.currentDonutShopSelection > 0) {
+			if (Input.GetKeyDown (GameControl.control.upInput) && GameControl.control.currentDonutShopSelection > 0) {
 				GameControl.control.currentDonutShopSelection--;
 				transform.position = new Vector3 (transform.position.x, GameControl.control.selectedDonutShopButton.transform.position.y);
 				//transform.position = new Vector3 (GameControl.control.selectedGame.transform.position.x-5, GameControl.control.selectedGame.transform.position.y);
