@@ -60,12 +60,7 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 			canSubmit = false;
 
 			submitGame();
-			if (!GameControl.control.submitToLeaderboard) {
-				GameControl.control.submitToLeaderboard = true;
-				GameControl.control.awardPointCount += 1;
-				GameControl.control.checkForGoalPoints();
-				GameControl.control.awardUnlocked();
-			}
+
 		}
 		if (Input.GetKeyDown (GameControl.control.backInput)) {
 			panel.GetComponent<FadeControl> ().levelChange ("playerhome", panel);
@@ -88,6 +83,12 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 				text.gameObject.GetComponent<TextMeshProUGUI> ().text = "Top Game Already Submitted and Updated!";
 				text.alpha = 1;
 			} else {
+				if (!GameControl.control.submitToLeaderboard) {
+					GameControl.control.submitToLeaderboard = true;
+					GameControl.control.awardPointCount += 1;
+					GameControl.control.checkForGoalPoints();
+					GameControl.control.awardUnlocked();
+				}
 				uploadToFirebase (yourTopGame);
 			}
 		}

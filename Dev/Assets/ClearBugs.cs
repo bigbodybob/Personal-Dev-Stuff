@@ -21,7 +21,7 @@ public class ClearBugs : MonoBehaviour {
 		if (GameControl.control.currentGameButtonSelectionIndex == 0 && GameControl.control.isPCOpen&&GameControl.control.allGames.Count>0) {
 			if(GameControl.control.selectedButton!=gameObject)
 			GameControl.control.selectedButton = gameObject;
-			if (Input.GetKeyDown (KeyCode.Return) && !GameControl.control.isClearBugsClicked) {
+			/*if (Input.GetKeyDown (KeyCode.Return) && !GameControl.control.isClearBugsClicked) {
 				
 				gameSelectionArrow.GetComponent<CanvasGroup> ().alpha = 1;
 				selectGamePrompt.GetComponent<CanvasGroup> ().alpha = 1;
@@ -29,21 +29,20 @@ public class ClearBugs : MonoBehaviour {
 
 				GameControl.control.isClearBugsClicked = true;
 
-			}
-			else if (Input.GetKeyDown (KeyCode.Return) && GameControl.control.isClearBugsClicked &&GameControl.control.allGames[GameControl.control.currentGameSelectionIndex].bugs>0) {
+			}*/
+			 if (Input.GetKeyDown (KeyCode.Return) && GameControl.control.isClearBugsClicked &&GameControl.control.allGames[GameControl.control.currentGameSelectionIndex].bugs>0) {
 				if (GameControl.control.selectedGame != null) {
-					GameControl.control.isClearBugsClicked = false;
 					GameControl.control.isPCOpen = false;
 					GameControl.control.gameCount = 0;
 					buttonClicked ();
 				}		
 			}
-			if (Input.GetKeyDown(GameControl.control.cancelInput) && GameControl.control.isClearBugsClicked) {
+		/*	if (Input.GetKeyDown(GameControl.control.cancelInput) && GameControl.control.isClearBugsClicked) {
 				gameSelectionArrow.GetComponent<CanvasGroup> ().alpha = 0;
 				selectGamePrompt.GetComponent<CanvasGroup> ().alpha = 0;
 				GameControl.control.isClearBugsClicked = false;
 
-			}
+			}*/
 
 		}
 	}

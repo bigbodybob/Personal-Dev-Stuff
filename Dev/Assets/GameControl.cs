@@ -172,11 +172,11 @@ public class GameControl : MonoBehaviour {
 	{
 		if (awardPointCount >= 3) {
 			FblaExcellenceAward = true;
-			awardUnlocked ();
 		}
 	}
 	public void awardUnlocked()
 	{
+		checkForGoalPoints ();
 		GameObject award = Instantiate (awardAnim);
 		Destroy (award, 3f);
 	}
@@ -254,8 +254,10 @@ public class GameControl : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "playerhome"&& isCompeting) {
 				StartCoroutine (compete());
 			}
+			if(sceneName=="shop")
+				shopItemsObject.RemoveRange (0, shopItemsObject.Count);
+			
 			isPCOpen = false;
-			isClearBugsClicked = false;
 			gameCount = 0;
 			//selectedDialogButtonIndex = 0;
 			//selectedButton = 0;

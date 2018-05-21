@@ -2361,17 +2361,17 @@ Prefab:
     - target: {fileID: 114801792959352348, guid: 8ce2ed94437727c44974d2480e9048b3,
         type: 2}
       propertyPath: allGames.Array.data[0].name
-      value: 0
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114801792959352348, guid: 8ce2ed94437727c44974d2480e9048b3,
         type: 2}
       propertyPath: allGames.Array.data[1].name
-      value: 1
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114801792959352348, guid: 8ce2ed94437727c44974d2480e9048b3,
         type: 2}
       propertyPath: allGames.Array.data[2].name
-      value: 2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114801792959352348, guid: 8ce2ed94437727c44974d2480e9048b3,
         type: 2}
@@ -2443,6 +2443,11 @@ Prefab:
         type: 2}
       propertyPath: FblaExcellenceAward
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114801792959352348, guid: 8ce2ed94437727c44974d2480e9048b3,
+        type: 2}
+      propertyPath: isClearBugsClicked
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ce2ed94437727c44974d2480e9048b3, type: 2}
@@ -6412,7 +6417,7 @@ CanvasGroup:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1603398894}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

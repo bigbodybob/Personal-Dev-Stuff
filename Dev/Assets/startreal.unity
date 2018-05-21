@@ -4938,6 +4938,17 @@ Prefab:
       propertyPath: shopItemsCosts.Array.data[2]
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 114801792959352348, guid: 8ce2ed94437727c44974d2480e9048b3,
+        type: 2}
+      propertyPath: awardAnim
+      value: 
+      objectReference: {fileID: 1761664443397050, guid: 2c9a2ab28c12f174a852c6687a7c22e5,
+        type: 2}
+    - target: {fileID: 114801792959352348, guid: 8ce2ed94437727c44974d2480e9048b3,
+        type: 2}
+      propertyPath: isClearBugsClicked
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ce2ed94437727c44974d2480e9048b3, type: 2}
   m_IsPrefabParent: 0

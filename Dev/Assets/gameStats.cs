@@ -55,7 +55,7 @@ public class gameStats : MonoBehaviour {
 
 		foreach (string n in GameControl.control.allGamesNames) {
 		
-			if (name.Equals (n)) {
+			if (name.Trim().Equals (n.Trim())) {
 				isNameUsed = true;
 			} else {
 				isNameUsed = false;

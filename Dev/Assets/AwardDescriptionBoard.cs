@@ -53,6 +53,17 @@ public class AwardDescriptionBoard : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (GameControl.control.placingMedal && placingMedal.color != Color.green) {
+			placingMedal.color = Color.green;
+			placingMedal.text = "Unlocked!";
+		}	
+		if (GameControl.control.placeFirst && placeFirst.color != Color.green) {
+			placeFirst.color = Color.green;
+			placeFirst.text = "Unlocked!";
+		}
+		if (GameControl.control.FblaExcellenceAward&& FblaExcellenceAward.color != Color.green) {
+			FblaExcellenceAward.color = Color.green;
+			FblaExcellenceAward.text = "Unlocked!";
+		}
 	}
 }

@@ -131,7 +131,7 @@ public class Leaderboard : MonoBehaviour {
 					displayValues [x].rank.color = Color.yellow;
 					displayValues [x].nameText.text = allEntries [x].getName ();
 					displayValues [x].nameText.color = Color.yellow;
-					displayValues [x].rating.text =  string.Format("{0:N1}",allEntries [x].getRating ().ToString ())+"/10";
+					displayValues [x].rating.text =  string.Format("{0:0.00}",allEntries [x].getRating ())+"/10";
 					displayValues [x].rating.color = Color.yellow;
 				} else if (displayValues.Count < 6) {
 
@@ -140,7 +140,7 @@ public class Leaderboard : MonoBehaviour {
 					entryScript.rank.text =allEntries[x].getRank().ToString ();
 					entryScript.nameText.text = allEntries [x].name;
 				
-					entryScript.rating.text =  string.Format("{0:N1}",allEntries [x].getRating ().ToString ())+"/10";
+					entryScript.rating.text =  string.Format("{0:0.00}",allEntries [x].getRating ())+"/10";
 					displayValues.Add (entryScript);
 				
 					displayValues [displayValues.Count - 1].rank.color = Color.yellow;
@@ -149,7 +149,7 @@ public class Leaderboard : MonoBehaviour {
 				} else {
 					displayValues[displayValues.Count - 1].rank.text =allEntries[x].getRank().ToString ()+".";
 					displayValues[displayValues.Count - 1].nameText.text = allEntries [x].name;
-					displayValues [displayValues.Count - 1].rating.text = allEntries [x].getRating ().ToString ();
+					displayValues [displayValues.Count - 1].rating.text =string.Format("{0:0.00}",allEntries [x].getRating ())+"/10";
 
 				}
 			} 
@@ -159,7 +159,7 @@ public class Leaderboard : MonoBehaviour {
 			displayValues[x].nameText.text=allEntries[x].getName();
 			Debug.Log (allEntries [x].rating);
 
-			displayValues[x].rating.text = string.Format("{0:N1}",allEntries[x].getRating().ToString())+"/10";
+			displayValues[x].rating.text = string.Format("{0:0.00}",allEntries[x].getRating())+"/10";
 
 			}
 		text.alpha = 0;

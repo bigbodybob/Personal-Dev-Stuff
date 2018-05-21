@@ -26,14 +26,14 @@ public class GenGameFlow : MonoBehaviour {
 
 				animator.SetBool ("isZoomedIn", false);
 				isOpen = false;
-			}
-			else if(!isOpen)
-			{
-				animator.SetBool("isZoomedIn", true);
+			} else if (!isOpen && text.alpha == 1) {
+				animator.SetBool ("isZoomedIn", true);
 				text.alpha = 0;
 
 				isOpen = true;
 			}
-	}
+		} else if (Input.anyKey) {
+			text.alpha = 0;
+		}
 }
 }

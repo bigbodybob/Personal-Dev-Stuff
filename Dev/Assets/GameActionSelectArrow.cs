@@ -10,7 +10,7 @@ public class GameActionSelectArrow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameControl.control.isPCOpen && !GameControl.control.isClearBugsClicked) {
+		if (GameControl.control.isPCOpen) {
 			transform.localPosition = new Vector3 (spacing, transform.localPosition.y);
 				if (Input.GetKeyDown (GameControl.control.leftInput)&&GameControl.control.currentGameButtonSelectionIndex!=0) {
 				GameControl.control.currentGameButtonSelectionIndex--;

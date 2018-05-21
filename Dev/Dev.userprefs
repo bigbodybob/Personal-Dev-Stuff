@@ -1,19 +1,34 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LeaderboardActionSelectArrow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameControl.cs">
     <Files>
-      <File FileName="Assets\GameControl.cs" Line="138" Column="3" />
+      <File FileName="Assets\GameControl.cs" Line="281" Column="1" />
       <File FileName="Assets\HelpScript.cs" Line="1" Column="1" />
       <File FileName="Assets\SpikedMonsterMove.cs" Line="1" Column="1" />
       <File FileName="Assets\DeleteScript.cs" Line="1" Column="1" />
       <File FileName="Assets\SubmitAGame.cs" Line="1" Column="1" />
-      <File FileName="Assets\AwardBoard.cs" Line="15" Column="1" />
-      <File FileName="Assets\buy.cs" Line="20" Column="47" />
-      <File FileName="Assets\Donut.cs" Line="51" Column="4" />
-      <File FileName="Assets\results.cs" Line="41" Column="1" />
+      <File FileName="Assets\AwardBoard.cs" Line="1" Column="1" />
+      <File FileName="Assets\Donut.cs" Line="1" Column="1" />
+      <File FileName="Assets\results.cs" Line="1" Column="1" />
       <File FileName="Assets\LeaderboardEntry.cs" Line="1" Column="1" />
-      <File FileName="Assets\LeaderboardActionSelectArrow.cs" Line="65" Column="26" />
-      <File FileName="Assets\Leaderboard.cs" Line="177" Column="135" />
+      <File FileName="Assets\LeaderboardActionSelectArrow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Leaderboard.cs" Line="1" Column="1" />
+      <File FileName="Assets\StartScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\SubmitGameButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\shopGuy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Teacher.cs" Line="1" Column="1" />
+      <File FileName="Assets\characterBodyControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\startFromCustom.cs" Line="1" Column="1" />
+      <File FileName="Assets\Press_ToDismiss.cs" Line="1" Column="1" />
+      <File FileName="Assets\GoBack.cs" Line="1" Column="1" />
+      <File FileName="Assets\ChangeUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\GenGameFlow.cs" Line="1" Column="1" />
+      <File FileName="Assets\ClearBugs.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameActionSelectArrow.cs" Line="1" Column="1" />
+      <File FileName="Assets\ShopSelectionArrow.cs" Line="1" Column="1" />
+      <File FileName="Assets\buy.cs" Line="1" Column="1" />
+      <File FileName="Assets\AwardDescriptionBoard.cs" Line="1" Column="1" />
+      <File FileName="Assets\shopButt.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

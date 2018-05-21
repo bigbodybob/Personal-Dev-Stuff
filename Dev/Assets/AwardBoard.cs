@@ -63,9 +63,22 @@ public class AwardBoard : MonoBehaviour {
 
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
+
+		if (GameControl.control.placingMedal && placingMedal.color!= Color.white) {
+			placingMedal.color = Color.white;
+
+		}
+		if (GameControl.control.placeFirst && placeFirst.color!= Color.white) {
+			placeFirst.color = Color.white;
+
+		}
+		if (GameControl.control.FblaExcellenceAward && FblaExcellenceAward.color!= Color.white) {
+			FblaExcellenceAward.color = Color.white;
+
+		}
 		if (Input.GetKeyDown (GameControl.control.eInput) && isInRange) {
 			if (!isZoomedIn) {
 				AchievementBoard.SetBool ("zoomedIn", true);
