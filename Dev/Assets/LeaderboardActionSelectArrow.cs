@@ -26,6 +26,8 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 		FirebaseApp.DefaultInstance.SetEditorDatabaseUrl ("https://fblagame-3c891.firebaseio.com/");
 
 	}
+	/* Check for connection to internet by pinging google
+	if succesful hide connect to internet message*/
 	IEnumerator checkInternetConnection(){
 		WWW www = new WWW("http://google.com");
 		yield return www;
@@ -37,6 +39,10 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 	} 
 	// Update is called once per frame
 	void Update () {
+		/*
+		This indexing move button between the two button options in the scene
+
+		*/
 		if (Input.GetKeyDown (GameControl.control.upInput) && buttonIndex < 1) {
 			buttonIndex++;
 			arrowObject.localPosition = positions [buttonIndex];
@@ -45,6 +51,7 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 			arrowObject.localPosition = positions [buttonIndex];
 
 			}
+		// open and close leader board
 		if (buttonIndex == 1 && Input.GetKeyDown(KeyCode.Return)) {
 			text.gameObject.GetComponent<TextMeshProUGUI> ().text = "Press '" +GameControl.control.eInput.ToString()+"' to close leaderboard";
 
@@ -56,6 +63,7 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 			leaderboard.SetBool ("zoomedIn", false);
 			text.alpha = 0;
 		}
+		//Submit button
 		if (buttonIndex == 0 && Input.GetKeyDown(KeyCode.Return)) {
 			canSubmit = false;
 
@@ -71,6 +79,7 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 	{
 		StartCoroutine(checkInternetConnection());
 		CreatedGame yourTopGame;
+		//Determines what game to submit. Submtis game with highest rating
 		if (GameControl.control.allGames.Count > 0) {
 			yourTopGame = GameControl.control.allGames [0];
 			foreach (CreatedGame x in GameControl.control.allGames) {
@@ -78,11 +87,13 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 					yourTopGame = x;
 				} 
 			}
+			//if topGame name already registered and is the same, dont submit and display this message
 			if (yourTopGame.name == GameControl.control.topGameName) {
 			
 				text.gameObject.GetComponent<TextMeshProUGUI> ().text = "Top Game Already Submitted and Updated!";
 				text.alpha = 1;
 			} else {
+				//Checks for award
 				if (!GameControl.control.submitToLeaderboard) {
 					GameControl.control.submitToLeaderboard = true;
 					GameControl.control.awardPointCount += 1;
@@ -92,6 +103,7 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 				uploadToFirebase (yourTopGame);
 			}
 		}
+		//If no game created.
 			else  {
 				text.gameObject.GetComponent<TextMeshProUGUI> ().text = "You have no applicable games to submit!";
 			
@@ -101,6 +113,9 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 
 
 	}
+	/*
+	Gets entry count
+	*/
 	void uploadToFirebase(CreatedGame game)
 	{
 		int gameNumber;
@@ -118,6 +133,10 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 			}
 		});
 	}
+	/* 
+	This is the first phase for checking equal games, first it adds all games 
+	using recursion, and then it calls phase 2
+	*/
 	void checkForEqualGames(int recursionCount, int gameNumber, CreatedGame game)
 	{
 		FirebaseDatabase.DefaultInstance.GetReference ("Leaderboard").Child ("Scores").Child(recursionCount.ToString()).GetValueAsync ().ContinueWith (task=>{
@@ -141,6 +160,12 @@ public class LeaderboardActionSelectArrow : MonoBehaviour {
 			});
 
 	}
+	/*
+	Phase 2 detects if there is agame in leaderboard with same name, if so add an asterik
+	to the submitted game name and change the identifier to that new modified name.
+	This solves issue of duplicate entries. Then submit game
+
+	*/
 	void checkForEqualGamesTwo( int gameNumber, CreatedGame game)
 	{
 		string gameIdentifier = game.name;	

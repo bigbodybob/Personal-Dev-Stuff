@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+/*
+The following class contains the actions used by the submit button for FBLA comptettive events
+If the user is currently in competition, it simply displays text indiciated inability to compete.
+else, submit the selected game, enable compeition variable, and provide submission receipt.
+*/
 public class SubmitGameButton : MonoBehaviour {
 	public TextMeshProUGUI text;
 	public bool submitted =false;

@@ -8,17 +8,22 @@ using UnityEngine.SceneManagement;
 using System;
 using Random = UnityEngine.Random;
 
+
+/* This script is a comprehensive link between all the various scenes 
+	and activites in the game. Variables are communicated using a Singleton Design pattern.
+	In addition, GameControl manages the save and load functions of the game
+*/
 public class GameControl : MonoBehaviour {
 	
 	//Lifetime awards
 	public int awardPointCount=0;
 	public GameObject awardAnim;
-	//Tier1
+	//Tier1 Awards
 	public bool buyWord;
 	public bool placingMedal;
 	public bool raising10k;
 	public bool submitToLeaderboard;
-	//Tier2
+	//Tier2 Awards
 	public bool placeFirst;
 	public bool buyAllWords;
 	public bool raise500k;
@@ -117,7 +122,7 @@ public class GameControl : MonoBehaviour {
 	public Color hairColor;
 	public int shoes= 0;
 	public int hair= 0;
-	//sprite lists
+	//sprite lists, this list manages character customization
 	public Sprite[] hairSpriteList;
 	public Sprite[] bodySpriteList;
 	public Sprite[] upperSpriteList;
@@ -130,8 +135,11 @@ public class GameControl : MonoBehaviour {
 	//current scene
 	public string sceneName;
 	// Use this for initialization
-//Awards, check if enough points have been achieved for fbla award,
-// If so, award it!
+
+	/*The following are the slider functions
+	  that allow for custom UI input. They take 
+	  user choice as a float and bind keys as such
+	  */
 	public void changeEInput(float x)
 	{
 		if (x == 0) {
@@ -168,32 +176,37 @@ public class GameControl : MonoBehaviour {
 			downInput = KeyCode.S;
 		}
 	}
+	//Awards, check if enough points have been achieved for fbla award,
+// If so, award it!
 	public void checkForGoalPoints()
 	{
 		if (awardPointCount >= 3) {
 			FblaExcellenceAward = true;
+			awardUnlocked ();
 		}
 	}
+	//If any award is unlocked, play the animation
 	public void awardUnlocked()
 	{
-		checkForGoalPoints ();
 		GameObject award = Instantiate (awardAnim);
 		Destroy (award, 3f);
 	}
+
 	void OnApplicationQuit()
 	{
+		//If in fundraise scence, set the last date to current data. Aids in money calculation
 		if (SceneManager.GetActiveScene ().name == "fundraise") {
 			latestTime = DateTime.Now;
 		}
 		if(SceneManager.GetActiveScene().name!="customize"&& SceneManager.GetActiveScene().name!="startreal") 
 		Save ();
-		Debug.Log ("finita");
 	}
 	void Awake () {
-//File.Delete (Application.persistentDataPath + "/saveinfo.dat");
+		//This Rect is reffered to for certain click events across game
 		screenRect = new Rect (0,0, Screen.width, Screen.height-80);
-
+		//Keeping track of the current scene name allows to control some of the logic decisions in the game.
 		sceneName = SceneManager.GetActiveScene ().name;
+		//The following if statement is part of the singketon design. A public static 'control' is set to this script to make all variables accesible globally
 		if (control == null) {
 			DontDestroyOnLoad (gameObject);
 			control = this;
@@ -201,6 +214,7 @@ public class GameControl : MonoBehaviour {
 		else if (control != this) {
 			Destroy(gameObject);
 		}
+		//Is there a save file?
 		if (!File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
 			doesCurrentGameExist = false;
 		} else if (File.Exists (Application.persistentDataPath + "/saveinfo.dat")) {
@@ -211,6 +225,7 @@ public class GameControl : MonoBehaviour {
 	{
 		
 	}
+	//Extensions of the fundraising component. Details found in the 'Donut' script
 	public  float DonutsPerClick()
 	{
 		float value = 0;
@@ -240,6 +255,7 @@ public class GameControl : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			Application.Quit ();
 		}
+		//Music Manager
 		if (sceneName != SceneManager.GetActiveScene ().name) {
 			if (SceneManager.GetActiveScene ().name == "startreal") {
 				mainAudio.clip = music [0];
@@ -254,10 +270,9 @@ public class GameControl : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name == "playerhome"&& isCompeting) {
 				StartCoroutine (compete());
 			}
-			if(sceneName=="shop")
-				shopItemsObject.RemoveRange (0, shopItemsObject.Count);
-			
+			//Close all windows and dialog counts if scene is changed
 			isPCOpen = false;
+			isClearBugsClicked = false;
 			gameCount = 0;
 			//selectedDialogButtonIndex = 0;
 			//selectedButton = 0;
@@ -273,6 +288,7 @@ public class GameControl : MonoBehaviour {
 		}
 	
 	}
+	//Controls FBLA competitive event competition
 	IEnumerator compete()
 	{
 		yield return new WaitForSeconds (1);
@@ -289,6 +305,8 @@ public class GameControl : MonoBehaviour {
 		isCompeting = false;
 		competeAgainDate = DateTime.Now.AddMinutes (15);
 	}
+	/*The following 2 blocks of code are part of the character customization menu. 
+	These  blocks assign the value*/
 	public  void changeSkinTone(float newskintone, GameObject headS, GameObject lowerarmS, GameObject lowerarmleftS, GameObject neckS, GameObject handS, GameObject handleftS)
 	{
 		GameControl.control.skintone= new Color (0.5F*newskintone,0.3F*newskintone,0.2F*newskintone,1.0F);
@@ -344,6 +362,8 @@ public class GameControl : MonoBehaviour {
 		GameObject.Find ("hair").GetComponent<SpriteRenderer> ().color = hairc;
 		hairColor = hairc;
 	}
+
+
 	public void Save()
 	{
 		Debug.Log ("saving");
@@ -623,6 +643,8 @@ public class GameControl : MonoBehaviour {
 	{
 	}
 }
+
+// List of variables that need to be saved and loaded
 [System.Serializable]
 class saveData:System.Object
 {

@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+/*
+The following script hanlds ranking for competuive events. In the game top 3 is placing therefore only rank 1-4 is neccesary 
+to evaluate. All the scrip does is detect rank of submitted game compares to 3 randomly generated values and places the game accordingly.
+Then, the text of the award panel is set to refelect that rank
+*/
 public class results : MonoBehaviour {
 	public TextMeshProUGUI text;
 	public int rank;

@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+/*
+The following class demonstrates the back end for the dialog interface of the teacher in the game.
+It takes is various dynamic keyboard input, freezes the character movement, controls prompt text, and displays dialog menu
+*/
 public class Teacher : MonoBehaviour {
 
 	public GameObject dialogDisplay;
